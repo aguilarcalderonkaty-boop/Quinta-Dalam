@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Contacta al Hotel Quinta Dalam en Morelia, Michoacán. Teléfono, WhatsApp, correo electrónico y formulario de contacto.">
     <title>Contacto - Hotel Quinta Dalam</title>
 </head>
+
 <body topmargin="0" leftmargin="0">
 
     <header>
         <div align="center">
             <br>
-            <img src="img/logo.png" alt="Logo Quinta Dalam" width="180">
+            <img src="img/logo.png" alt="Logo Quinta Dalam" title="Logo Quinta Dalam" width="180">
             <h1>HOTEL QUINTA DALAM</h1>
             <p>Estamos para servirte</p>
-            
+
             <hr width="80%">
             <nav>
-                <a href="index.html">INICIO</a> &nbsp;|&nbsp; 
-                <a href="habitaciones.html">VER HABITACIONES</a> &nbsp;|&nbsp; 
-                <a href="reservar.html">RESERVACIONES</a> &nbsp;|&nbsp; 
-                <b>CONTACTO</b> </nav>
+                <a href="index.html">INICIO</a> &nbsp;|&nbsp;
+                <a href="habitaciones.html">VER HABITACIONES</a> &nbsp;|&nbsp;
+                <a href="reservar.html">RESERVACIONES</a> &nbsp;|&nbsp;
+                <b>CONTACTO</b>
+            </nav>
             <hr width="80%">
         </div>
     </header>
@@ -37,88 +43,126 @@
                     <br>
                     <h3>Ubicación</h3>
                     <p>Morelia, Michoacán, México.</p>
-                    
-                    <img src="img/mapa.jpg" alt="Mapa de Ubicación" width="300" border="1">
+
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60188.97!2d-101.19!3d19.70!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0ba18c4b2517%3A0x2d20e43e7311dfe4!2sMorelia%2C%20Mich.!5e0!3m2!1ses!2smx!4v1700000000000!5m2!1ses!2smx"
+                        width="300" height="200" frameborder="0" allowfullscreen loading="lazy"
+                        title="Ubicación de Hotel Quinta Dalam en Google Maps">
+                    </iframe>
                     <br><br>
                     <a href="https://goo.gl/maps/tu_enlace_aqui" target="_blank">VER EN GOOGLE MAPS</a>
-                    
+
                     <hr width="80%">
-                    
+
                     <h3>Atención al Cliente</h3>
-                    <p>Teléfono y WhatsApp:</p>
-                    <p><b>+52 (443) 123-4567</b></p>
-                    
+                    <p>Teléfono:</p>
+                    <p>
+                        <b><a href="tel:+524431234567">+52 (443) 123-4567</a></b>
+                    </p>
+                    <p>WhatsApp:</p>
+                    <p>
+                        <a href="https://wa.me/524431234567" target="_blank">Enviar mensaje por WhatsApp</a>
+                    </p>
+
                     <h3>Correo Electrónico</h3>
-                    <p>contacto@quintadalam.com</p>
+                    <p>
+                        <a href="mailto:contacto@quintadalam.com">contacto@quintadalam.com</a>
+                    </p>
                     <br>
                 </td>
 
                 <td width="50%" valign="top">
                     <h3>Envíanos un Mensaje</h3>
-                    <form>
-                        <table border="0" width="100%" cellpadding="5">
-                            <tr>
-                                <td><b>Nombre:</b></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text" name="nombre" style="width: 100%" required></td>
-                            </tr>
-                            <tr>
-                                <td><b>Correo:</b></td>
-                            </tr>
-                            <tr>
-                                <td><input type="email" name="email" style="width: 100%" required></td>
-                            </tr>
-                            <tr>
-                                <td><b>Asunto:</b></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <select name="asunto" style="width: 100%">
-                                        <option>Información General</option>
-                                        <option>Cotización de Eventos</option>
-                                        <option>Objetos Olvidados</option>
-                                        <option>Quejas o Sugerencias</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><b>Mensaje:</b></td>
-                            </tr>
-                            <tr>
-                                <td><textarea name="mensaje" rows="5" style="width: 100%"></textarea></td>
-                            </tr>
-                            <tr>
-                                <td align="center">
-                                    <br>
-                                    <input type="submit" value="ENVIAR MENSAJE AHORA" style="padding: 10px;">
-                                </td>
-                            </tr>
-                        </table>
+                    <form action="https://formspree.io/f/TU_ID_AQUI" method="POST">
+                        <fieldset>
+                            <legend><b>Formulario de Contacto</b></legend>
+                            <table border="0" width="100%" cellpadding="5">
+                                <tr>
+                                    <td>
+                                        <label for="contacto-nombre"><b>Nombre:</b></label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" name="nombre" id="contacto-nombre" size="40" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="contacto-email"><b>Correo:</b></label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="email" name="email" id="contacto-email" size="40" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="contacto-asunto"><b>Asunto:</b></label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <select name="asunto" id="contacto-asunto">
+                                            <option value="informacion">Información General</option>
+                                            <option value="eventos">Cotización de Eventos</option>
+                                            <option value="objetos">Objetos Olvidados</option>
+                                            <option value="quejas">Quejas o Sugerencias</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="contacto-mensaje"><b>Mensaje:</b></label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <textarea name="mensaje" id="contacto-mensaje" rows="5" cols="40"></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center">
+                                        <br>
+                                        <input type="reset" value="LIMPIAR">
+                                        &nbsp;&nbsp;
+                                        <input type="submit" value="ENVIAR MENSAJE AHORA">
+                                    </td>
+                                </tr>
+                            </table>
+                        </fieldset>
                     </form>
                 </td>
             </tr>
         </table>
     </main>
 
-    <br><br><hr>
+    <br><br>
+    <hr>
 
     <footer id="contacto">
         <div align="center">
             <h3>Síguenos</h3>
             <a href="https://www.facebook.com/profile.php?id=61584681841684" target="_blank">
-                <img src="img/facebook.png" alt="Facebook" width="30">
-            </a> &nbsp;&nbsp;
-            <a href="https://www.instagram.com/quintadalam" target="_blank">
-                <img src="img/instagram.png" alt="Instagram" width="30">
-            </a> &nbsp;&nbsp;
-            <a href="https://www.tiktok.com/@quintadalam" target="_blank">
-                <img src="img/tiktok.png" alt="TikTok" width="30">
+                <img src="img/facebook.png" alt="Facebook" title="Facebook Quinta Dalam" width="30">
             </a>
+            &nbsp;&nbsp;
+            <a href="https://www.instagram.com/quintadalam" target="_blank">
+                <img src="img/instagram.png" alt="Instagram" title="Instagram Quinta Dalam" width="30">
+            </a>
+            &nbsp;&nbsp;
+            <a href="https://www.tiktok.com/@quintadalam" target="_blank">
+                <img src="img/tiktok.png" alt="TikTok" title="TikTok Quinta Dalam" width="30">
+            </a>
+
             <br><br>
             <small>&copy; 2026 Hotel Quinta Dalam</small>
+            <br>
+            <small>Todos los derechos reservados</small>
         </div>
     </footer>
 
 </body>
+
 </html>

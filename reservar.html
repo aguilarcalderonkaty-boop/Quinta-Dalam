@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Reserva tu habitación en Hotel Quinta Dalam. Hospédate en habitaciones inspiradas en los Pueblos Mágicos de Michoacán.">
     <title>Reservar - Hotel Quinta Dalam</title>
 </head>
+
 <body topmargin="0" leftmargin="0">
 
     <header>
         <div align="center">
             <br>
-            <img src="img/logo.png" alt="Logo Quinta Dalam" width="180">
+            <img src="img/logo.png" alt="Logo Quinta Dalam" title="Logo Quinta Dalam" width="180">
             <h1>HOTEL QUINTA DALAM</h1>
             <p>Módulo de Reservaciones</p>
-            
+
             <hr width="80%">
             <nav>
-    <a href="index.html">INICIO</a> &nbsp;|&nbsp; 
-    <a href="habitaciones.html">VER HABITACIONES</a> &nbsp;|&nbsp; 
-    <b>RESERVACIONES</b> &nbsp;|&nbsp; 
-    <a href="contacto.html">CONTACTO</a> </nav>
+                <a href="index.html">INICIO</a> &nbsp;|&nbsp;
+                <a href="habitaciones.html">VER HABITACIONES</a> &nbsp;|&nbsp;
+                <b>RESERVACIONES</b> &nbsp;|&nbsp;
+                <a href="contacto.html">CONTACTO</a>
+            </nav>
             <hr width="80%">
         </div>
     </header>
@@ -30,81 +36,133 @@
         </div>
         <br>
 
-        <form>
+        <form action="https://formspree.io/f/TU_ID_AQUI" method="POST">
             <table width="60%" align="center" border="0" cellpadding="10" bgcolor="#f9f9f9">
-                
-                <tr bgcolor="#ddd">
-                    <td colspan="2" align="center"><b>DATOS DEL CLIENTE</b></td>
-                </tr>
-                <tr>
-                    <td align="right" width="40%">Nombre Completo:</td>
-                    <td align="left"><input type="text" name="nombre" size="40" required></td>
-                </tr>
-                <tr>
-                    <td align="right">Correo Electrónico:</td>
-                    <td align="left"><input type="email" name="email" size="40" required></td>
-                </tr>
-                <tr>
-                    <td align="right">Teléfono:</td>
-                    <td align="left"><input type="tel" name="telefono" required></td>
-                </tr>
 
-                <tr bgcolor="#ddd">
-                    <td colspan="2" align="center"><b>DETALLES DEL VIAJE</b></td>
-                </tr>
                 <tr>
-                    <td align="right">Llegada:</td>
-                    <td align="left"><input type="date" name="llegada" required></td>
-                </tr>
-                <tr>
-                    <td align="right">Salida:</td>
-                    <td align="left"><input type="date" name="salida" required></td>
-                </tr>
-                <tr>
-                    <td align="right">Personas:</td>
-                    <td align="left">
-                        Adultos: <input type="number" min="1" max="5" value="1" style="width:40px"> 
-                        Niños: <input type="number" min="0" max="5" value="0" style="width:40px">
+                    <td colspan="2">
+                        <fieldset>
+                            <legend><b>DATOS DEL CLIENTE</b></legend>
+                            <table border="0" width="100%" cellpadding="8">
+                                <tr>
+                                    <td align="right" width="40%">
+                                        <label for="nombre">Nombre Completo:</label>
+                                    </td>
+                                    <td align="left">
+                                        <input type="text" name="nombre" id="nombre" size="40" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">
+                                        <label for="email">Correo Electrónico:</label>
+                                    </td>
+                                    <td align="left">
+                                        <input type="email" name="email" id="email" size="40" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">
+                                        <label for="telefono">Teléfono:</label>
+                                    </td>
+                                    <td align="left">
+                                        <input type="tel" name="telefono" id="telefono" required>
+                                    </td>
+                                </tr>
+                            </table>
+                        </fieldset>
                     </td>
                 </tr>
 
-                <tr bgcolor="#ddd">
-                    <td colspan="2" align="center"><b>HABITACIÓN</b></td>
-                </tr>
                 <tr>
-                    <td align="right">Selecciona:</td>
-                    <td align="left">
-                        <select name="habitacion">
-                            <option value="">-- Elige una opción --</option>
-                            <optgroup label="Planta Baja">
-                                <option>101 - Tzintzuntzan</option>
-                                <option>102 - Paracho</option>
-                                <option>103 - Yunuen</option>
-                                <option>104 - Pátzcuaro</option>
-                                <option>105 - Coeneo</option>
-                                <option>106 - Janitzio</option>
-                            </optgroup>
-                            <optgroup label="Planta Alta">
-                                <option>201 - Suite Quencio</option>
-                                <option>202 - Morelia</option>
-                                <option>203 - Tacámbaro</option>
-                                <option>204 - Uruapan</option>
-                                <option>205 - Tlalpujahua</option>
-                                <option>206 - Cuitzeo</option>
-                                <option>207 - Cuanajo</option>
-                            </optgroup>
-                        </select>
+                    <td colspan="2">
+                        <fieldset>
+                            <legend><b>DETALLES DEL VIAJE</b></legend>
+                            <table border="0" width="100%" cellpadding="8">
+                                <tr>
+                                    <td align="right" width="40%">
+                                        <label for="llegada">Llegada:</label>
+                                    </td>
+                                    <td align="left">
+                                        <input type="date" name="llegada" id="llegada" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">
+                                        <label for="salida">Salida:</label>
+                                    </td>
+                                    <td align="left">
+                                        <input type="date" name="salida" id="salida" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">
+                                        <label for="adultos">Personas:</label>
+                                    </td>
+                                    <td align="left">
+                                        <label for="adultos">Adultos:</label>
+                                        <input type="number" name="adultos" id="adultos" min="1" max="5" value="1"
+                                            size="3">
+                                        &nbsp;
+                                        <label for="ninos">Niños:</label>
+                                        <input type="number" name="ninos" id="ninos" min="0" max="5" value="0" size="3">
+                                    </td>
+                                </tr>
+                            </table>
+                        </fieldset>
                     </td>
                 </tr>
+
                 <tr>
-                    <td align="right" valign="top">Comentarios:</td>
-                    <td align="left"><textarea rows="3" cols="30"></textarea></td>
+                    <td colspan="2">
+                        <fieldset>
+                            <legend><b>HABITACIÓN</b></legend>
+                            <table border="0" width="100%" cellpadding="8">
+                                <tr>
+                                    <td align="right" width="40%">
+                                        <label for="habitacion">Selecciona:</label>
+                                    </td>
+                                    <td align="left">
+                                        <select name="habitacion" id="habitacion">
+                                            <option value="">-- Elige una opción --</option>
+                                            <optgroup label="Planta Baja">
+                                                <option value="101">101 - Tzintzuntzan</option>
+                                                <option value="102">102 - Paracho</option>
+                                                <option value="103">103 - Yunuen</option>
+                                                <option value="104">104 - Pátzcuaro</option>
+                                                <option value="105">105 - Coeneo</option>
+                                                <option value="106">106 - Janitzio</option>
+                                            </optgroup>
+                                            <optgroup label="Planta Alta">
+                                                <option value="201">201 - Suite Quencio</option>
+                                                <option value="202">202 - Morelia</option>
+                                                <option value="203">203 - Tacámbaro</option>
+                                                <option value="204">204 - Uruapan</option>
+                                                <option value="205">205 - Tlalpujahua</option>
+                                                <option value="206">206 - Cuitzeo</option>
+                                                <option value="207">207 - Cuanajo</option>
+                                            </optgroup>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right" valign="top">
+                                        <label for="comentarios">Comentarios:</label>
+                                    </td>
+                                    <td align="left">
+                                        <textarea name="comentarios" id="comentarios" rows="3" cols="30"></textarea>
+                                    </td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                    </td>
                 </tr>
 
                 <tr>
                     <td colspan="2" align="center">
                         <br>
-                        <input type="submit" value="CONFIRMAR RESERVACIÓN" style="padding: 10px 20px;">
+                        <input type="reset" value="LIMPIAR FORMULARIO">
+                        &nbsp;&nbsp;
+                        <input type="submit" value="CONFIRMAR RESERVACIÓN">
                         <br><br>
                     </td>
                 </tr>
@@ -112,18 +170,31 @@
         </form>
     </main>
 
-    <br><hr>
+    <br>
+    <hr>
 
     <footer id="contacto">
         <div align="center">
             <h3>Síguenos</h3>
-            <a href="https://www.facebook.com/profile.php?id=61584681841684" target="_blank"><img src="img/facebook.png" width="30"></a> &nbsp;
-            <a href="https://www.instagram.com/quintadalam" target="_blank"><img src="img/instagram.png" width="30"></a> &nbsp;
-            <a href="https://www.tiktok.com/@quintadalam" target="_blank"><img src="img/tiktok.png" width="30"></a>
+            <a href="https://www.facebook.com/profile.php?id=61584681841684" target="_blank">
+                <img src="img/facebook.png" alt="Facebook" title="Facebook Quinta Dalam" width="30">
+            </a>
+            &nbsp;&nbsp;
+            <a href="https://www.instagram.com/quintadalam" target="_blank">
+                <img src="img/instagram.png" alt="Instagram" title="Instagram Quinta Dalam" width="30">
+            </a>
+            &nbsp;&nbsp;
+            <a href="https://www.tiktok.com/@quintadalam" target="_blank">
+                <img src="img/tiktok.png" alt="TikTok" title="TikTok Quinta Dalam" width="30">
+            </a>
+
             <br><br>
             <small>&copy; 2026 Hotel Quinta Dalam</small>
+            <br>
+            <small>Todos los derechos reservados</small>
         </div>
     </footer>
 
 </body>
+
 </html>
