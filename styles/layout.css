@@ -1,0 +1,137 @@
+.header-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--color-brand);
+    height: 90px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand {
+    color: var(--white);
+    font-size: 1.8rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-right {
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.navbar-secondary-links {
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-contact-link,
+.nav-rewards-link {
+    text-decoration: none;
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: color 0.3s ease;
+}
+
+.nav-contact-link:hover,
+.nav-rewards-link:hover {
+    color: #7A5051;
+}
+
+/* Menú Hamburguesa estático */
+.menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 5px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: #333;
+    transition: 0.3s;
+}
+
+.menu-toggle:hover span {
+    background-color: #7A5051;
+}
+
+section {
+    padding: 5rem 0;
+}
+
+.rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.mission-vision-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 3rem;
+}
+
+.booking-section {
+    background-color: var(--color-brand);
+    padding: 5rem 0;
+}
+
+.booking-container {
+    max-width: 900px;
+}
+
+.footer {
+    background-color: var(--bg-dark);
+    color: var(--white);
+    padding: 3rem 0;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+
+    .mission-vision-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar-menu {
+        display: none;
+        /* En un futuro SPA se hace menú hamburguesa */
+    }
+}

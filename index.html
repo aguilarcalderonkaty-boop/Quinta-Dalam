@@ -6,99 +6,479 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="Hotel Quinta Dalam - La esencia de Michoacán. Hospédate en habitaciones inspiradas en los Pueblos Mágicos de Michoacán.">
-    <title>Inicio - Hotel Quinta Dalam</title>
+    <title>Hotel Quinta Dalam - One Page</title>
+    <!-- Arquitectura CSS separada -->
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/components.css">
 </head>
 
-<body topmargin="0" leftmargin="0">
+<body>
 
-    <header>
-        <div align="center">
-            <br>
-            <img src="img/logo.png" alt="Logo Quinta Dalam" title="Logo Quinta Dalam" width="180">
+    <header class="header-nav">
+        <nav class="navbar container">
+            <div class="navbar-left">
+                <a href="#inicio" class="navbar-brand">
+                    <!-- Icono o logo simple (simulando estrella Iberostar) -->
+                    <span style="color: #000000; font-size: 1.8rem; margin-right: 5px;">★</span>
+                    <div style="display: flex; flex-direction: column; line-height: 1;">
+                        <span style="font-weight: 400; font-size: 1.4rem; letter-spacing: 2px;">QUINTA DALAM</span>
+                        <span style="font-size: 0.6rem; letter-spacing: 1px; color: #666;">HOTEL & RESORT</span>
+                    </div>
+                </a>
+            </div>
 
-            <h1>HOTEL QUINTA DALAM</h1>
-            <p>La esencia de Michoacán</p>
-
-            <hr width="80%">
-            <nav>
-                <b>INICIO</b> &nbsp;|&nbsp;
-                <a href="habitaciones.html">VER HABITACIONES</a> &nbsp;|&nbsp;
-                <a href="reservar.html">RESERVACIONES</a> &nbsp;|&nbsp;
-                <a href="contacto.html">CONTACTO</a>
-            </nav>
-            <hr width="80%">
-        </div>
+            <div class="navbar-right">
+                <div class="navbar-secondary-links">
+                    <a href="#contacto" class="nav-contact-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="contact-icon">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                            </path>
+                        </svg>
+                        Contacto
+                    </a>
+                </div>
+            </div>
+        </nav>
     </header>
 
     <main>
-        <div align="center">
-            <br>
-            <h2>Bienvenidos a Michoacán</h2>
-            <p>Vive la magia y tradición de nuestros pueblos en un solo lugar.</p>
+        <!-- SECCIÓN: INICIO (Hero e Info) -->
+        <section id="inicio" class="hero-section">
+            <div class="hero-content">
+                <p class="hero-subtitle">Descanso y tradición en nuestra quinta</p>
+                <h1 class="hero-title">¡Bienvenido a Quinta Dalam!</h1>
+                <p class="hero-subtitle">AHORA ES EL MOMENTO DE QUE DESCANSES Y CONOZCAS QUENCIO</p>
 
-            <img src="img/bienvenida.jpg" alt="Vista Principal del Hotel" title="Vista Principal del Hotel" width="600">
-            <br><br>
-            <a href="reservar.html">RESERVAR AHORA</a>
-        </div>
+                <div class="hero-actions">
+                    <a href="#habitaciones" class="btn-primary">Ver Habitaciones</a>
+                </div>
+            </div>
 
-        <br><br>
-        <hr width="50%">
-        <br>
+            <!-- Barra de Reservas Rápida sobrepuesta -->
+            <div class="quick-booking-bar">
+                <form action="#reservar" class="quick-booking-form">
+                    <div class="qb-group">
+                        <label>Llegada</label>
+                        <input type="date" required>
+                    </div>
+                    <div class="qb-group">
+                        <label>Salida</label>
+                        <input type="date" required>
+                    </div>
+                    <div class="qb-group">
+                        <label>Huéspedes</label>
+                        <select>
+                            <option>1 Adulto, 0 Niños</option>
+                            <option>2 Adultos, 0 Niños</option>
+                            <option>2 Adultos, 2 Niños</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-secondary qb-submit">RESERVAR</button>
+                </form>
+            </div>
+        </section>
 
-        <div align="center">
-            <h2>Sobre Nosotros</h2>
-            <br>
-        </div>
+        <section class="about-section container">
+            <div class="text-center">
+                <h2 class="section-title">Bienvenidos a Michoacán</h2>
+                <p>Vive la magia y tradición de nuestros pueblos en un solo lugar.</p>
+                <img src="img/bienvenida.jpg" alt="Vista Principal del Hotel" title="Vista Principal del Hotel"
+                    style="max-width: 100%; border-radius: 8px; margin: 2rem 0;">
+            </div>
 
-        <table width="80%" align="center" border="0" cellspacing="20">
-            <tr>
-                <td align="center" width="50%" valign="top">
-                    <h3>Nuestra Misión</h3>
-                    <img src="img/mision.jpg" alt="Foto Misión" title="Foto Misión" width="200">
-                    <br><br>
-                    <p align="justify">
+            <div class="mission-vision-grid">
+                <div class="info-card">
+                    <h3 class="info-title">Nuestra Misión</h3>
+                    <img src="img/mision.jpg" alt="Foto Misión" title="Foto Misión" class="info-img">
+                    <p class="info-text">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                         laboris nisi ut aliquip ex ea commodo consequat.
                     </p>
-                </td>
-
-                <td align="center" width="50%" valign="top">
-                    <h3>Nuestra Visión</h3>
-                    <img src="img/vision.jpg" alt="Foto Visión" title="Foto Visión" width="200">
-                    <br><br>
-                    <p align="justify">
+                </div>
+                <div class="info-card">
+                    <h3 class="info-title">Nuestra Visión</h3>
+                    <img src="img/vision.jpg" alt="Foto Visión" title="Foto Visión" class="info-img">
+                    <p class="info-text">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                         laboris nisi ut aliquip ex ea commodo consequat.
                     </p>
-                </td>
-            </tr>
-        </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: HABITACIONES -->
+        <section id="habitaciones" class="rooms-section">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-title">Nuestros Espacios</h2>
+                    <p>Cada habitación está inspirada en un Pueblo Mágico de Michoacán.</p>
+                </div>
+
+                <div class="floor-title">
+                    <h3>PLANTA BAJA</h3>
+                </div>
+
+                <div class="rooms-grid">
+                    <!-- Room 101 -->
+                    <article class="room-card">
+                        <img src="img/101_tzintzuntzan.jpg" alt="Foto Habitación" title="Tzintzuntzan Quinta Dalam"
+                            class="room-card-image">
+                        <div class="room-card-body">
+                            <h3 class="room-card-title">101: Tzintzuntzan</h3>
+                            <p class="room-card-description">Capital del imperio Purépecha.</p>
+                            <div class="room-card-footer">
+                                <a href="#reservar" class="btn-secondary">RESERVAR ESTA HABITACION</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Room 102 -->
+                    <article class="room-card">
+                        <img src="img/102_paracho.jpg" alt="Foto Habitación" title="Paracho Quinta Dalam"
+                            class="room-card-image">
+                        <div class="room-card-body">
+                            <h3 class="room-card-title">102: Paracho</h3>
+                            <p class="room-card-description">Capital mundial de la guitarra.</p>
+                            <div class="room-card-footer">
+                                <a href="#reservar" class="btn-secondary">RESERVAR ESTA HABITACION</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Room 103 -->
+                    <article class="room-card">
+                        <img src="img/103_yunuen.jpg" alt="Foto Habitación" title="Yunuen Quinta Dalam"
+                            class="room-card-image">
+                        <div class="room-card-body">
+                            <h3 class="room-card-title">103: Yunuen</h3>
+                            <p class="room-card-description">Isla con encanto y tradición.</p>
+                            <div class="room-card-footer">
+                                <a href="#reservar" class="btn-secondary">RESERVAR ESTA HABITACION</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Room 104 -->
+                    <article class="room-card">
+                        <img src="img/104_patzcuaro.jpg" alt="Foto Habitación" title="Pátzcuaro Quinta Dalam"
+                            class="room-card-image">
+                        <div class="room-card-body">
+                            <h3 class="room-card-title">104: Pátzcuaro</h3>
+                            <p class="room-card-description">Pueblo mágico colonial.</p>
+                            <div class="room-card-footer">
+                                <a href="#reservar" class="btn-secondary">RESERVAR ESTA HABITACION</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Room 105 -->
+                    <article class="room-card">
+                        <img src="img/105_coeneo.jpg" alt="Foto Habitación" title="Coeneo Quinta Dalam"
+                            class="room-card-image">
+                        <div class="room-card-body">
+                            <h3 class="room-card-title">105: Coeneo</h3>
+                            <p class="room-card-description">Lugar de las lentejas.</p>
+                            <div class="room-card-footer">
+                                <a href="#reservar" class="btn-secondary">RESERVAR ESTA HABITACION</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Room 106 -->
+                    <article class="room-card">
+                        <img src="img/106_janitzio.jpg" alt="Foto Habitación" title="Janitzio Quinta Dalam"
+                            class="room-card-image">
+                        <div class="room-card-body">
+                            <h3 class="room-card-title">106: Janitzio</h3>
+                            <p class="room-card-description">Isla de los pescadores.</p>
+                            <div class="room-card-footer">
+                                <a href="#reservar" class="btn-secondary">RESERVAR ESTA HABITACION</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="floor-title">
+                    <h3>PLANTA ALTA</h3>
+                </div>
+
+                <!-- Suite Quencio Special Row -->
+                <div class="suite-card">
+                    <h3 class="suite-card-title">★ 201: Suite Quencio ★</h3>
+                    <img src="img/201_quencio.jpg" alt="Suite Principal" title="Suite Quencio Quinta Dalam"
+                        class="suite-card-image">
+                    <p class="suite-card-description">Lujo y confort superior.</p>
+                    <a href="#reservar" class="btn-primary">RESERVAR ESTA SUITE</a>
+                </div>
+
+                <div class="rooms-grid">
+                    <!-- Room 202 -->
+                    <article class="room-card">
+                        <img src="img/202_morelia.jpg" alt="Habitación 202 Morelia" title="Morelia Quinta Dalam"
+                            class="room-card-image">
+                        <div class="room-card-body">
+                            <h3 class="room-card-title">202: Morelia</h3>
+                            <p class="room-card-description">Capital Michoacana.</p>
+                            <div class="room-card-footer">
+                                <a href="#reservar" class="btn-secondary">RESERVAR ESTA HABITACION</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Room 203 -->
+                    <article class="room-card">
+                        <img src="img/203_tacambaro.jpg" alt="Habitación 203 Tacámbaro" title="Tacámbaro Quinta Dalam"
+                            class="room-card-image">
+                        <div class="room-card-body">
+                            <h3 class="room-card-title">203: Tacámbaro</h3>
+                            <p class="room-card-description">Ciudad Heroica.</p>
+                            <div class="room-card-footer">
+                                <a href="#reservar" class="btn-secondary">RESERVAR ESTA HABITACION</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Room 204 -->
+                    <article class="room-card">
+                        <img src="img/204_uruapan.jpg" alt="Habitación 204 Uruapan" title="Uruapan Quinta Dalam"
+                            class="room-card-image">
+                        <div class="room-card-body">
+                            <h3 class="room-card-title">204: Uruapan</h3>
+                            <p class="room-card-description">Capital Mundial de las Aguacates.</p>
+                            <div class="room-card-footer">
+                                <a href="#reservar" class="btn-secondary">RESERVAR ESTA HABITACION</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Room 205 -->
+                    <article class="room-card">
+                        <img src="img/205_tlalpujahua.jpg" alt="Habitación 205 Tlalpujahua"
+                            title="Tlalpujahua Quinta Dalam" class="room-card-image">
+                        <div class="room-card-body">
+                            <h3 class="room-card-title">205: Tlalpujahua</h3>
+                            <p class="room-card-description">Pueblo de la Eterna Navidad.</p>
+                            <div class="room-card-footer">
+                                <a href="#reservar" class="btn-secondary">RESERVAR ESTA HABITACION</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Room 206 -->
+                    <article class="room-card">
+                        <img src="img/206_cuitzeo.jpg" alt="Habitación 206 Cuitzeo" title="Cuitzeo Quinta Dalam"
+                            class="room-card-image">
+                        <div class="room-card-body">
+                            <h3 class="room-card-title">206: Cuitzeo</h3>
+                            <p class="room-card-description">Pueblo Mágico con encanto.</p>
+                            <div class="room-card-footer">
+                                <a href="#reservar" class="btn-secondary">RESERVAR ESTA HABITACION</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Room 207 -->
+                    <article class="room-card">
+                        <img src="img/207_cuanajo.jpg" alt="Habitación 207 Cuanajo" title="Cuanajo Quinta Dalam"
+                            class="room-card-image">
+                        <div class="room-card-body">
+                            <h3 class="room-card-title">207: Cuanajo</h3>
+                            <p class="room-card-description">La cuna del mueble artesanal.</p>
+                            <div class="room-card-footer">
+                                <a href="#reservar" class="btn-secondary">RESERVAR ESTA HABITACION</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: RESERVAR -->
+        <section id="reservar" class="booking-section">
+            <div class="container booking-container">
+                <div class="text-center text-white">
+                    <h2 class="section-title text-white">Reserva tu Estancia</h2>
+                    <p style="margin-bottom: 2rem;">Por favor completa los siguientes datos.</p>
+                </div>
+
+                <form action="https://formspree.io/f/TU_ID_AQUI" method="POST" class="booking-form-advanced">
+
+                    <fieldset class="form-fieldset">
+                        <legend class="form-legend">DATOS DEL CLIENTE</legend>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="nombre" class="form-label">Nombre Completo:</label>
+                                <input type="text" name="nombre" id="nombre" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-label">Correo Electrónico:</label>
+                                <input type="email" name="email" id="email" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono" class="form-label">Teléfono:</label>
+                                <input type="tel" name="telefono" id="telefono" class="form-input" required>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="form-fieldset">
+                        <legend class="form-legend">DETALLES DEL VIAJE</legend>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="llegada" class="form-label">Llegada:</label>
+                                <input type="date" name="llegada" id="llegada" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="salida" class="form-label">Salida:</label>
+                                <input type="date" name="salida" id="salida" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Personas:</label>
+                                <div style="display: flex; gap: 1rem;">
+                                    <div>
+                                        <label for="adultos" style="font-size: 0.9rem;">Adultos:</label>
+                                        <input type="number" name="adultos" id="adultos" min="1" max="5" value="1"
+                                            class="form-input" style="width: 80px;">
+                                    </div>
+                                    <div>
+                                        <label for="ninos" style="font-size: 0.9rem;">Niños:</label>
+                                        <input type="number" name="ninos" id="ninos" min="0" max="5" value="0"
+                                            class="form-input" style="width: 80px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="form-fieldset">
+                        <legend class="form-legend">HABITACIÓN</legend>
+                        <div class="form-group" style="margin-bottom: 1rem;">
+                            <label for="habitacion" class="form-label">Selecciona:</label>
+                            <select name="habitacion" id="habitacion" class="form-input">
+                                <option value="">-- Elige una opción --</option>
+                                <optgroup label="Planta Baja">
+                                    <option value="101">101 - Tzintzuntzan</option>
+                                    <option value="102">102 - Paracho</option>
+                                    <option value="103">103 - Yunuen</option>
+                                    <option value="104">104 - Pátzcuaro</option>
+                                    <option value="105">105 - Coeneo</option>
+                                    <option value="106">106 - Janitzio</option>
+                                </optgroup>
+                                <optgroup label="Planta Alta">
+                                    <option value="201">201 - Suite Quencio</option>
+                                    <option value="202">202 - Morelia</option>
+                                    <option value="203">203 - Tacámbaro</option>
+                                    <option value="204">204 - Uruapan</option>
+                                    <option value="205">205 - Tlalpujahua</option>
+                                    <option value="206">206 - Cuitzeo</option>
+                                    <option value="207">207 - Cuanajo</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="comentarios" class="form-label">Comentarios:</label>
+                            <textarea name="comentarios" id="comentarios" rows="3" class="form-textarea"></textarea>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-actions text-center" style="margin-top: 2rem;">
+                        <input type="reset" value="LIMPIAR FORMULARIO" class="btn-clear text-white">
+                        <input type="submit" value="CONFIRMAR RESERVACIÓN" class="btn-primary">
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: CONTACTO -->
+        <section id="contacto" class="contact-section">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-title">Información de Contacto</h2>
+                    <p>¿Tienes dudas? Comunícate directamente con nosotros.</p>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3 class="contact-subtitle">Ubicación</h3>
+                        <p class="contact-detail">Morelia, Michoacán, México.</p>
+                        <img src="ubicacion.png" alt="Hotel Quinta Dalam Google Maps"
+                            title="Hotel Quinta Dalam Google Maps"
+                            style="width: 100%; border-radius: 8px; margin: 1rem 0;">
+                        <a href="https://www.google.com/maps/place/Hotel+Colonial+Playa+del+carmen/@20.625414,-87.0816557,17z/data=!3m1!4b1!4m9!3m8!1s0x8f4e43006d2a9b4d:0x22ae322a812c2383!5m2!4m1!1i2!8m2!3d20.625409!4d-87.0767848!16s%2Fg%2F11vtbpsmz3?entry=ttu&g_ep=EgoyMDI2MDIwOC4wIKXMDSoASAFQAw%3D%3D"
+                            target="_blank" class="link-important">VER EN GOOGLE MAPS</a>
+
+                        <hr style="margin: 2rem 0; border: 1px solid #cbd5e1;">
+
+                        <h3 class="contact-subtitle">Atención al Cliente</h3>
+                        <p class="contact-detail">Teléfono: <b><a href="tel:+524431234567">+52 (443) 123-4567</a></b>
+                        </p>
+                        <p class="contact-detail">WhatsApp: <a href="https://wa.me/524431234567" target="_blank">Enviar
+                                mensaje</a></p>
+
+                        <h3 class="contact-subtitle" style="margin-top: 2rem;">Correo Electrónico</h3>
+                        <p class="contact-detail"><a href="mailto:contacto@quintadalam.com">contacto@quintadalam.com</a>
+                        </p>
+                    </div>
+
+                    <div class="contact-form-container">
+                        <h3 class="contact-subtitle">Envíanos un Mensaje</h3>
+                        <form action="https://formspree.io/f/TU_ID_AQUI" method="POST" class="contact-form">
+                            <div class="form-group">
+                                <label for="contacto-nombre" class="form-label">Nombre:</label>
+                                <input type="text" name="nombre" id="contacto-nombre" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contacto-email" class="form-label">Correo:</label>
+                                <input type="email" name="email" id="contacto-email" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contacto-asunto" class="form-label">Asunto:</label>
+                                <select name="asunto" id="contacto-asunto" class="form-input">
+                                    <option value="informacion">Información General</option>
+                                    <option value="eventos">Cotización de Eventos</option>
+                                    <option value="objetos">Objetos Olvidados</option>
+                                    <option value="quejas">Quejas o Sugerencias</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="contacto-mensaje" class="form-label">Mensaje:</label>
+                                <textarea name="mensaje" id="contacto-mensaje" rows="5"
+                                    class="form-textarea"></textarea>
+                            </div>
+                            <div class="form-actions" style="display: flex; gap: 1rem; margin-top: 1rem;">
+                                <input type="reset" value="LIMPIAR" class="btn-clear">
+                                <input type="submit" value="ENVIAR MENSAJE AHORA" class="btn-secondary"
+                                    style="flex-grow: 1;">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <br><br>
-    <hr>
-
-    <footer id="contacto">
-        <div align="center">
-            <h3>Síguenos</h3>
-            <a href="https://www.facebook.com/profile.php?id=61584681841684" target="_blank">
-                <img src="img/facebook.png" alt="Facebook" title="Facebook Quinta Dalam" width="30">
-            </a>
-            &nbsp;&nbsp;
-            <a href="https://www.instagram.com/quintadalam" target="_blank">
-                <img src="img/instagram.png" alt="Instagram" title="Instagram Quinta Dalam" width="30">
-            </a>
-            &nbsp;&nbsp;
-            <a href="https://www.tiktok.com/@quintadalam" target="_blank">
-                <img src="img/tiktok.png" alt="TikTok" title="TikTok Quinta Dalam" width="30">
-            </a>
-
-            <br><br>
-            <small>&copy; 2026 Hotel Quinta Dalam</small>
-            <br>
-            <small>Todos los derechos reservados</small>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container text-center">
+            <h3 style="margin-bottom: 1rem;">Síguenos</h3>
+            <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem;">
+                <a href="https://www.facebook.com/profile.php?id=61584681841684" target="_blank">
+                    <img src="img/facebook.png" alt="Facebook" title="Facebook Quinta Dalam" width="40">
+                </a>
+                <a href="https://www.instagram.com/quintadalam" target="_blank">
+                    <img src="img/instagram.png" alt="Instagram" title="Instagram Quinta Dalam" width="40">
+                </a>
+                <a href="https://www.tiktok.com/@quintadalam" target="_blank">
+                    <img src="img/tiktok.png" alt="TikTok" title="TikTok Quinta Dalam" width="40">
+                </a>
+            </div>
+            <p class="footer-text">&copy; 2026 Hotel Quinta Dalam. Todos los derechos reservados.</p>
         </div>
     </footer>
 
