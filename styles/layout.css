@@ -1,3 +1,7 @@
+/* =========================================
+   ESTILOS DEL HEADER Y NAVEGACIÓN
+   ========================================= */
+
 .header-nav {
     position: sticky;
     top: 0;
@@ -9,7 +13,36 @@
     align-items: center;
 }
 
-.navbar {
+/* --- Animaciones Generales --- */
+.nav-animado, .icono-animado {
+    transition: all 0.3s ease;
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-animado:hover, .icono-animado:hover {
+    color: #f59e0b !important; /* Color dorado/ámbar */
+}
+
+.nav-animado:hover {
+    transform: translateY(-2px);
+}
+
+.icono-animado {
+    display: inline-block;
+}
+
+.icono-animado:hover {
+    transform: scale(1.25);
+}
+
+.icono-animado:active {
+    transform: scale(0.9);
+}
+
+/* --- Estructura Layout (Flexbox) --- */
+.navbar-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -19,45 +52,83 @@
 .navbar-left {
     display: flex;
     align-items: center;
+    gap: 3rem;
 }
 
 .navbar-brand {
-    color: var(--white);
-    font-size: 1.8rem;
     text-decoration: none;
+    color: var(--white);
     display: flex;
     align-items: center;
+    gap: 0.8rem;
 }
 
-.navbar-right {
-    font-size: 1.8rem;
+.brand-text-wrapper {
     display: flex;
-    align-items: center;
-    gap: 2rem;
+    flex-direction: column;
+    line-height: 1;
 }
 
-.navbar-secondary-links {
-    font-size: 1.8rem;
+.brand-title {
+    font-weight: 400;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+}
+
+.brand-subtitle {
+    font-size: 0.6rem;
+    letter-spacing: 1px;
+    color: #ccc;
+}
+
+.nav-links-group {
     display: flex;
     align-items: center;
     gap: 1.5rem;
 }
 
-.nav-contact-link,
-.nav-rewards-link {
-    text-decoration: none;
-    color: var(--white);
-    font-size: 1rem;
-    font-weight: 500;
+.navbar-right {
     display: flex;
-    align-items: center;
-    gap: 0.3rem;
-    transition: color 0.3s ease;
+    justify-content: flex-end;
 }
 
-.nav-contact-link:hover,
-.nav-rewards-link:hover {
-    color: #7A5051;
+.navbar-secondary-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.social-top-nav {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+/* --- Utilidades y Separadores --- */
+.separator-sm {
+    width: 1px;
+    height: 18px;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.separator-md {
+    width: 1px;
+    height: 24px;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.social-icon-lg {
+    font-size: 1.2rem;
+}
+
+.social-icon-md {
+    font-size: 1.1rem;
+}
+
+.contact-link-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; 
 }
 
 /* Menú Hamburguesa estático */
