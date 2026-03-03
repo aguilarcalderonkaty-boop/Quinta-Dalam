@@ -88,19 +88,18 @@
   margin-top: 2rem;
 }
 
-/* Barra de Buscador Rápida (Estilo debajo de la imagen) */
+/* Barra de Buscador Rápida (Estilo original de la plantilla) */
 .quick-booking-bar {
-  position: absolute;
-  bottom: -40px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
   background-color: var(--white);
   padding: 1.5rem 2rem;
-  border-radius: 4px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   width: 90%;
-  max-width: 1000px;
-  z-index: 20;
+  max-width: 1100px;
+  margin: 1.5rem auto;
+  z-index: 1000;
+  transition: all 0.3s ease;
 }
 
 .quick-booking-form {
@@ -125,40 +124,51 @@
 }
 
 .qb-group input,
-.qb-group select {
+.qb-select-standard {
   padding: 0.8rem;
   border: 1px solid #cbd5e1;
   border-radius: 4px;
   font-size: 1rem;
   font-family: inherit;
+  background-color: white;
+  color: var(--color-dark);
 }
 
-.qb-submit {
+.qb-select-standard {
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn-reservar-hero {
+  background-color: var(--color-brand);
+  color: white;
   padding: 0.9rem 2.5rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+@media (min-width: 769px) {
+  .quick-booking-bar {
+    position: sticky;
+    top: 90px;
+    margin-top: -80px;
+    border: 1px solid #eee;
+  }
 }
 
 @media (max-width: 768px) {
-  .hero-title {
-    font-size: 2.5rem;
-  }
-
   .quick-booking-form {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
+}
 
-  .quick-booking-bar {
-    position: relative;
-    bottom: 0;
-    transform: none;
-    left: 0;
-    width: 100%;
-    margin-top: 2rem;
-  }
-
-  .hero-section {
-    margin-bottom: 0;
-    flex-direction: column;
-  }
+.hero-title {
+  font-size: 2.5rem;
 }
 
 /* Info Cards (Misión/Visión) */
@@ -277,10 +287,370 @@
   gap: 1.5rem;
 }
 
-@media (max-width: 600px) {
-  .form-grid {
+/* =========================================
+   NUEVA BARRA DE RESERVAS RÁPIDA (Hero)
+   ========================================= */
+
+/* Efectos hover para los inputs */
+.qb-group input {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.qb-group input:hover,
+.guests-display:hover {
+  border-color: #8c5a45;
+  box-shadow: 0 0 8px rgba(140, 90, 69, 0.2);
+}
+
+/* El botón principal de RESERVAR (Sustituye al azul) */
+.btn-reservar-hero {
+  background-color: #8c5a45;
+  /* Color terracota/tierra elegante */
+  color: white;
+  padding: 0.9rem 2.5rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.btn-reservar-hero:hover {
+  background-color: #6d4432;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(109, 68, 50, 0.4);
+}
+
+/* --- Desplegable de Huéspedes --- */
+.qb-guests-group {
+  position: relative;
+}
+
+.guests-display {
+  padding: 0.8rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-dark);
+}
+
+.guests-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 250px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  margin-top: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.guests-dropdown.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.guest-counter-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.guest-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #458277;
+  /* Tono teal inspirado en tu imagen de referencia */
+  background: white;
+  color: #458277;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s;
+}
+
+.btn-circle:hover {
+  background: #f0fdfa;
+}
+
+.guest-count-number {
+  font-size: 1.1rem;
+  font-weight: bold;
+  min-width: 15px;
+  text-align: center;
+}
+
+.btn-confirm-guests {
+  width: 100%;
+  background-color: #458277;
+  /* Teal inspirado en StarAgents */
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 4px;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+/* =========================================
+   PÁGINA DE RESULTADOS (ESTILO STARAGENTS)
+   ========================================= */
+
+/* Fondo específico para esta página para que resalten las tarjetas blancas */
+.bg-resultados {
+  background-color: #f5f5f5;
+}
+
+/* --- Barra de Resumen Superior --- */
+.search-summary-bar {
+  background: white;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 2rem;
+}
+
+.summary-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  /* Para que no se rompa en pantallas pequeñas */
+  gap: 1rem;
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.summary-item small {
+  color: #666;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+/* --- Layout Principal de Resultados --- */
+.results-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  /* Columna izq (2/3) y der (1/3) */
+  gap: 2rem;
+  align-items: start;
+  margin-bottom: 5rem;
+}
+
+.results-title {
+  margin-bottom: 1.5rem;
+  color: var(--color-brand);
+}
+
+/* --- Tarjetas de Habitación (Columna Izquierda) --- */
+.room-result-card {
+  background: white;
+  border-radius: 8px;
+  display: flex;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  border-left: 5px solid #8c5a45;
+  /* Detalle terracota a la izquierda */
+}
+
+.room-result-img {
+  width: 280px;
+  min-height: 200px;
+  object-fit: cover;
+}
+
+.room-result-info {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.room-info-top h3 {
+  color: #8c5a45;
+  margin-bottom: 0.5rem;
+}
+
+.room-info-top p {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.room-info-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 1.5rem;
+}
+
+.price-old {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.price-text {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--color-brand);
+}
+
+.price-suffix {
+  color: #666;
+}
+
+/* Botones de seleccionar */
+.btn-select-room {
+  background: white;
+  border: 1px solid #458277;
+  /* Verde teal */
+  color: #458277;
+  padding: 0.8rem 2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-select-room:hover {
+  background: #458277;
+  color: white;
+}
+
+.btn-modificar {
+  padding: 0.5rem 1rem;
+}
+
+/* --- Carrito Fijo (Columna Derecha) --- */
+.sticky-cart {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 110px;
+  /* Hace que el carrito baje contigo cuando haces scroll */
+}
+
+.cart-title {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.5rem;
+  color: var(--color-brand);
+}
+
+.cart-dates,
+.cart-guests {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.cart-room-status {
+  display: flex;
+  justify-content: space-between;
+  color: #aaa;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.status-pending {
+  color: #458277;
+  font-style: italic;
+}
+
+.cart-total-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  border-top: 1px solid #ddd;
+  padding-top: 1rem;
+}
+
+.total-price-text {
+  font-size: 1.5rem;
+  color: var(--color-brand);
+}
+
+.btn-continue-disabled {
+  width: 100%;
+  background: #ccc;
+  border: none;
+  padding: 1rem;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  cursor: not-allowed;
+}
+
+.cart-taxes-note {
+  font-size: 0.8rem;
+  color: #999;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* --- Responsividad para móviles --- */
+@media (max-width: 900px) {
+  .results-layout {
     grid-template-columns: 1fr;
+    /* Una sola columna en celulares */
   }
+
+  .room-result-card {
+    flex-direction: column;
+  }
+
+  .room-result-img {
+    width: 100%;
+    height: 200px;
+  }
+
+  .sticky-cart {
+    position: static;
+    /* Quita el efecto pegajoso en móviles */
+  }
+}
+
+.btn-confirm-guests:hover {
+  background-color: #35665d;
+}
+
+.form-grid {
+  grid-template-columns: 1fr;
 }
 
 .form-group {

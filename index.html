@@ -17,11 +17,11 @@
 
 <body>
 
- <header class="header-nav">
+    <header class="header-nav">
         <nav class="navbar container navbar-container">
-            
+
             <div class="navbar-left">
-                
+
                 <a href="#inicio" class="navbar-brand">
                     <i class="fa-solid fa-hotel"></i>
                     <div class="brand-text-wrapper">
@@ -40,15 +40,17 @@
 
             <div class="navbar-right">
                 <div class="navbar-secondary-links">
-                    
+
                     <div class="social-top-nav">
                         <a href="https://wa.me/524431234567" target="_blank" class="icono-animado" title="WhatsApp">
                             <i class="fa-brands fa-whatsapp social-icon-lg"></i>
                         </a>
-                        <a href="https://www.facebook.com/profile.php?id=61584681841684" target="_blank" class="icono-animado" title="Facebook">
+                        <a href="https://www.facebook.com/profile.php?id=61584681841684" target="_blank"
+                            class="icono-animado" title="Facebook">
                             <i class="fa-brands fa-facebook-f social-icon-md"></i>
                         </a>
-                        <a href="https://www.tiktok.com/@quintadalam" target="_blank" class="icono-animado" title="TikTok">
+                        <a href="https://www.tiktok.com/@quintadalam" target="_blank" class="icono-animado"
+                            title="TikTok">
                             <i class="fa-brands fa-tiktok social-icon-md"></i>
                         </a>
                     </div>
@@ -59,7 +61,9 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             class="contact-icon">
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                            </path>
                         </svg>
                     </a>
                 </div>
@@ -80,29 +84,34 @@
                 </div>
             </div>
 
-            <!-- Barra de Reservas Rápida sobrepuesta -->
-            <div class="quick-booking-bar">
-                <form action="#reservar" class="quick-booking-form">
-                    <div class="qb-group">
-                        <label>Llegada</label>
-                        <input type="date" required>
-                    </div>
-                    <div class="qb-group">
-                        <label>Salida</label>
-                        <input type="date" required>
-                    </div>
-                    <div class="qb-group">
-                        <label>Huéspedes</label>
-                        <select>
-                            <option>1 Adulto, 0 Niños</option>
-                            <option>2 Adultos, 0 Niños</option>
-                            <option>2 Adultos, 2 Niños</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn-secondary qb-submit">RESERVAR</button>
-                </form>
-            </div>
         </section>
+
+        <!-- Barra de Reservas Rápida sobrepuesta (Movida fuera para sticky persistente) -->
+        <div class="quick-booking-bar">
+            <form action="resultados.html" class="quick-booking-form">
+                <div class="qb-group qb-date">
+                    <label>Llegada</label>
+                    <input type="date" required>
+                </div>
+
+                <div class="qb-group qb-date">
+                    <label>Salida</label>
+                    <input type="date" required>
+                </div>
+
+                <div class="qb-group">
+                    <label>Huéspedes</label>
+                    <select name="huespedes" class="qb-select-standard">
+                        <option value="1">1 Adulto, 0 Niños</option>
+                        <option value="2" selected>2 Adultos, 0 Niños</option>
+                        <option value="3">2 Adultos, 2 Niños</option>
+                        <option value="4">4 Adultos, 0 Niños</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-reservar-hero">RESERVAR</button>
+            </form>
+        </div>
 
         <section class="about-section container">
             <div class="text-center">
@@ -429,11 +438,10 @@
                     <div class="contact-info">
                         <h3 class="contact-subtitle">Ubicación</h3>
                         <p class="contact-detail">Morelia, Michoacán, México.</p>
-                        <img src="ubicacion.png" alt="Hotel Quinta Dalam Google Maps"
-                            title="Hotel Quinta Dalam Google Maps"
+                        <img src="" alt="Hotel Quinta Dalam Google Maps" title="Hotel Quinta Dalam Google Maps"
                             style="width: 100%; border-radius: 8px; margin: 1rem 0;">
                         <a href="https://www.google.com/maps/place/Hotel+Colonial+Playa+del+carmen/@20.625414,-87.0816557,17z/data=!3m1!4b1!4m9!3m8!1s0x8f4e43006d2a9b4d:0x22ae322a812c2383!5m2!4m1!1i2!8m2!3d20.625409!4d-87.0767848!16s%2Fg%2F11vtbpsmz3?entry=ttu&g_ep=EgoyMDI2MDIwOC4wIKXMDSoASAFQAw%3D%3D"
-                            target="_blank" class="link-important">VER EN GOOGLE MAPS</a>
+                            target="_blank" class="link-important"><br>VER EN GOOGLE MAPS</a>
 
                         <hr style="margin: 2rem 0; border: 1px solid #cbd5e1;">
 
@@ -504,6 +512,8 @@
         </div>
     </footer>
 
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
 </body>
 
 </html>
