@@ -113,6 +113,7 @@
             </form>
         </div>
 
+
         <section class="about-section container">
             <div class="text-center">
                 <h2 class="section-title">Bienvenidos a Michoacán</h2>
@@ -330,101 +331,6 @@
             </div>
         </section>
 
-        <!-- SECCIÓN: RESERVAR -->
-        <section id="reservar" class="booking-section">
-            <div class="container booking-container">
-                <div class="text-center text-white">
-                    <h2 class="section-title text-white">Reserva tu Estancia</h2>
-                    <p style="margin-bottom: 2rem;">Por favor completa los siguientes datos.</p>
-                </div>
-
-                <form action="https://formspree.io/f/TU_ID_AQUI" method="POST" class="booking-form-advanced">
-
-                    <fieldset class="form-fieldset">
-                        <legend class="form-legend">DATOS DEL CLIENTE</legend>
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label for="nombre" class="form-label">Nombre Completo:</label>
-                                <input type="text" name="nombre" id="nombre" class="form-input" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email" class="form-label">Correo Electrónico:</label>
-                                <input type="email" name="email" id="email" class="form-input" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="telefono" class="form-label">Teléfono:</label>
-                                <input type="tel" name="telefono" id="telefono" class="form-input" required>
-                            </div>
-                        </div>
-                    </fieldset>
-
-                    <fieldset class="form-fieldset">
-                        <legend class="form-legend">DETALLES DEL VIAJE</legend>
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label for="llegada" class="form-label">Llegada:</label>
-                                <input type="date" name="llegada" id="llegada" class="form-input" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="salida" class="form-label">Salida:</label>
-                                <input type="date" name="salida" id="salida" class="form-input" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Personas:</label>
-                                <div style="display: flex; gap: 1rem;">
-                                    <div>
-                                        <label for="adultos" style="font-size: 0.9rem;">Adultos:</label>
-                                        <input type="number" name="adultos" id="adultos" min="1" max="5" value="1"
-                                            class="form-input" style="width: 80px;">
-                                    </div>
-                                    <div>
-                                        <label for="ninos" style="font-size: 0.9rem;">Niños:</label>
-                                        <input type="number" name="ninos" id="ninos" min="0" max="5" value="0"
-                                            class="form-input" style="width: 80px;">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </fieldset>
-
-                    <fieldset class="form-fieldset">
-                        <legend class="form-legend">HABITACIÓN</legend>
-                        <div class="form-group" style="margin-bottom: 1rem;">
-                            <label for="habitacion" class="form-label">Selecciona:</label>
-                            <select name="habitacion" id="habitacion" class="form-input">
-                                <option value="">-- Elige una opción --</option>
-                                <optgroup label="Planta Baja">
-                                    <option value="101">101 - Tzintzuntzan</option>
-                                    <option value="102">102 - Paracho</option>
-                                    <option value="103">103 - Yunuen</option>
-                                    <option value="104">104 - Pátzcuaro</option>
-                                    <option value="105">105 - Coeneo</option>
-                                    <option value="106">106 - Janitzio</option>
-                                </optgroup>
-                                <optgroup label="Planta Alta">
-                                    <option value="201">201 - Suite Quencio</option>
-                                    <option value="202">202 - Morelia</option>
-                                    <option value="203">203 - Tacámbaro</option>
-                                    <option value="204">204 - Uruapan</option>
-                                    <option value="205">205 - Tlalpujahua</option>
-                                    <option value="206">206 - Cuitzeo</option>
-                                    <option value="207">207 - Cuanajo</option>
-                                </optgroup>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="comentarios" class="form-label">Comentarios:</label>
-                            <textarea name="comentarios" id="comentarios" rows="3" class="form-textarea"></textarea>
-                        </div>
-                    </fieldset>
-
-                    <div class="form-actions text-center" style="margin-top: 2rem;">
-                        <input type="reset" value="LIMPIAR FORMULARIO" class="btn-clear text-white">
-                        <input type="submit" value="CONFIRMAR RESERVACIÓN" class="btn-primary">
-                    </div>
-                </form>
-            </div>
-        </section>
 
         <!-- SECCIÓN: CONTACTO -->
         <section id="contacto" class="contact-section">
@@ -496,19 +402,19 @@
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container text-center">
-            <h3 style="margin-bottom: 1rem;">Síguenos</h3>
-            <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem;">
-                <a href="https://www.facebook.com/profile.php?id=61584681841684" target="_blank">
-                    <img src="img/facebook.png" alt="Facebook" title="Facebook Quinta Dalam" width="40">
+            <h3 class="footer-heading">Síguenos</h3>
+            <div class="social-footer-links">
+                <a href="https://www.facebook.com/profile.php?id=61584681841684" target="_blank" class="icono-animado" title="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
                 </a>
-                <a href="https://www.instagram.com/quintadalam" target="_blank">
-                    <img src="img/instagram.png" alt="Instagram" title="Instagram Quinta Dalam" width="40">
+                <a href="https://www.instagram.com/quintadalam" target="_blank" class="icono-animado" title="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
                 </a>
-                <a href="https://www.tiktok.com/@quintadalam" target="_blank">
-                    <img src="img/tiktok.png" alt="TikTok" title="TikTok Quinta Dalam" width="40">
+                <a href="https://www.tiktok.com/@quintadalam" target="_blank" class="icono-animado" title="TikTok">
+                    <i class="fa-brands fa-tiktok"></i>
                 </a>
             </div>
-            <p class="footer-text">&copy; 2026 Hotel Quinta Dalam. Todos los derechos reservados.</p>
+            <p class="footer-text">© 2026 Hotel Quinta Dalam. Todos los derechos reservados.</p>
         </div>
     </footer>
 

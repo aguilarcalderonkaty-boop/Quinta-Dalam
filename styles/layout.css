@@ -206,3 +206,28 @@ section {
         /* En un futuro SPA se hace menú hamburguesa */
     }
 }
+/* =========================================
+   ESTILOS DEL FOOTER Y REDES SOCIALES
+   ========================================= */
+.footer-heading {
+    margin-bottom: 1rem;
+}
+
+.social-footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.social-footer-links a {
+    font-size: 2rem; /* Hace los iconos más grandes */
+    color: var(--white); /* Toma el color blanco definido en tu :root */
+    text-decoration: none;
+}
+
+/* El efecto hover se hereda de la clase .icono-animado que ya tienes, 
+   pero si quieres asegurar que cambien de color al pasar el mouse: */
+.social-footer-links a:hover i {
+    color: #f59e0b; /* Color dorado al pasar el mouse */
+}
