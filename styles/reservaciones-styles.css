@@ -1,21 +1,741 @@
 /* =========================================
-   ESTILOS PARA LOS MENÚS DESPLEGABLES
+   ESTILOS ESPECÍFICOS DE RESERVACIÓN
+   Diseño de 2 Columnas - Imagen Superior Proporcional
+   Simulación de Selección con solo HTML/CSS (Radio inputs)
    ========================================= */
 
-.select-personas {
-    padding: 0.6rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-    color: #555;
-    background-color: white;
-    width: 250px;
-    cursor: pointer;
-    font-family: Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Open+Sans:wght@400;600;700&display=swap');
+
+:root {
+    --color-brand: #3A1F23;
+    /* Tinto/Madera Oscura */
+    --color-secondary: #7A5051;
+    /* Palo de Rosa Intenso */
+    --color-accent-light: #f4ece4;
+    /* Fondo Suave / Arena */
+    --color-dark: #2c2c2c;
+    /* Gris casi negro */
+    --bg-light: #FFFFFF;
+    --colonial-bg: #fdfbf7;
+    --colonial-border: #e6dfd5;
+    --text-muted: #6b6b6b;
+    --success-color: #2e7d32;
 }
 
-.select-personas:focus {
+body.bg-resultados {
+    background-color: var(--colonial-bg);
+    font-family: 'Open Sans', sans-serif;
+    color: var(--color-dark);
+}
+
+.container {
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* --- Barra de Progreso Superior --- */
+.progress-bar-container {
+    background-color: transparent;
+    padding: 2.5rem 0 1.5rem 0;
+}
+
+.progress-steps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: #b0a39c;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.step.active {
+    color: var(--color-brand);
+}
+
+.step-circle {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #eedcd0;
+    color: #b0a39c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.step.active .step-circle {
+    background-color: var(--color-brand);
+    color: var(--white);
+}
+
+.step-line {
+    flex-grow: 1;
+    height: 2px;
+    background-color: #eedcd0;
+    margin-bottom: 1.5rem;
+}
+
+/* --- MAIN LAYOUT (Izquierda Habitaciones, Derecha Carrito) --- */
+.results-layout {
+    display: flex;
+    gap: 3.5rem;
+    align-items: flex-start;
+    padding-bottom: 5rem;
+}
+
+.rooms-list {
+    flex: 1;
+    /* Tira principal (Izquierda) */
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    min-width: 0;
+}
+
+/* Ocultar los radio buttons reales que manejan la lógica CSS */
+.room-radio-input {
+    display: none;
+}
+
+/* --- TARJETAS DE HABITACIÓN (IMAGEN ARRIBA, TEXTO ABAJO) --- */
+.room-card {
+    background-color: var(--white);
+    border-radius: 0;
+    border: 1px solid var(--colonial-border);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    transition: border-color 0.3s;
+    position: relative;
+}
+
+/* Indicador de "Seleccionada" visual */
+.room-radio-input:checked+.room-card {
+    border: 2px solid var(--color-secondary);
+    box-shadow: 0 8px 25px rgba(122, 80, 81, 0.15);
+}
+
+/* Banderin de seleccionada que aparce al checkear */
+.selected-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: var(--color-secondary);
+    color: white;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.room-radio-input:checked+.room-card .selected-badge {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.room-img-container {
+    width: 100%;
+    position: relative;
+}
+
+/* Ajuste de Proporciones: Fotografía estilo panorámica/grande */
+.room-img {
+    width: 100%;
+    height: 250px;
+    /* Reducido para que quepa la información completa */
+    object-fit: cover;
+    display: block;
+}
+
+.room-content {
+    padding: 1.8rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.room-title {
+    font-family: 'Playfair Display', serif;
+    color: var(--color-brand);
+    font-size: 1.8rem;
+    margin: 0 0 0.5rem 0;
+    font-weight: 700;
+}
+
+.room-desc {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0 0 1.5rem 0;
+}
+
+.room-features {
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--colonial-border);
+}
+
+.feature-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--color-dark);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.feature-item i {
+    color: var(--color-secondary);
+    font-size: 1.2rem;
+}
+
+/* Pie de la tarjeta (Precio y Botón Label) */
+.room-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.policy-info {
+    flex: 1;
+}
+
+.policy-desc {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 0 0 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.policy-desc i {
+    color: var(--success-color);
+    font-size: 1rem;
+}
+
+.price-action {
+    display: flex;
+    align-items: flex-end;
+    gap: 2rem;
+}
+
+.price-box {
+    text-align: right;
+}
+
+.price-val {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--color-brand);
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.price-suffix {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    display: block;
+    margin-top: 0.3rem;
+}
+
+/* Este label funciona como el botón de selección real */
+.btn-seleccionar-label {
+    background-color: transparent;
+    color: var(--color-brand);
+    border: 2px solid var(--color-brand);
+    padding: 0.8rem 2.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+    display: inline-block;
+}
+
+.btn-seleccionar-label:hover {
+    background-color: var(--color-brand);
+    color: var(--white);
+}
+
+/* Cambiar estilo del botón cuando está chequeado */
+.room-radio-input:checked+.room-card .btn-seleccionar-label {
+    background-color: var(--color-secondary);
+    color: var(--white);
+    border-color: var(--color-secondary);
+}
+
+/* --- CARRITO LATERAL (SIDEBAR) --- */
+.sticky-sidebar {
+    width: 380px;
+    flex-shrink: 0;
+}
+
+.cart-box {
+    position: sticky;
+    top: 2rem;
+    background-color: #faf9f6;
+    border: 1px solid var(--colonial-border);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    /* Padding bottom extra para el boton final flotante */
+    padding-bottom: 2.5rem;
+}
+
+.cart-header {
+    margin-bottom: 1.5rem;
+}
+
+.cart-hotel-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--color-brand);
+    margin: 0 0 0.3rem 0;
+}
+
+.cart-stars {
+    color: var(--color-brand);
+    font-size: 0.75rem;
+}
+
+.cart-section-break {
+    width: 100%;
+    height: 1px;
+    background-color: var(--colonial-border);
+    margin: 1.5rem 0;
+}
+
+.cart-details h4 {
+    color: var(--color-secondary);
+    font-size: 1.05rem;
+    margin: 0 0 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-details p {
+    color: var(--color-dark);
+    margin: 0 0 0.5rem 0;
+    font-size: 0.95rem;
+}
+
+/* LÓGICA DE SELECCIÓN EN EL CARRITO MEDIANTE CSS PURO */
+/* Por defecto todo apagado en el carrito */
+.cart-room-dynamic {
+    display: none;
+    clear: both;
+}
+
+/* Si hay algun input radio checked general, el estado vacio ("¡Elige tu habitación!") se oculta */
+.cart-empty-state {
+    display: flex;
+    justify-content: space-between;
+    color: var(--color-secondary);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+body:has(.room-radio-input:checked) .cart-empty-state {
+    display: none;
+}
+
+/* Mostrar la info específica según qué ID esté checked usando :has en el body (Soportado en browsers modernos) */
+body:has(#room101:checked) .room101-info,
+body:has(#room102:checked) .room102-info,
+body:has(#room103:checked) .room103-info,
+body:has(#room104:checked) .room104-info,
+body:has(#room105:checked) .room105-info,
+body:has(#room106:checked) .room106-info,
+body:has(#room201:checked) .room201-info,
+body:has(#room202:checked) .room202-info,
+body:has(#room203:checked) .room203-info,
+body:has(#room204:checked) .room204-info,
+body:has(#room205:checked) .room205-info,
+body:has(#room206:checked) .room206-info,
+body:has(#room207:checked) .room207-info {
+    display: block;
+}
+
+/* Cabecera de la habitación dinámica en el carrito */
+.dynamic-room-name {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    color: var(--color-brand);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.dynamic-room-price {
+    text-align: right;
+    font-weight: normal;
+    color: var(--text-muted);
+}
+
+.total-final-box {
+    margin-top: 1.5rem;
+}
+
+.total-label {
+    font-weight: bold;
+    font-size: 1rem;
+    color: var(--color-dark);
+    text-transform: uppercase;
+    display: block;
+}
+
+.total-amount {
+    display: block;
+    font-size: 2rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    color: var(--color-brand);
+    text-align: right;
+    margin-top: 0.5rem;
+}
+
+/* Boton Continuar a Datos Personales */
+.btn-submit-cart {
+    display: block;
+    width: 100%;
+    background-color: var(--colonial-border);
+    /* Color apagado por default */
+    color: #888;
+    text-align: center;
+    text-decoration: none;
+    padding: 1.2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 2rem;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    /* Deshabilitado por default */
+}
+
+/* Activar botón cuando haya selección via checkbox/radio */
+body:has(.room-radio-input:checked) .btn-submit-cart {
+    background-color: var(--color-secondary);
+    color: var(--white);
+    pointer-events: auto;
+}
+
+body:has(.room-radio-input:checked) .btn-submit-cart:hover {
+    background-color: var(--color-brand);
+}
+
+.taxes-footer {
+    background-color: #eedcd0;
+    padding: 1rem;
+    margin: 2rem -2rem -2.5rem -2rem;
+    /* Se expande a los bordes del cart-box */
+    font-size: 0.85rem;
+    color: var(--color-brand);
+    text-align: center;
+}
+
+/* =========================================
+   FORMULARIO DATOS PERSONALES (Oculto inicialmente)
+   ========================================= */
+/* La lógica CSS para pasar a datos personales usa un checkbox oculto */
+#toggle-datos-personales {
+    display: none;
+}
+
+.seccion-datos-personales {
+    display: none;
+    /* Oculto por defecto */
+    margin-top: 3rem;
+    background: var(--white);
+    padding: 3rem;
+    border: 1px solid var(--colonial-border);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Mostrar la sección de datos cuando se chequea pasar de sección */
+body:has(#toggle-datos-personales:checked) .seccion-datos-personales {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+/* Ocultar listado de habitaciones si vamos al paso 2 */
+body:has(#toggle-datos-personales:checked) .results-layout {
+    display: none;
+}
+
+/* Ocultar barra de búsqueda si vamos al paso 2 */
+body:has(#toggle-datos-personales:checked) .search-summary-bar {
+    display: none;
+}
+
+/* Cambiar step activo en la barra superior via CSS logic */
+body:has(#toggle-datos-personales:checked) .progress-bar-container .step-1 {
+    color: #b0a39c;
+}
+
+body:has(#toggle-datos-personales:checked) .progress-bar-container .step-1 .step-circle {
+    background-color: #eedcd0;
+    color: #b0a39c;
+}
+
+body:has(#toggle-datos-personales:checked) .progress-bar-container .step-2 {
+    color: var(--color-brand);
+}
+
+body:has(#toggle-datos-personales:checked) .progress-bar-container .step-2 .step-circle {
+    background-color: var(--color-brand);
+    color: var(--white);
+}
+
+/* =========================================
+   PANTALLA 3: CONFIRMACIÓN DE RESERVA
+   ========================================= */
+.seccion-confirmacion-final {
+    display: none;
+}
+
+/* Lógica dinámica de Confirmación (Mostrar Foto, Nombre y Precio de lo seleccionado) */
+body:has(#room101:checked) .conf-room-img-container .img-101,
+body:has(#room101:checked) .conf-room-name .name-101,
+body:has(#room101:checked) .conf-room-price .price-101 {
+    display: inline-block !important;
+}
+
+body:has(#room102:checked) .conf-room-img-container .img-102,
+body:has(#room102:checked) .conf-room-name .name-102,
+body:has(#room102:checked) .conf-room-price .price-102 {
+    display: inline-block !important;
+}
+
+body:has(#room103:checked) .conf-room-img-container .img-103,
+body:has(#room103:checked) .conf-room-name .name-103,
+body:has(#room103:checked) .conf-room-price .price-103 {
+    display: inline-block !important;
+}
+
+body:has(#room104:checked) .conf-room-img-container .img-104,
+body:has(#room104:checked) .conf-room-name .name-104,
+body:has(#room104:checked) .conf-room-price .price-104 {
+    display: inline-block !important;
+}
+
+body:has(#room105:checked) .conf-room-img-container .img-105,
+body:has(#room105:checked) .conf-room-name .name-105,
+body:has(#room105:checked) .conf-room-price .price-105 {
+    display: inline-block !important;
+}
+
+body:has(#room106:checked) .conf-room-img-container .img-106,
+body:has(#room106:checked) .conf-room-name .name-106,
+body:has(#room106:checked) .conf-room-price .price-106 {
+    display: inline-block !important;
+}
+
+body:has(#room201:checked) .conf-room-img-container .img-201,
+body:has(#room201:checked) .conf-room-name .name-201,
+body:has(#room201:checked) .conf-room-price .price-201 {
+    display: inline-block !important;
+}
+
+body:has(#room202:checked) .conf-room-img-container .img-202,
+body:has(#room202:checked) .conf-room-name .name-202,
+body:has(#room202:checked) .conf-room-price .price-202 {
+    display: inline-block !important;
+}
+
+body:has(#room203:checked) .conf-room-img-container .img-203,
+body:has(#room203:checked) .conf-room-name .name-203,
+body:has(#room203:checked) .conf-room-price .price-203 {
+    display: inline-block !important;
+}
+
+body:has(#room204:checked) .conf-room-img-container .img-204,
+body:has(#room204:checked) .conf-room-name .name-204,
+body:has(#room204:checked) .conf-room-price .price-204 {
+    display: inline-block !important;
+}
+
+/* Ocultar placeholders por defecto cuando HAY alguna habitación seleccionada */
+body:has(input[name="room-selection"]:checked) .conf-room-name .conf-default,
+body:has(input[name="room-selection"]:checked) .conf-room-price .conf-default {
+    display: none !important;
+}
+
+/* Ocultar formulario de datos si se activa la confirmación */
+body:has(#toggle-confirmacion:checked) .seccion-datos-personales {
+    display: none !important;
+}
+
+/* Mostrar panel final */
+body:has(#toggle-confirmacion:checked) .seccion-confirmacion-final {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+/* Animaciones sobre la barra de progreso general en paso 3 */
+body:has(#toggle-confirmacion:checked) .progress-bar-container .step-1,
+body:has(#toggle-confirmacion:checked) .progress-bar-container .step-2 {
+    color: #b0a39c;
+}
+
+body:has(#toggle-confirmacion:checked) .progress-bar-container .step-1 .step-circle,
+body:has(#toggle-confirmacion:checked) .progress-bar-container .step-2 .step-circle {
+    background-color: #eedcd0;
+    color: #b0a39c;
+}
+
+body:has(#toggle-confirmacion:checked) .progress-bar-container .step:nth-child(5) {
+    color: var(--color-brand);
+}
+
+body:has(#toggle-confirmacion:checked) .progress-bar-container .step:nth-child(5) .step-circle {
+    background-color: var(--color-brand);
+    color: var(--white);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-heading {
+    font-family: 'Playfair Display', serif;
+    color: var(--color-brand);
+    font-size: 2rem;
+    margin: 0 0 2rem 0;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--color-dark);
+    margin-bottom: 0.5rem;
+}
+
+.input-style {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--color-brand);
+    background-color: #fcfbfa;
+}
+
+.input-style:focus {
     outline: none;
-    border-color: #8c5a45; /* Color terracota al darle clic */
-    box-shadow: 0 0 5px rgba(140, 90, 69, 0.3);
+    border-color: var(--color-secondary);
+    background-color: var(--white);
+}
+
+.btn-confirmar-reserva {
+    display: block;
+    width: 100%;
+    background-color: var(--color-brand);
+    color: var(--white);
+    border: none;
+    padding: 1.2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 2rem;
+    transition: background-color 0.3s;
+}
+
+.btn-confirmar-reserva:hover {
+    background-color: var(--color-secondary);
+}
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+    .results-layout {
+        flex-direction: column-reverse;
+        /* Carrito primero en moviles */
+    }
+
+    .sticky-sidebar {
+        width: 100%;
+    }
+
+    .cart-box {
+        position: static;
+    }
+}
+
+@media (max-width: 768px) {
+    .room-img {
+        height: 250px;
+    }
+
+    .room-content {
+        padding: 1.5rem;
+    }
+
+    .price-action {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .price-box {
+        text-align: left;
+        margin-bottom: 1rem;
+    }
+
+    .btn-seleccionar-label {
+        width: 100%;
+    }
+
+    .room-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
 }

@@ -4,201 +4,987 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Reserva tu habitación en Hotel Quinta Dalam. Hospédate en habitaciones inspiradas en los Pueblos Mágicos de Michoacán.">
-    <title>Reservar - Hotel Quinta Dalam</title>
-    
+    <script src="https://kit.fontawesome.com/aab6fd71ad.js" crossorigin="anonymous"></script>
+    <title>Reservar | Hotel Quinta Dalam</title>
+    <link rel="icon" href="icons/hotel-solid.png" type="image/png">
+    <link rel="stylesheet" href="styles/index-styles.css">
     <link rel="stylesheet" href="styles/reservaciones-styles.css">
 </head>
 
-<body topmargin="0" leftmargin="0">
+<body class="bg-resultados">
 
-    <header>
-        <div align="center">
-            <br>
-            <img src="img/logo.png" alt="Logo Quinta Dalam" title="Logo Quinta Dalam" width="180">
-            <h1>HOTEL QUINTA DALAM</h1>
-            <p>Módulo de Reservaciones</p>
+    <!-- Lógica CSS para Secciones (Sin JS) -->
+    <!-- Este checkbox oculto controla si mostramos Habitaciones vs Datos Personales -->
+    <input type="checkbox" id="toggle-datos-personales" style="display: none;">
 
-            <hr width="80%">
-            <nav>
-                <a href="index.html">INICIO</a> &nbsp;|&nbsp;
-                <a href="habitaciones.html">VER HABITACIONES</a> &nbsp;|&nbsp;
-                <b>RESERVACIONES</b> &nbsp;|&nbsp;
-                <a href="contacto.html">CONTACTO</a>
-            </nav>
-            <hr width="80%">
-        </div>
+    <header class="header-nav">
+        <nav class="navbar navbar-container navbar-wide">
+            <div class="navbar-left">
+                <a href="index.html" class="navbar-brand">
+                    <i class="fa-solid fa-hotel"></i>
+                    <div class="brand-text-wrapper">
+                        <span class="brand-title">QUINTA DALAM</span>
+                        <span class="brand-subtitle">HOTEL MICHOACANO</span>
+                    </div>
+                </a>
+            </div>
+        </nav>
     </header>
 
     <main>
-        <div align="center">
-            <h2>Reserva tu Estancia</h2>
-            <p>Por favor completa los siguientes datos.</p>
+        <!-- Pasos de Progreso -->
+        <div class="progress-bar-container">
+            <div class="progress-steps container">
+                <!-- Usamos clases step-1 y step-2 para controlarlos con el checkbox global -->
+                <div class="step step-1 active">
+                    <div class="step-circle">1</div>
+                    <span>SELECCIÓN DE HABITACIÓN</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="step step-2">
+                    <div class="step-circle">2</div>
+                    <span>DATOS PERSONALES</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="step">
+                    <div class="step-circle"><i class="fa-solid fa-check"></i></div>
+                    <span>¡RESERVA CONFIRMADA!</span>
+                </div>
+            </div>
         </div>
-        <br>
 
-        <form action="https://formspree.io/f/TU_ID_AQUI" method="POST">
-            <table width="60%" align="center" border="0" cellpadding="10" bgcolor="#f9f9f9">
+        <div class="container">
+            <!-- Barra de Resumen -->
+            <div class="search-summary-bar">
+                <div class="container summary-grid">
+                    <div class="summary-item">
+                        <small>HOTEL</small>
+                        <strong>Hotel Quinta Dalam</strong>
+                    </div>
+                    <div class="summary-item">
+                        <small>ENTRADA</small>
+                        <span><i class="fa-regular fa-calendar"
+                                style="color: var(--color-secondary); margin-right: 5px;"></i> 13/08/2026</span>
+                    </div>
+                    <div class="summary-item">
+                        <small>SALIDA</small>
+                        <span>17/08/2026</span>
+                    </div>
+                    <div class="summary-item">
+                        <small>HABITACIONES</small>
+                        <span>1</span>
+                    </div>
+                    <div class="summary-item">
+                        <small>PERSONAS</small>
+                        <span>2 adultos</span>
+                    </div>
+                    <a href="index.html" class="btn-modificar-busqueda">Modificar Búsqueda</a>
+                </div>
+            </div>
 
-                <tr>
-                    <td colspan="2">
-                        <fieldset>
-                            <legend><b>DATOS DEL CLIENTE</b></legend>
-                            <table border="0" width="100%" cellpadding="8">
-                                <tr>
-                                    <td align="right" width="40%">
-                                        <label for="nombre">Nombre Completo:</label>
-                                    </td>
-                                    <td align="left">
-                                        <input type="text" name="nombre" id="nombre" size="40" required>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="right">
-                                        <label for="email">Correo Electrónico:</label>
-                                    </td>
-                                    <td align="left">
-                                        <input type="email" name="email" id="email" size="40" required>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="right">
-                                        <label for="telefono">Teléfono:</label>
-                                    </td>
-                                    <td align="left">
-                                        <input type="tel" name="telefono" id="telefono" required>
-                                    </td>
-                                </tr>
-                            </table>
-                        </fieldset>
-                    </td>
-                </tr>
+            <!-- Layout Central (Grid 2 Columnas) -->
+            <div class="results-layout">
 
-                <tr>
-                    <td colspan="2">
-                        <fieldset>
-                            <legend><b>DETALLES DEL VIAJE</b></legend>
-                            <table border="0" width="100%" cellpadding="8">
-                                <tr>
-                                    <td align="right" width="40%">
-                                        <label for="llegada">Llegada:</label>
-                                    </td>
-                                    <td align="left">
-                                        <input type="date" name="llegada" id="llegada" required>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="right">
-                                        <label for="salida">Salida:</label>
-                                    </td>
-                                    <td align="left">
-                                        <input type="date" name="salida" id="salida" required>
-                                    </td>
-                                </tr>
-                                
-                                <tr>
-                                    <td align="right">
-                                        <label for="personas">Personas:</label>
-                                    </td>
-                                    <td align="left">
-                                        <select name="personas" id="personas" class="select-personas">
-                                            <option value="1_adulto_0_ninos">1 Adulto, 0 Niños</option>
-                                            <option value="1_adulto_1_nino">1 Adulto, 1 Niño</option>
-                                            <option value="1_adulto_2_ninos">1 Adulto, 2 Niños</option>
-                                            <option value="2_adultos_0_ninos" selected>2 Adultos, 0 Niños</option>
-                                            <option value="2_adultos_1_nino">2 Adultos, 1 Niño</option>
-                                            <option value="2_adultos_2_ninos">2 Adultos, 2 Niños</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                </table>
-                        </fieldset>
-                    </td>
-                </tr>
+                <!-- Columna Izquierda: Lista de Habitaciones -->
+                <section class="rooms-list">
 
-                <tr>
-                    <td colspan="2">
-                        <fieldset>
-                            <legend><b>HABITACIÓN</b></legend>
-                            <table border="0" width="100%" cellpadding="8">
-                                <tr>
-                                    <td align="right" width="40%">
-                                        <label for="habitacion">Selecciona:</label>
-                                    </td>
-                                    <td align="left">
-                                        <select name="habitacion" id="habitacion" class="select-personas">
-                                            <option value="">-- Elige una opción --</option>
-                                            <optgroup label="Planta Baja">
-                                                <option value="101">101 - Tzintzuntzan</option>
-                                                <option value="102">102 - Paracho</option>
-                                                <option value="103">103 - Yunuen</option>
-                                                <option value="104">104 - Pátzcuaro</option>
-                                                <option value="105">105 - Coeneo</option>
-                                                <option value="106">106 - Janitzio</option>
-                                            </optgroup>
-                                            <optgroup label="Planta Alta">
-                                                <option value="201">201 - Suite Quencio</option>
-                                                <option value="202">202 - Morelia</option>
-                                                <option value="203">203 - Tacámbaro</option>
-                                                <option value="204">204 - Uruapan</option>
-                                                <option value="205">205 - Tlalpujahua</option>
-                                                <option value="206">206 - Cuitzeo</option>
-                                                <option value="207">207 - Cuanajo</option>
-                                            </optgroup>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="right" valign="top">
-                                        <label for="comentarios">Comentarios:</label>
-                                    </td>
-                                    <td align="left">
-                                        <textarea name="comentarios" id="comentarios" rows="3" cols="30"></textarea>
-                                    </td>
-                                </tr>
-                            </table>
-                        </fieldset>
-                    </td>
-                </tr>
+                    <!-- Lógica CSS de Selección: Radios ocultos antes de cada tarjeta -->
+                    <!-- El 'name="room-selection"' asegura que solo 1 pueda estar activa -->
 
-                <tr>
-                    <td colspan="2" align="center">
-                        <br>
-                        <input type="reset" value="LIMPIAR FORMULARIO">
-                        &nbsp;&nbsp;
-                        <input type="submit" value="CONFIRMAR RESERVACIÓN">
-                        <br><br>
-                    </td>
-                </tr>
-            </table>
-        </form>
+                    <!-- Habitación 101 Tzintzuntzan -->
+                    <input type="radio" name="room-selection" id="room101" class="room-radio-input">
+                    <article class="room-card">
+                        <span class="selected-badge"><i class="fa-solid fa-check"></i> Seleccionada</span>
+                        <div class="room-img-container">
+                            <img src="img/101_tzintzuntzan.jpg" alt="101 Tzintzuntzan" class="room-img"
+                                onerror="this.src='img/NAV.jpg'">
+                        </div>
+                        <div class="room-content">
+                            <h3 class="room-title">101 Tzintzuntzan</h3>
+                            <p class="room-desc">Inspirada en el majestuoso imperio Purépecha. Siente la magia milenaria
+                                de las Yácatas con detalles en madera intrincadamente tallada y espacios diseñados para
+                                despertar con el espíritu antiguo de Michoacán.</p>
+
+                            <div class="room-features">
+                                <div class="feature-item"><span>30m2</span></div>
+                                <div class="feature-item"><i class="fa-solid fa-bed"></i> <span>1 Matrimonial</span>
+                                </div>
+                                <div class="feature-item"><i class="fa-solid fa-user-group"></i> <span>2 - 3
+                                        Personas</span></div>
+                            </div>
+
+                            <div class="room-footer">
+                                <div class="policy-info">
+                                    <p class="policy-desc"><i class="fa-solid fa-circle-check"></i> Cancelación gratuita
+                                        hasta 2 días antes de la llegada.</p>
+                                </div>
+                                <div class="price-action">
+                                    <div class="price-box">
+                                        <div class="price-val">MXN $1,200</div>
+                                        <div class="price-suffix">/ noche</div>
+                                    </div>
+                                    <label for="room101" class="btn-seleccionar-label">Seleccionar</label>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Habitación 102 Paracho -->
+                    <input type="radio" name="room-selection" id="room102" class="room-radio-input">
+                    <article class="room-card">
+                        <span class="selected-badge"><i class="fa-solid fa-check"></i> Seleccionada</span>
+                        <div class="room-img-container">
+                            <img src="img/102_paracho.jpg" alt="102 Paracho" class="room-img"
+                                onerror="this.src='img/NAV.jpg'">
+                        </div>
+                        <div class="room-content">
+                            <h3 class="room-title">102 Paracho</h3>
+                            <p class="room-desc">El alma de la música te espera. Esta habitación rinde homenaje a la
+                                capital mundial de la guitarra con acabados acústicos cálidos y maderas preciosas que
+                                resuenan como una dulce melodía michoacana.</p>
+
+                            <div class="room-features">
+                                <div class="feature-item"><span>30m2</span></div>
+                                <div class="feature-item"><i class="fa-solid fa-bed"></i> <span>1 Matrimonial</span>
+                                </div>
+                                <div class="feature-item"><i class="fa-solid fa-user-group"></i> <span>2 Personas</span>
+                                </div>
+                            </div>
+
+                            <div class="room-footer">
+                                <div class="policy-info">
+                                    <p class="policy-desc"><i class="fa-solid fa-circle-check"></i> Cancelación gratuita
+                                        hasta 2 días antes de la llegada.</p>
+                                </div>
+                                <div class="price-action">
+                                    <div class="price-box">
+                                        <div class="price-val">MXN $1,200</div>
+                                        <div class="price-suffix">/ noche</div>
+                                    </div>
+                                    <label for="room102" class="btn-seleccionar-label">Seleccionar</label>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Habitación 103 Yunuen -->
+                    <input type="radio" name="room-selection" id="room103" class="room-radio-input">
+                    <article class="room-card">
+                        <span class="selected-badge"><i class="fa-solid fa-check"></i> Seleccionada</span>
+                        <div class="room-img-container">
+                            <img src="img/103_yunuen.jpg" alt="103 Yunuen" class="room-img"
+                                onerror="this.src='img/NAV.jpg'">
+                        </div>
+                        <div class="room-content">
+                            <h3 class="room-title">103 Yunuen</h3>
+                            <p class="room-desc">Reflejando la tranquilidad absoluta de la isla del lago de Pátzcuaro.
+                                Descansa inmerso en un estilo sereno, con textiles suaves y colores pacíficos que evocan
+                                el movimiento manso del agua en una tarde de otoño.</p>
+
+                            <div class="room-features">
+                                <div class="feature-item"><span>30m2</span></div>
+                                <div class="feature-item"><i class="fa-solid fa-bed"></i> <span>2 Individuales</span>
+                                </div>
+                                <div class="feature-item"><i class="fa-solid fa-user-group"></i> <span>1 - 2
+                                        Personas</span></div>
+                            </div>
+
+                            <div class="room-footer">
+                                <div class="policy-info">
+                                    <p class="policy-desc"><i class="fa-solid fa-circle-check"></i> Cancelación gratuita
+                                        hasta 2 días antes de la llegada.</p>
+                                </div>
+                                <div class="price-action">
+                                    <div class="price-box">
+                                        <div class="price-val">MXN $1,200</div>
+                                        <div class="price-suffix">/ noche</div>
+                                    </div>
+                                    <label for="room103" class="btn-seleccionar-label">Seleccionar</label>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Habitación 104 Pátzcuaro -->
+                    <input type="radio" name="room-selection" id="room104" class="room-radio-input">
+                    <article class="room-card">
+                        <span class="selected-badge"><i class="fa-solid fa-check"></i> Seleccionada</span>
+                        <div class="room-img-container">
+                            <img src="img/104_patzcuaro.jpg" alt="104 Pátzcuaro" class="room-img"
+                                onerror="this.src='img/NAV.jpg'">
+                        </div>
+                        <div class="room-content">
+                            <h3 class="room-title">104 Pátzcuaro</h3>
+                            <p class="room-desc">La puerta al cielo michoacano. Encanto puro de Pueblo Mágico con
+                                amplios balcones, destellos de cobre artesanal y un ambiente que te transportará a las
+                                callejuelas empedradas del siglo XVI.</p>
+
+                            <div class="room-features">
+                                <div class="feature-item"><span>42m2</span></div>
+                                <div class="feature-item"><i class="fa-solid fa-bed"></i> <span>2 Matrimoniales</span>
+                                </div>
+                                <div class="feature-item"><i class="fa-solid fa-user-group"></i> <span>2 - 4
+                                        Personas</span></div>
+                            </div>
+
+                            <div class="room-footer">
+                                <div class="policy-info">
+                                    <p class="policy-desc"><i class="fa-solid fa-circle-check"></i> Cancelación gratuita
+                                        hasta 2 días antes de la llegada.</p>
+                                </div>
+                                <div class="price-action">
+                                    <div class="price-box">
+                                        <div class="price-val">MXN $1,500</div>
+                                        <div class="price-suffix">/ noche</div>
+                                    </div>
+                                    <label for="room104" class="btn-seleccionar-label">Seleccionar</label>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Habitación 105 Coeneo -->
+                    <input type="radio" name="room-selection" id="room105" class="room-radio-input">
+                    <article class="room-card">
+                        <span class="selected-badge"><i class="fa-solid fa-check"></i> Seleccionada</span>
+                        <div class="room-img-container">
+                            <img src="img/105_coeneo.jpg" alt="105 Coeneo" class="room-img"
+                                onerror="this.src='img/NAV.jpg'">
+                        </div>
+                        <div class="room-content">
+                            <h3 class="room-title">105 Coeneo</h3>
+                            <p class="room-desc">El encanto terrenal de la alfarería hecha hogar. Un santuario rodeado
+                                de artesanías en barro cobrizo que ofrecen un abrazo cálido y protegen el sueño bajo la
+                                bendición de las antiguas tradiciones indígenas.</p>
+
+                            <div class="room-features">
+                                <div class="feature-item"><span>30m2</span></div>
+                                <div class="feature-item"><i class="fa-solid fa-bed"></i> <span>1 Matrimonial</span>
+                                </div>
+                                <div class="feature-item"><i class="fa-solid fa-user-group"></i> <span>2 Personas</span>
+                                </div>
+                            </div>
+
+                            <div class="room-footer">
+                                <div class="policy-info">
+                                    <p class="policy-desc"><i class="fa-solid fa-circle-check"></i> Cancelación gratuita
+                                        hasta 2 días antes de la llegada.</p>
+                                </div>
+                                <div class="price-action">
+                                    <div class="price-box">
+                                        <div class="price-val">MXN $1,200</div>
+                                        <div class="price-suffix">/ noche</div>
+                                    </div>
+                                    <label for="room105" class="btn-seleccionar-label">Seleccionar</label>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Habitación 106 Janitzio -->
+                    <input type="radio" name="room-selection" id="room106" class="room-radio-input">
+                    <article class="room-card">
+                        <span class="selected-badge"><i class="fa-solid fa-check"></i> Seleccionada</span>
+                        <div class="room-img-container">
+                            <img src="img/106_janitzio.jpg" alt="106 Janitzio" class="room-img"
+                                onerror="this.src='img/NAV.jpg'">
+                        </div>
+                        <div class="room-content">
+                            <h3 class="room-title">106 Janitzio</h3>
+                            <p class="room-desc">La morada icónica de los pescadores tarascos. Detalles tejidos que
+                                evocan las emblemáticas redes de mariposa entrelazando un refugio rústico y
+                                espiritualmente rico a la luz de los cirios.</p>
+
+                            <div class="room-features">
+                                <div class="feature-item"><span>30m2</span></div>
+                                <div class="feature-item"><i class="fa-solid fa-bed"></i> <span>1 Matrimonial</span>
+                                </div>
+                                <div class="feature-item"><i class="fa-solid fa-user-group"></i> <span>2 Personas</span>
+                                </div>
+                            </div>
+
+                            <div class="room-footer">
+                                <div class="policy-info">
+                                    <p class="policy-desc"><i class="fa-solid fa-circle-check"></i> Cancelación gratuita
+                                        hasta 2 días antes de la llegada.</p>
+                                </div>
+                                <div class="price-action">
+                                    <div class="price-box">
+                                        <div class="price-val">MXN $1,200</div>
+                                        <div class="price-suffix">/ noche</div>
+                                    </div>
+                                    <label for="room106" class="btn-seleccionar-label">Seleccionar</label>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Suite 201 Quencio -->
+                    <input type="radio" name="room-selection" id="room201" class="room-radio-input">
+                    <article class="room-card">
+                        <span class="selected-badge"><i class="fa-solid fa-check"></i> Seleccionada</span>
+                        <div class="room-img-container">
+                            <img src="img/201_quencio.jpg" alt="201 Suite Quencio" class="room-img"
+                                onerror="this.src='img/NAV.jpg'">
+                        </div>
+                        <div class="room-content">
+                            <h3 class="room-title"><i class="fa-solid fa-crown"
+                                    style="color:var(--color-secondary); font-size:1.6rem;"></i> 201 Suite Quencio</h3>
+                            <p class="room-desc">El pináculo del confort y la historia viva. Esta fastuosa suite corona
+                                nuestro hotel fusionando exquisitas reliquias artesanales con lujos modernos, un balcón
+                                panorámico y una relajante tina que rinde tributo a un manantial privado.</p>
+
+                            <div class="room-features">
+                                <div class="feature-item"><span>55m2</span></div>
+                                <div class="feature-item"><i class="fa-solid fa-bed"></i> <span>1 King Size</span></div>
+                                <div class="feature-item"><i class="fa-solid fa-user-group"></i> <span>2 Personas</span>
+                                </div>
+                                <div class="feature-item"><i class="fa-solid fa-bath"></i> <span>Tina de
+                                        Hidromasaje</span></div>
+                            </div>
+
+                            <div class="room-footer">
+                                <div class="policy-info">
+                                    <p class="policy-desc"><i class="fa-solid fa-circle-check"></i> Cancelación gratuita
+                                        hasta 2 días antes de la llegada.</p>
+                                </div>
+                                <div class="price-action">
+                                    <div class="price-box">
+                                        <div class="price-val">MXN $2,800</div>
+                                        <div class="price-suffix">/ noche</div>
+                                    </div>
+                                    <label for="room201" class="btn-seleccionar-label">Seleccionar Suite</label>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Habitación 202 Morelia -->
+                    <input type="radio" name="room-selection" id="room202" class="room-radio-input">
+                    <article class="room-card">
+                        <span class="selected-badge"><i class="fa-solid fa-check"></i> Seleccionada</span>
+                        <div class="room-img-container">
+                            <img src="img/202_morelia.jpg" alt="202 Morelia" class="room-img"
+                                onerror="this.src='img/NAV.jpg'">
+                        </div>
+                        <div class="room-content">
+                            <h3 class="room-title">202 Morelia</h3>
+                            <p class="room-desc">La opulencia de la majestuosa cantera rosa. Descubre una sofisticación
+                                urbana forjada en herrería colonial y toques arquitectónicos que capturan el romance
+                                eterno de la capital del estado.</p>
+
+                            <div class="room-features">
+                                <div class="feature-item"><span>35m2</span></div>
+                                <div class="feature-item"><i class="fa-solid fa-bed"></i> <span>2 Matrimoniales</span>
+                                </div>
+                                <div class="feature-item"><i class="fa-solid fa-user-group"></i> <span>2 - 4
+                                        Personas</span></div>
+                            </div>
+
+                            <div class="room-footer">
+                                <div class="policy-info">
+                                    <p class="policy-desc"><i class="fa-solid fa-circle-check"></i> Cancelación gratuita
+                                        hasta 2 días antes de la llegada.</p>
+                                </div>
+                                <div class="price-action">
+                                    <div class="price-box">
+                                        <div class="price-val">MXN $1,600</div>
+                                        <div class="price-suffix">/ noche</div>
+                                    </div>
+                                    <label for="room202" class="btn-seleccionar-label">Seleccionar</label>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Habitación 203 Tacámbaro -->
+                    <input type="radio" name="room-selection" id="room203" class="room-radio-input">
+                    <article class="room-card">
+                        <span class="selected-badge"><i class="fa-solid fa-check"></i> Seleccionada</span>
+                        <div class="room-img-container">
+                            <img src="img/203_tacambaro.jpg" alt="203 Tacámbaro" class="room-img"
+                                onerror="this.src='img/NAV.jpg'">
+                        </div>
+                        <div class="room-content">
+                            <h3 class="room-title">203 Tacámbaro</h3>
+                            <p class="room-desc">El frescor de los manantiales cristalinos entre los cerros boscosos.
+                                Respira paz en un ambiente heroico adornado con pinceladas que imitan la neblina
+                                tempranera y los colores vivos de un paisaje inexplorado.</p>
+
+                            <div class="room-features">
+                                <div class="feature-item"><span>30m2</span></div>
+                                <div class="feature-item"><i class="fa-solid fa-bed"></i> <span>1 Matrimonial</span>
+                                </div>
+                                <div class="feature-item"><i class="fa-solid fa-user-group"></i> <span>1 - 2
+                                        Personas</span></div>
+                            </div>
+
+                            <div class="room-footer">
+                                <div class="policy-info">
+                                    <p class="policy-desc"><i class="fa-solid fa-circle-check"></i> Cancelación gratuita
+                                        hasta 2 días antes de la llegada.</p>
+                                </div>
+                                <div class="price-action">
+                                    <div class="price-box">
+                                        <div class="price-val">MXN $1,200</div>
+                                        <div class="price-suffix">/ noche</div>
+                                    </div>
+                                    <label for="room203" class="btn-seleccionar-label">Seleccionar</label>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Habitación 204 Uruapan -->
+                    <input type="radio" name="room-selection" id="room204" class="room-radio-input">
+                    <article class="room-card">
+                        <span class="selected-badge"><i class="fa-solid fa-check"></i> Seleccionada</span>
+                        <div class="room-img-container">
+                            <img src="img/204_uruapan.jpg" alt="204 Uruapan" class="room-img"
+                                onerror="this.src='img/NAV.jpg'">
+                        </div>
+                        <div class="room-content">
+                            <h3 class="room-title">204 Uruapan</h3>
+                            <p class="room-desc">El susurro selvático del Río Cupatitzio en tu cuarto. Verde intenso,
+                                esmeraldas suaves y fragancias a humedad limpia envuelven esta habitación que canta a la
+                                naturaleza tropical michoacana.</p>
+
+                            <div class="room-features">
+                                <div class="feature-item"><span>30m2</span></div>
+                                <div class="feature-item"><i class="fa-solid fa-bed"></i> <span>1 Matrimonial</span>
+                                </div>
+                                <div class="feature-item"><i class="fa-solid fa-user-group"></i> <span>1 - 2
+                                        Personas</span></div>
+                            </div>
+
+                            <div class="room-footer">
+                                <div class="policy-info">
+                                    <p class="policy-desc"><i class="fa-solid fa-circle-check"></i> Cancelación gratuita
+                                        hasta 2 días antes de la llegada.</p>
+                                </div>
+                                <div class="price-action">
+                                    <div class="price-box">
+                                        <div class="price-val">MXN $1,200</div>
+                                        <div class="price-suffix">/ noche</div>
+                                    </div>
+                                    <label for="room204" class="btn-seleccionar-label">Seleccionar</label>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Habitación 205 Tlalpujahua -->
+                    <input type="radio" name="room-selection" id="room205" class="room-radio-input">
+                    <article class="room-card">
+                        <span class="selected-badge"><i class="fa-solid fa-check"></i> Seleccionada</span>
+                        <div class="room-img-container">
+                            <img src="img/205_tlalpujahua.jpg" alt="205 Tlalpujahua" class="room-img"
+                                onerror="this.src='img/NAV.jpg'">
+                        </div>
+                        <div class="room-content">
+                            <h3 class="room-title">205 Tlalpujahua</h3>
+                            <p class="room-desc">La cálida nostalgia de una eterna navidad maderera. Duerme entre
+                                detalles de brillante vidrio soplado artesanal y rústicos acabados oscuros inspirados en
+                                las minas doradas iluminadas a la luz de las velas.</p>
+
+                            <div class="room-features">
+                                <div class="feature-item"><span>30m2</span></div>
+                                <div class="feature-item"><i class="fa-solid fa-bed"></i> <span>1 Matrimonial</span>
+                                </div>
+                                <div class="feature-item"><i class="fa-solid fa-user-group"></i> <span>1 - 2
+                                        Personas</span></div>
+                            </div>
+
+                            <div class="room-footer">
+                                <div class="policy-info">
+                                    <p class="policy-desc"><i class="fa-solid fa-circle-check"></i> Cancelación gratuita
+                                        hasta 2 días antes de la llegada.</p>
+                                </div>
+                                <div class="price-action">
+                                    <div class="price-box">
+                                        <div class="price-val">MXN $1,200</div>
+                                        <div class="price-suffix">/ noche</div>
+                                    </div>
+                                    <label for="room205" class="btn-seleccionar-label">Seleccionar</label>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Habitación 206 Cuitzeo -->
+                    <input type="radio" name="room-selection" id="room206" class="room-radio-input">
+                    <article class="room-card">
+                        <span class="selected-badge"><i class="fa-solid fa-check"></i> Seleccionada</span>
+                        <div class="room-img-container">
+                            <img src="img/206_cuitzeo.jpg" alt="206 Cuitzeo" class="room-img"
+                                onerror="this.src='img/NAV.jpg'">
+                        </div>
+                        <div class="room-content">
+                            <h3 class="room-title">206 Cuitzeo</h3>
+                            <p class="room-desc">El vasto y callado espejo de agua hecho poesía. Sumérgete en un espacio
+                                de amplitud diáfana, paletas plateadas y un romanticismo arquitectónico que te
+                                desconectará del exterior de manera inigualable.</p>
+
+                            <div class="room-features">
+                                <div class="feature-item"><span>35m2</span></div>
+                                <div class="feature-item"><i class="fa-solid fa-bed"></i> <span>2 Matrimoniales</span>
+                                </div>
+                                <div class="feature-item"><i class="fa-solid fa-user-group"></i> <span>2 - 4
+                                        Personas</span></div>
+                            </div>
+
+                            <div class="room-footer">
+                                <div class="policy-info">
+                                    <p class="policy-desc"><i class="fa-solid fa-circle-check"></i> Cancelación gratuita
+                                        hasta 2 días antes de la llegada.</p>
+                                </div>
+                                <div class="price-action">
+                                    <div class="price-box">
+                                        <div class="price-val">MXN $1,500</div>
+                                        <div class="price-suffix">/ noche</div>
+                                    </div>
+                                    <label for="room206" class="btn-seleccionar-label">Seleccionar</label>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Habitación 207 Cuanajo -->
+                    <input type="radio" name="room-selection" id="room207" class="room-radio-input">
+                    <article class="room-card">
+                        <span class="selected-badge"><i class="fa-solid fa-check"></i> Seleccionada</span>
+                        <div class="room-img-container">
+                            <img src="img/207_cuanajo.jpg" alt="207 Cuanajo" class="room-img"
+                                onerror="this.src='img/NAV.jpg'">
+                        </div>
+                        <div class="room-content">
+                            <h3 class="room-title">207 Cuanajo</h3>
+                            <p class="room-desc">La robustez y corazón de la madera forjada a mano. Esta habitación
+                                alberga tesoros tallados por maestros locales, ofreciendo un descanso reparador anclado
+                                en la pura esencia de la tierra y los bosques de pino.</p>
+
+                            <div class="room-features">
+                                <div class="feature-item"><span>30m2</span></div>
+                                <div class="feature-item"><i class="fa-solid fa-bed"></i> <span>1 Matrimonial</span>
+                                </div>
+                                <div class="feature-item"><i class="fa-solid fa-user-group"></i> <span>1 - 2
+                                        Personas</span></div>
+                            </div>
+
+                            <div class="room-footer">
+                                <div class="policy-info">
+                                    <p class="policy-desc"><i class="fa-solid fa-circle-check"></i> Cancelación gratuita
+                                        hasta 2 días antes de la llegada.</p>
+                                </div>
+                                <div class="price-action">
+                                    <div class="price-box">
+                                        <div class="price-val">MXN $1,200</div>
+                                        <div class="price-suffix">/ noche</div>
+                                    </div>
+                                    <label for="room207" class="btn-seleccionar-label">Seleccionar</label>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                </section>
+
+                <!-- Columna Derecha: Carrito Sticky (Sidebar) -->
+                <aside class="sticky-sidebar">
+                    <div class="cart-box">
+                        <div class="cart-header">
+                            <h3 class="cart-hotel-title">Hotel Quinta Dalam <span class="cart-stars"><i
+                                        class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                        class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span></h3>
+                        </div>
+
+                        <div class="cart-details">
+                            <h4>Detalles de la reserva <i class="fa-solid fa-chevron-up"></i></h4>
+                            <p>13/08/2026 - 17/08/2026 (4 noches)</p>
+                            <p>2 adultos</p>
+                            <p>Alojamiento Base</p>
+                        </div>
+
+                        <div class="cart-section-break"></div>
+
+                        <!-- Estado original sin seleccion -->
+                        <div class="cart-empty-state">
+                            <span>Habitación</span>
+                            <span style="opacity: 0.5;">¡Elige tu habitación!</span>
+                        </div>
+
+                        <!-- Opciones dinámicas que aparecen con CSS puro -->
+                        <!-- Multiplicacion de 4 noches por habitación en los total amount -->
+
+                        <div class="cart-room-dynamic room101-info">
+                            <div class="dynamic-room-name"><span>101 Tzintzuntzan</span> <span
+                                    class="dynamic-room-price">MXN 4,800</span></div>
+                            <div class="total-final-box">
+                                <span class="total-label">PRECIO FINAL <i class="fa-solid fa-circle-info"
+                                        style="color:var(--text-muted); font-size: 0.9em; font-weight: normal;"></i></span>
+                                <span class="total-amount">MXN 4,800.00</span>
+                            </div>
+                        </div>
+
+                        <div class="cart-room-dynamic room102-info">
+                            <div class="dynamic-room-name"><span>102 Paracho</span> <span class="dynamic-room-price">MXN
+                                    4,800</span></div>
+                            <div class="total-final-box">
+                                <span class="total-label">PRECIO FINAL</span>
+                                <span class="total-amount">MXN 4,800.00</span>
+                            </div>
+                        </div>
+
+                        <div class="cart-room-dynamic room103-info">
+                            <div class="dynamic-room-name"><span>103 Yunuen</span> <span class="dynamic-room-price">MXN
+                                    4,800</span></div>
+                            <div class="total-final-box">
+                                <span class="total-label">PRECIO FINAL</span>
+                                <span class="total-amount">MXN 4,800.00</span>
+                            </div>
+                        </div>
+
+                        <div class="cart-room-dynamic room104-info">
+                            <div class="dynamic-room-name"><span>104 Pátzcuaro</span> <span
+                                    class="dynamic-room-price">MXN 6,000</span></div>
+                            <div class="total-final-box">
+                                <span class="total-label">PRECIO FINAL</span>
+                                <span class="total-amount">MXN 6,000.00</span>
+                            </div>
+                        </div>
+
+                        <div class="cart-room-dynamic room105-info">
+                            <div class="dynamic-room-name"><span>105 Coeneo</span> <span class="dynamic-room-price">MXN
+                                    4,800</span></div>
+                            <div class="total-final-box">
+                                <span class="total-label">PRECIO FINAL</span>
+                                <span class="total-amount">MXN 4,800.00</span>
+                            </div>
+                        </div>
+
+                        <div class="cart-room-dynamic room106-info">
+                            <div class="dynamic-room-name"><span>106 Janitzio</span> <span
+                                    class="dynamic-room-price">MXN 4,800</span></div>
+                            <div class="total-final-box">
+                                <span class="total-label">PRECIO FINAL</span>
+                                <span class="total-amount">MXN 4,800.00</span>
+                            </div>
+                        </div>
+
+                        <div class="cart-room-dynamic room201-info">
+                            <div class="dynamic-room-name"><span>Suite Quencio</span> <span
+                                    class="dynamic-room-price">MXN 11,200</span></div>
+                            <div class="total-final-box">
+                                <span class="total-label">PRECIO FINAL</span>
+                                <span class="total-amount">MXN 11,200.00</span>
+                            </div>
+                        </div>
+
+                        <div class="cart-room-dynamic room202-info">
+                            <div class="dynamic-room-name"><span>202 Morelia</span> <span class="dynamic-room-price">MXN
+                                    6,400</span></div>
+                            <div class="total-final-box">
+                                <span class="total-label">PRECIO FINAL</span>
+                                <span class="total-amount">MXN 6,400.00</span>
+                            </div>
+                        </div>
+
+                        <div class="cart-room-dynamic room203-info">
+                            <div class="dynamic-room-name"><span>203 Tacámbaro</span> <span
+                                    class="dynamic-room-price">MXN 4,800</span></div>
+                            <div class="total-final-box">
+                                <span class="total-label">PRECIO FINAL</span>
+                                <span class="total-amount">MXN 4,800.00</span>
+                            </div>
+                        </div>
+
+                        <div class="cart-room-dynamic room204-info">
+                            <div class="dynamic-room-name"><span>204 Uruapan</span> <span class="dynamic-room-price">MXN
+                                    4,800</span></div>
+                            <div class="total-final-box">
+                                <span class="total-label">PRECIO FINAL</span>
+                                <span class="total-amount">MXN 4,800.00</span>
+                            </div>
+                        </div>
+
+                        <div class="cart-room-dynamic room205-info">
+                            <div class="dynamic-room-name"><span>205 Tlalpujahua</span> <span
+                                    class="dynamic-room-price">MXN 4,800</span></div>
+                            <div class="total-final-box">
+                                <span class="total-label">PRECIO FINAL</span>
+                                <span class="total-amount">MXN 4,800.00</span>
+                            </div>
+                        </div>
+
+                        <div class="cart-room-dynamic room206-info">
+                            <div class="dynamic-room-name"><span>206 Cuitzeo</span> <span class="dynamic-room-price">MXN
+                                    6,000</span></div>
+                            <div class="total-final-box">
+                                <span class="total-label">PRECIO FINAL</span>
+                                <span class="total-amount">MXN 6,000.00</span>
+                            </div>
+                        </div>
+
+                        <div class="cart-room-dynamic room207-info">
+                            <div class="dynamic-room-name"><span>207 Cuanajo</span> <span class="dynamic-room-price">MXN
+                                    4,800</span></div>
+                            <div class="total-final-box">
+                                <span class="total-label">PRECIO FINAL</span>
+                                <span class="total-amount">MXN 4,800.00</span>
+                            </div>
+                        </div>
+
+                        <!-- Botón para avanzar a Datos Personales basado en CSS Label Action -->
+                        <!-- Este label activa el checkbox con id 'toggle-datos-personales' que inicia al principio del body -->
+                        <label for="toggle-datos-personales" class="btn-submit-cart">Continuar a datos personales <i
+                                class="fa-solid fa-chevron-right"></i></label>
+
+                        <div class="taxes-footer">
+                            Descuentos e impuestos aplicados
+                        </div>
+                    </div>
+                </aside>
+            </div>
+
+            <!-- SECCIÓN OCULTA: DATOS PERSONALES Y CONFIRMACIÓN -->
+            <section class="seccion-datos-personales">
+                <h2 class="form-heading">Introduce tus datos</h2>
+
+                <form action="#" method="get"
+                    onsubmit="document.getElementById('toggle-confirmacion').checked = true; document.documentElement.scrollTop = 0; return false;">
+
+                    <div class="form-grid">
+                        <div class="input-group">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" class="input-style" required placeholder="Tu nombre">
+                        </div>
+                        <div class="input-group">
+                            <label for="apellidos">Apellidos</label>
+                            <input type="text" id="apellidos" class="input-style" required placeholder="Tus apellidos">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="fecha_nacimiento">Fecha de Nacimiento</label>
+                            <input type="date" id="fecha_nacimiento" class="input-style" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="telefono">Teléfono de Contácto</label>
+                            <!-- Simulación ligera de prefijo -->
+                            <div style="display:flex;">
+                                <select class="input-style"
+                                    style="border-right: none; background:#eee; width:80px; flex-shrink:0;">
+                                    <option>+52</option>
+                                    <option>+1</option>
+                                    <option>+34</option>
+                                </select>
+                                <input type="tel" id="telefono" class="input-style" pattern="[0-9]{10}"
+                                    title="Debe contener exactamente 10 números" required placeholder="5512345678"
+                                    style="flex-grow:1;">
+                            </div>
+                        </div>
+
+                        <div class="input-group" style="grid-column: 1 / -1;">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" class="input-style" required
+                                placeholder="correo@ejemplo.com">
+                        </div>
+
+                        <div class="input-group" style="grid-column: 1 / -1;">
+                            <label for="direccion">Dirección Completa</label>
+                            <textarea id="direccion" class="input-style" rows="2" required
+                                placeholder="Calle, Número, Colonia, Ciudad, Código Postal"></textarea>
+                        </div>
+                    </div>
+
+                    <div style="margin-top:2rem; padding-top:2rem; border-top: 1px solid var(--colonial-border);">
+
+                        <!-- Términos y condiciones -->
+                        <div class="terms-group"
+                            style="margin-bottom: 2rem; display: flex; align-items: flex-start; gap: 1rem;">
+                            <input type="checkbox" id="terminos" required
+                                style="width: 20px; height: 20px; accent-color: var(--color-brand); margin-top: 3px; cursor: pointer;">
+                            <label for="terminos"
+                                style="font-size: 0.95rem; color: var(--color-dark); cursor: pointer; line-height: 1.5;">
+                                He leído y acepto la <a href="#"
+                                    style="color: var(--color-secondary); text-decoration: underline;">Política de
+                                    Privacidad</a> y los <a href="#"
+                                    style="color: var(--color-secondary); text-decoration: underline;">Términos y
+                                    Condiciones</a> de la reserva, incluyendo las políticas de cancelación descritas
+                                previamente.
+                            </label>
+                        </div>
+
+                        <!-- Botón para finalizar -->
+                        <button type="submit" class="btn-confirmar-reserva">Confirmar Reserva Definitiva</button>
+                    </div>
+
+                    <!-- Botón para volver atrás (limpia el checkbox vía CSS trick / click) -->
+                    <label for="toggle-datos-personales"
+                        style="display:block; text-align:center; margin-top:2rem; color:var(--text-muted); cursor:pointer; text-decoration:underline; font-weight:600;">
+                        Volver a la selección de habitaciones
+                    </label>
+
+                </form>
+            </section>
+
+        </div>
+
+        <!-- SECCIÓN OCULTA 3: CONFIRMACIÓN FINAL -->
+        <input type="checkbox" id="toggle-confirmacion" style="display: none;">
+        <section class="seccion-confirmacion-final">
+            <div class="container"
+                style="display: flex; justify-content: center; align-items: center; min-height: 60vh; margin-top: 2rem;">
+                <div
+                    style="text-align: center; max-width: 650px; width: 100%; background: var(--white); padding: 4rem 3rem; border: 1px solid var(--colonial-border); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);">
+                    <i class="fa-solid fa-circle-check"
+                        style="font-size: 5.5rem; color: var(--success-color); margin-bottom: 1.5rem;"></i>
+                    <h2 class="form-heading" style="margin-bottom: 1rem;">¡Reserva Confirmada!</h2>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6; margin-bottom: 2.5rem;">
+                        Tu solicitud de hospedaje ha sido registrada exitosamente. Hemos enviado un correo con todos los
+                        detalles de pago y políticas de recepción.
+                    </p>
+
+                    <!-- Tarjeta con el Estilo limpio de las Habitaciones -->
+                    <div class="room-card"
+                        style="margin-bottom: 3.5rem; text-align: left; max-width: 500px; margin-left: auto; margin-right: auto; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);">
+                        <!-- Imagen Decorativa de Confirmación que cambiará con CSS -->
+                        <div class="conf-room-img-container"
+                            style="width: 100%; height: 250px; overflow: hidden; background: var(--white); position: relative;">
+                            <img src="img/101_tzintzuntzan.jpg" class="img-101" alt="101 Tzintzuntzan"
+                                style="width: 100%; height: 100%; object-fit: cover; display: none;">
+                            <img src="img/102_paracho.jpg" class="img-102" alt="102 Paracho"
+                                style="width: 100%; height: 100%; object-fit: cover; display: none;">
+                            <img src="img/103_yunuen.jpg" class="img-103" alt="103 Yunuen"
+                                style="width: 100%; height: 100%; object-fit: cover; display: none;">
+                            <img src="img/104_patzcuaro.jpg" class="img-104" alt="104 Pátzcuaro"
+                                style="width: 100%; height: 100%; object-fit: cover; display: none;">
+                            <img src="img/105_coeneo.jpg" class="img-105" alt="105 Coeneo"
+                                style="width: 100%; height: 100%; object-fit: cover; display: none;">
+                            <img src="img/106_janitzio.jpg" class="img-106" alt="106 Janitzio"
+                                style="width: 100%; height: 100%; object-fit: cover; display: none;">
+                            <img src="img/201_quencio.jpg" class="img-201" alt="201 Suite Quencio"
+                                style="width: 100%; height: 100%; object-fit: cover; display: none;">
+                            <img src="img/202_morelia.jpg" class="img-202" alt="202 Morelia"
+                                style="width: 100%; height: 100%; object-fit: cover; display: none;">
+                            <img src="img/203_tacambaro.jpg" class="img-203" alt="203 Tacámbaro"
+                                style="width: 100%; height: 100%; object-fit: cover; display: none;">
+                            <img src="img/204_uruapan.jpg" class="img-204" alt="204 Uruapan"
+                                style="width: 100%; height: 100%; object-fit: cover; display: none;">
+                        </div>
+
+                        <div class="room-content" style="padding: 2.5rem;">
+                            <h3
+                                style="font-family: 'Playfair Display', serif; color: var(--color-brand); font-size: 1.8rem; margin-bottom: 2rem; text-align: center;">
+                                Detalles de la Reserva</h3>
+
+                            <div
+                                style="display: flex; flex-direction: column; gap: 1.2rem; font-size: 1rem; color: var(--color-dark);">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span style="color: var(--text-muted); font-weight: 600;">Hotel</span>
+                                    <strong>Quinta Dalam</strong>
+                                </div>
+                                <div class="conf-room-name"
+                                    style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span style="color: var(--text-muted); font-weight: 600;">Habitación</span>
+                                    <strong class="conf-default">Standard</strong>
+                                    <strong class="name-101" style="display: none; color: var(--color-brand);">101
+                                        Tzintzuntzan</strong>
+                                    <strong class="name-102" style="display: none; color: var(--color-brand);">102
+                                        Paracho</strong>
+                                    <strong class="name-103" style="display: none; color: var(--color-brand);">103
+                                        Yunuen</strong>
+                                    <strong class="name-104" style="display: none; color: var(--color-brand);">104
+                                        Pátzcuaro</strong>
+                                    <strong class="name-105" style="display: none; color: var(--color-brand);">105
+                                        Coeneo</strong>
+                                    <strong class="name-106" style="display: none; color: var(--color-brand);">106
+                                        Janitzio</strong>
+                                    <strong class="name-201" style="display: none; color: var(--color-brand);"><i
+                                            class="fa-solid fa-crown" style="color:var(--color-secondary);"></i> 201
+                                        Suite Quencio</strong>
+                                    <strong class="name-202" style="display: none; color: var(--color-brand);">202
+                                        Morelia</strong>
+                                    <strong class="name-203" style="display: none; color: var(--color-brand);">203
+                                        Tacámbaro</strong>
+                                    <strong class="name-204" style="display: none; color: var(--color-brand);">204
+                                        Uruapan</strong>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span style="color: var(--text-muted); font-weight: 600;">Fechas</span>
+                                    <span>13/08/2026 - 17/08/2026</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span style="color: var(--text-muted); font-weight: 600;">Huéspedes</span>
+                                    <span>2 Adultos</span>
+                                </div>
+                                <div>
+                                    <small
+                                        style="display: block; color: var(--text-muted); font-weight: bold; margin-bottom: 0.3rem;">CHECK-IN</small>
+                                    <span><i class="fa-regular fa-calendar" style="color: var(--color-secondary);"></i>
+                                        13
+                                        de Agosto, 2026</span>
+                                </div>
+                                <div>
+                                    <small
+                                        style="display: block; color: var(--text-muted); font-weight: bold; margin-bottom: 0.3rem;">CHECK-OUT</small>
+                                    <span><i class="fa-regular fa-calendar" style="color: var(--color-secondary);"></i>
+                                        17
+                                        de Agosto, 2026</span>
+                                </div>
+                                <div>
+                                    <small
+                                        style="display: block; color: var(--text-muted); font-weight: bold; margin-bottom: 0.3rem;">HUÉSPEDES</small>
+                                    <span>2 Adultos</span>
+                                </div>
+                                <div class="conf-room-price"
+                                    style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; padding-top: 1.5rem; border-top: 1px solid var(--colonial-border);">
+                                    <span
+                                        style="color: var(--color-dark); font-weight: bold; font-family: 'Playfair Display', serif; font-size: 1.2rem;">Total
+                                        Aproximado</span>
+                                    <strong class="conf-default"
+                                        style="font-size: 1.4rem; color: var(--color-brand);">--</strong>
+                                    <strong class="price-101"
+                                        style="display: none; font-size: 1.4rem; color: var(--color-brand);">MXN
+                                        $4,800</strong>
+                                    <strong class="price-102"
+                                        style="display: none; font-size: 1.4rem; color: var(--color-brand);">MXN
+                                        $4,800</strong>
+                                    <strong class="price-103"
+                                        style="display: none; font-size: 1.4rem; color: var(--color-brand);">MXN
+                                        $4,800</strong>
+                                    <strong class="price-104"
+                                        style="display: none; font-size: 1.4rem; color: var(--color-brand);">MXN
+                                        $6,000</strong>
+                                    <strong class="price-105"
+                                        style="display: none; font-size: 1.4rem; color: var(--color-brand);">MXN
+                                        $4,800</strong>
+                                    <strong class="price-106"
+                                        style="display: none; font-size: 1.4rem; color: var(--color-brand);">MXN
+                                        $4,800</strong>
+                                    <strong class="price-201"
+                                        style="display: none; font-size: 1.4rem; color: var(--color-brand);">MXN
+                                        $11,200</strong>
+                                    <strong class="price-202"
+                                        style="display: none; font-size: 1.4rem; color: var(--color-brand);">MXN
+                                        $6,400</strong>
+                                    <strong class="price-203"
+                                        style="display: none; font-size: 1.4rem; color: var(--color-brand);">MXN
+                                        $4,800</strong>
+                                    <strong class="price-204"
+                                        style="display: none; font-size: 1.4rem; color: var(--color-brand);">MXN
+                                        $5,600</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="index.html" class="btn-seleccionar-label"
+                        style="text-decoration: none; padding: 1.2rem 3.5rem; font-size: 1.1rem; display: inline-block; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">Volver
+                        a la Página Principal</a>
+                </div>
+            </div>
+        </section>
     </main>
-
-    <br>
-    <hr>
-
-    <footer id="contacto">
-        <div align="center">
-            <h3>Síguenos</h3>
-            <a href="https://www.facebook.com/profile.php?id=61584681841684" target="_blank">
-                <img src="img/facebook.png" alt="Facebook" title="Facebook Quinta Dalam" width="30">
-            </a>
-            &nbsp;&nbsp;
-            <a href="https://www.instagram.com/quintadalam" target="_blank">
-                <img src="img/instagram.png" alt="Instagram" title="Instagram Quinta Dalam" width="30">
-            </a>
-            &nbsp;&nbsp;
-            <a href="https://www.tiktok.com/@quintadalam" target="_blank">
-                <img src="img/tiktok.png" alt="TikTok" title="TikTok Quinta Dalam" width="30">
-            </a>
-
-            <br><br>
-            <small>&copy; 2026 Hotel Quinta Dalam</small>
-            <br>
-            <small>Todos los derechos reservados</small>
-        </div>
-    </footer>
 
 </body>
 
