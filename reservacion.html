@@ -15,8 +15,7 @@
 
 <body class="bg-resultados">
 
-    <!-- Lógica CSS para Secciones (Sin JS) -->
-    <!-- Este checkbox oculto controla si mostramos Habitaciones vs Datos Personales -->
+    <!-- Controlador de vistas -->
     <input type="checkbox" id="toggle-datos-personales" style="display: none;">
 
     <header class="header-nav">
@@ -41,10 +40,8 @@
     </header>
 
     <main>
-        <!-- Pasos de Progreso -->
         <div class="progress-bar-container">
             <div class="progress-steps container">
-                <!-- Usamos clases step-1 y step-2 para controlarlos con el checkbox global -->
                 <div class="step step-1 active">
                     <div class="step-circle">1</div>
                     <span>SELECCIÓN DE HABITACIÓN</span>
@@ -63,7 +60,6 @@
         </div>
 
         <div class="container">
-            <!-- Barra de Resumen -->
             <div class="search-summary-bar">
                 <div class="container summary-grid">
                     <div class="summary-item">
@@ -91,17 +87,11 @@
                 </div>
             </div>
 
-            <!-- Layout Central (Grid 2 Columnas) -->
             <div class="results-layout">
-
-                <!-- Columna Izquierda: Lista de Habitaciones -->
                 <section class="rooms-list">
                     <h2
                         style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0;">
                         Lista de Habitaciones Disponibles</h2>
-
-                    <!-- Lógica CSS de Selección: Radios ocultos antes de cada tarjeta -->
-                    <!-- El 'name="room-selection"' asegura que solo 1 pueda estar activa -->
 
                     <!-- Habitación 101 Tzintzuntzan -->
                     <input type="radio" name="room-selection" id="room101" class="room-radio-input">
@@ -603,7 +593,7 @@
 
                 </section>
 
-                <!-- Columna Derecha: Carrito Sticky (Sidebar) -->
+                <!-- Panel derecho: Resumen de reserva -->
                 <aside class="sticky-sidebar">
                     <div class="cart-box">
                         <div class="cart-header">
@@ -621,15 +611,13 @@
 
                         <div class="cart-section-break"></div>
 
-                        <!-- Estado original sin seleccion -->
+                        <!-- Panel vacío -->
                         <div class="cart-empty-state">
                             <span>Habitación</span>
                             <span style="opacity: 0.5;">¡Elige tu habitación!</span>
                         </div>
 
-                        <!-- Opciones dinámicas que aparecen con CSS puro -->
-                        <!-- Multiplicacion de 4 noches por habitación en los total amount -->
-
+                        <!-- Opciones de habitaciones -->
                         <div class="cart-room-dynamic room101-info">
                             <div class="dynamic-room-name"><span>101 Tzintzuntzan</span> <span
                                     class="dynamic-room-price">MXN 4,800</span></div>
@@ -748,8 +736,7 @@
                             </div>
                         </div>
 
-                        <!-- Botón para avanzar a Datos Personales basado en CSS Label Action -->
-                        <!-- Este label activa el checkbox con id 'toggle-datos-personales' que inicia al principio del body -->
+                        <!-- Botón continuar -->
                         <label for="toggle-datos-personales" class="btn-submit-cart">Continuar a datos personales <i
                                 class="fa-solid fa-chevron-right"></i></label>
 
@@ -760,7 +747,7 @@
                 </aside>
             </div>
 
-            <!-- SECCIÓN OCULTA: DATOS PERSONALES Y CONFIRMACIÓN -->
+            <!-- Formulario de datos -->
             <section class="seccion-datos-personales">
                 <h2 class="form-heading">Introduce tus datos</h2>
 
@@ -783,7 +770,7 @@
                         </div>
                         <div class="input-group">
                             <label for="telefono">Teléfono de Contácto</label>
-                            <!-- Simulación ligera de prefijo -->
+                            <!-- Lada -->
                             <div style="display:flex;">
                                 <select class="input-style"
                                     style="border-right: none; background:#eee; width:80px; flex-shrink:0;">
@@ -812,7 +799,7 @@
 
                     <div style="margin-top:2rem; padding-top:2rem; border-top: 1px solid var(--colonial-border);">
 
-                        <!-- Términos y condiciones -->
+                        <!-- Políticas -->
                         <div class="terms-group"
                             style="margin-bottom: 2rem; display: flex; align-items: flex-start; gap: 1rem;">
                             <input type="checkbox" id="terminos" required
@@ -828,11 +815,11 @@
                             </label>
                         </div>
 
-                        <!-- Botón para finalizar -->
+                        <!-- Confirmar -->
                         <button type="submit" class="btn-confirmar-reserva">Confirmar Reserva Definitiva</button>
                     </div>
 
-                    <!-- Botón para volver atrás (limpia el checkbox vía CSS trick / click) -->
+                    <!-- Volver atras -->
                     <label for="toggle-datos-personales"
                         style="display:block; text-align:center; margin-top:2rem; color:var(--text-muted); cursor:pointer; text-decoration:underline; font-weight:600;">
                         Volver a la selección de habitaciones
@@ -843,7 +830,7 @@
 
         </div>
 
-        <!-- SECCIÓN OCULTA 3: CONFIRMACIÓN FINAL -->
+
         <input type="checkbox" id="toggle-confirmacion" style="display: none;">
         <section class="seccion-confirmacion-final">
             <div class="container"
@@ -858,10 +845,11 @@
                         detalles de pago y políticas de recepción.
                     </p>
 
-                    <!-- Tarjeta con el Estilo limpio de las Habitaciones -->
+
                     <div class="room-card"
                         style="margin-bottom: 3.5rem; text-align: left; max-width: 500px; margin-left: auto; margin-right: auto; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);">
-                        <!-- Imagen Decorativa de Confirmación que cambiará con CSS -->
+
+                        <!-- Imagen de la habitación -->
                         <div class="conf-room-img-container"
                             style="width: 100%; height: 250px; overflow: hidden; background: var(--white); position: relative;">
                             <img src="img/101_tzintzuntzan.jpg" class="img-101" alt="101 Tzintzuntzan"

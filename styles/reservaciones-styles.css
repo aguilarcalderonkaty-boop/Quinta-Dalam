@@ -459,9 +459,8 @@ body:has(.room-radio-input:checked) .btn-submit-cart:hover {
 }
 
 /* =========================================
-   FORMULARIO DATOS PERSONALES (Oculto inicialmente)
+   PANTALLA 2: DATOS PERSONALES
    ========================================= */
-/* La lógica CSS para pasar a datos personales usa un checkbox oculto */
 #toggle-datos-personales {
     display: none;
 }
@@ -476,23 +475,22 @@ body:has(.room-radio-input:checked) .btn-submit-cart:hover {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-/* Mostrar la sección de datos cuando se chequea pasar de sección */
+/* Animación al pasar a pantalla 2 */
 body:has(#toggle-datos-personales:checked) .seccion-datos-personales {
     display: block;
     animation: fadeIn 0.5s ease;
 }
 
-/* Ocultar listado de habitaciones si vamos al paso 2 */
+/* Ocultar vista inicial */
 body:has(#toggle-datos-personales:checked) .results-layout {
     display: none;
 }
 
-/* Ocultar barra de búsqueda si vamos al paso 2 */
 body:has(#toggle-datos-personales:checked) .search-summary-bar {
     display: none;
 }
 
-/* Cambiar step activo en la barra superior via CSS logic */
+/* Progreso pantalla 2 */
 body:has(#toggle-datos-personales:checked) .progress-bar-container .step-1 {
     color: #b0a39c;
 }
@@ -512,13 +510,13 @@ body:has(#toggle-datos-personales:checked) .progress-bar-container .step-2 .step
 }
 
 /* =========================================
-   PANTALLA 3: CONFIRMACIÓN DE RESERVA
+   PANTALLA 3: CONFIRMACIÓN
    ========================================= */
 .seccion-confirmacion-final {
     display: none;
 }
 
-/* Lógica dinámica de Confirmación (Mostrar Foto, Nombre y Precio de lo seleccionado) */
+/* Detalles de confirmación de la habitación */
 body:has(#room101:checked) .conf-room-img-container .img-101,
 body:has(#room101:checked) .conf-room-name .name-101,
 body:has(#room101:checked) .conf-room-price .price-101 {
@@ -579,24 +577,22 @@ body:has(#room204:checked) .conf-room-price .price-204 {
     display: inline-block !important;
 }
 
-/* Ocultar placeholders por defecto cuando HAY alguna habitación seleccionada */
+/* Mostrar datos y formulario correctos */
 body:has(input[name="room-selection"]:checked) .conf-room-name .conf-default,
 body:has(input[name="room-selection"]:checked) .conf-room-price .conf-default {
     display: none !important;
 }
 
-/* Ocultar formulario de datos si se activa la confirmación */
 body:has(#toggle-confirmacion:checked) .seccion-datos-personales {
     display: none !important;
 }
 
-/* Mostrar panel final */
 body:has(#toggle-confirmacion:checked) .seccion-confirmacion-final {
     display: block;
     animation: fadeIn 0.5s ease;
 }
 
-/* Animaciones sobre la barra de progreso general en paso 3 */
+/* Progreso pantalla 3 */
 body:has(#toggle-confirmacion:checked) .progress-bar-container .step-1,
 body:has(#toggle-confirmacion:checked) .progress-bar-container .step-2 {
     color: #b0a39c;
