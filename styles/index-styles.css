@@ -114,7 +114,6 @@ body {
 
 .navbar-wide {
     width: 96%;
-    /* Para evitar que llegue a tocar matemáticamente los bordes en monitores gigantes */
     max-width: none;
     margin: 0 auto;
 }
@@ -140,21 +139,28 @@ body {
 }
 
 .brand-title {
-    font-weight: 400;
-    font-size: 1.4rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.5rem;
     letter-spacing: 2px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .brand-subtitle {
-    font-size: 0.6rem;
-    letter-spacing: 1px;
-    color: #ccc;
+    font-family: 'Lora', serif;
+    font-size: 0.65rem;
+    letter-spacing: 1.5px;
+    color: #ffd700;
+    /* Dorado para destacar elegancia */
+    text-transform: uppercase;
 }
 
 .nav-links-group {
     display: flex;
     align-items: center;
     gap: 1.5rem;
+    font-family: 'Lora', serif;
+    font-size: 1.05rem;
 }
 
 .navbar-right {
@@ -166,6 +172,7 @@ body {
     display: flex;
     align-items: center;
     gap: 1.5rem;
+    font-family: 'Lora', serif;
 }
 
 .social-top-nav {
@@ -279,6 +286,9 @@ section {
    ESTILOS DEL FOOTER Y REDES SOCIALES
    ========================================= */
 .footer-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
     margin-bottom: 1rem;
 }
 
@@ -311,42 +321,48 @@ section {
     display: inline-block;
     padding: 0.8rem 1.5rem;
     text-decoration: none;
-    font-weight: 500;
+    font-family: 'Lora', serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
     text-align: center;
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
 }
 
 .btn-primary {
     background-color: #7A5051;
-    /* Verde turquesa */
     color: var(--white);
 }
 
 .btn-primary:hover {
-    background-color: #000000;
+    background-color: #5a3b3c;
 }
 
 .btn-secondary {
-    background-color: #003264;
-    /* Azul oscuro corporativo */
-    color: var(--white);
+    background-color: #e2cba4;
+    /* Color arena/dorado */
+    color: #3A1F23;
+    /* Marrón oscuro para contraste */
 }
 
 .btn-secondary:hover {
-    background-color: #002244;
+    background-color: #c9a77b;
+    /* Arena oscuro al hacer hover */
+    color: #1a0f0a;
 }
 
 .btn-clear {
     background-color: transparent;
-    border: 1px solid #cbd5e1;
-    color: var(--color-dark);
+    border: 1px solid #e2cba4;
+    color: #e2cba4;
 }
 
 .btn-clear:hover {
-    background-color: #f1f5f9;
+    background-color: rgba(226, 203, 164, 0.15);
+    color: #ffffff;
+    border-color: #ffffff;
 }
 
 /* Hero */
@@ -356,7 +372,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: linear-gradient(rgba(58, 31, 35, 0.5), rgba(58, 31, 35, 0.5)), url('../img/NAV.jpg');
+    background-image: linear-gradient(rgba(58, 31, 35, 0.4), rgba(58, 31, 35, 0.5)), url('../img/NAV.jpg');
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -372,18 +388,21 @@ section {
 }
 
 .hero-title {
-    font-family: 'Georgia', serif;
-    /* Estilo serif similar a la imagen */
-    font-size: 4.5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
     margin: 1rem 0;
-    font-weight: normal;
+    font-weight: 700;
+    text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.5);
+    /* Sombra elegante */
 }
 
 .hero-subtitle {
-    font-size: 1rem;
-    letter-spacing: 2px;
+    font-family: 'Lora', serif;
+    font-size: 1.1rem;
+    letter-spacing: 3px;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 500;
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-actions {
@@ -512,14 +531,21 @@ section {
    SECCIÓN MISIÓN Y VISIÓN (Intercalada)
    ========================================= */
 .about-section {
-    padding: 3rem 0;
+    padding: 0;
+    /* Quitado padding superior/inferior para pegar héroe vs contenido */
 }
 
 .alternating-row {
     display: flex;
     align-items: center;
     gap: 4rem;
-    margin-bottom: 5rem;
+    margin-bottom: 0;
+    /* Removido el margen inferior que separaba las cajitas */
+}
+
+.alternating-row.edge-to-edge {
+    gap: 0;
+    margin-bottom: 0;
 }
 
 .alternating-row:last-child {
@@ -543,9 +569,27 @@ section {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.alt-row-content {
+.alternating-row.edge-to-edge .alt-row-image img {
+    border-radius: 0;
+    box-shadow: none;
+    height: 500px;
+    /* Más alto, estilo widescreen cinematográfico */
+}
+
+.alt-row-content-wrapper {
     flex: 1;
-    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem 6rem;
+    /* Padding amplio para no tocar los bordes */
+}
+
+.alt-row-content {
+    /* flex: 1; y padding: 1rem; ya no aplican directamente si usamos el wrapper, pero lo mantenemos por si acaso */
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .alt-title {
@@ -572,116 +616,227 @@ section {
         margin-bottom: 4rem;
     }
 
+    .alternating-row.edge-to-edge,
+    .alternating-row.edge-to-edge.reverse {
+        flex-direction: column;
+        gap: 0;
+        margin-bottom: 0;
+    }
+
     .alt-row-image img {
         height: 250px;
+    }
+
+    .alternating-row.edge-to-edge .alt-row-image img {
+        height: 300px;
     }
 
     .alt-row-content {
         padding: 0;
     }
+
+    .alt-row-content-wrapper {
+        padding: 3rem 1.5rem;
+    }
 }
 
-/* Habitaciones estilo hacienda */
-.floor-title {
-    background-color: #e2cba4;
-    /* Arena colonial */
-    color: #3A1F23;
-    padding: 0.8rem;
-    text-align: center;
-    border-radius: 4px;
-    margin: 3rem 0 2rem 0;
-    border: 1px solid #c9a77b;
-    font-family: 'Georgia', serif;
-    letter-spacing: 2px;
+/* =========================================
+   HABITACIONES ESTILO XCARET (Filtros CSS)
+   ========================================= */
+
+/* Radio inputs ocultos para la lógica de filtrado */
+.x-cat-radio {
+    display: none;
 }
 
-.room-card {
-    background-color: #fffaf5;
-    /* Blanco cálido */
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #e6d5c3;
-    border-bottom: 5px solid #8c5a45;
-    /* Detalle terracota */
-}
-
-.room-card-image {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-}
-
-.room-card-body {
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    text-align: center;
-}
-
-.room-card-title {
-    font-family: 'Georgia', serif;
-    font-size: 1.4rem;
-    color: #3A1F23;
-    margin-bottom: 0.5rem;
-}
-
-.room-card-description {
-    color: #6d4432;
-    margin-bottom: 1.5rem;
-    flex-grow: 1;
-    font-style: italic;
-}
-
-.room-card-footer {
+/* Menú de categorías */
+.x-cat-menu {
     display: flex;
     justify-content: center;
-    border-top: 1px solid #e2cba4;
-    padding-top: 1rem;
-    background-color: #fdf6eb;
+    gap: 3rem;
+    margin-bottom: 4rem;
+    padding-bottom: 0;
 }
 
-/* Rediseño del botón secundario para que combine */
-.btn-secondary {
-    background-color: #3A1F23;
-    /* Madera oscura */
-    color: var(--white);
-    border: 1px solid #3A1F23;
-}
-
-.btn-secondary:hover {
-    background-color: #8c5a45;
-    /* Terracota al pasar el mouse */
-}
-
-/* Suite Destacada estilo Premium Colonial */
-.suite-card {
-    background-color: #3A1F23;
-    /* Fondo oscuro elegante */
-    color: #e2cba4;
-    /* Letras doradas/arena */
-    border: 2px solid #c9a77b;
-    border-radius: 8px;
-    padding: 3rem 2rem;
-    text-align: center;
-    margin-bottom: 3rem;
-    box-shadow: 0 10px 30px rgba(58, 31, 35, 0.4);
-}
-
-.suite-card-title {
+.x-cat-label {
+    cursor: pointer;
     font-family: 'Georgia', serif;
-    font-size: 2rem;
-    color: #e2cba4;
-    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: #888;
+    padding-bottom: 0.5rem;
+    position: relative;
+    transition: color 0.3s ease;
 }
 
-.suite-card-description {
-    color: #fdf6eb;
-    font-size: 1.1rem;
+.x-cat-label:hover {
+    color: #444;
+}
+
+/* Estado Activo (La línea inferior dorada) */
+#x-cat-pb:checked~.x-cat-menu label[for="x-cat-pb"],
+#x-cat-pa:checked~.x-cat-menu label[for="x-cat-pa"],
+#x-cat-suites:checked~.x-cat-menu label[for="x-cat-suites"] {
+    color: var(--color-brand);
+    font-weight: bold;
+}
+
+#x-cat-pb:checked~.x-cat-menu label[for="x-cat-pb"]::after,
+#x-cat-pa:checked~.x-cat-menu label[for="x-cat-pa"]::after,
+#x-cat-suites:checked~.x-cat-menu label[for="x-cat-suites"]::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-brand);
+}
+
+/* Mostrar/Ocultar Filas según el Radio checked */
+#x-cat-pb:checked~.x-rooms-list .x-room-row:not(.x-cat-pb) {
+    display: none;
+}
+
+#x-cat-pa:checked~.x-rooms-list .x-room-row:not(.x-cat-pa) {
+    display: none;
+}
+
+#x-cat-suites:checked~.x-rooms-list .x-room-row:not(.x-cat-suites) {
+    display: none;
+}
+
+/* Diseño de la Fila (Tarjeta Horizontal) */
+.x-room-row {
+    display: flex;
+    gap: 4rem;
+    margin-bottom: 5rem;
+    align-items: center;
+}
+
+.x-room-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.x-room-img-container {
+    flex: 1.2;
+}
+
+.x-room-img-container img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.x-room-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+.x-room-content h3 {
+    font-family: 'Georgia', serif;
+    font-size: 1.8rem;
+    color: var(--color-brand);
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.x-room-subtitle {
+    font-size: 0.85rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.x-room-desc {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
     margin-bottom: 2rem;
+}
+
+/* Amenidades */
+.x-room-amenities {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.x-room-amenities li {
+    font-size: 0.9rem;
+    color: #444;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.x-room-amenities i {
+    width: 20px;
+    color: #888;
+    text-align: center;
+}
+
+/* Acciones Inferiores */
+.x-room-actions {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eaeaea;
+    padding-top: 1.5rem;
+}
+
+.x-link-amenities {
+    font-size: 0.8rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+    font-weight: bold;
+}
+
+.x-link-amenities:hover {
+    color: var(--color-brand);
+}
+
+.btn-reservar-x {
+    background-color: #8c5a45;
+    /* Tono tierra/colonial */
+    color: white;
+    padding: 0.8rem 2rem;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border-radius: 2px;
+    transition: background-color 0.3s;
+}
+
+.btn-reservar-x:hover {
+    background-color: #5c3b2c;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+
+    .x-room-row,
+    .x-room-row.reverse {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .x-room-img-container img {
+        min-height: 250px;
+    }
+
+    .x-cat-menu {
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
 }
 
 /* Formularios */
@@ -1097,31 +1252,62 @@ section {
     border-color: var(--color-brand);
 }
 
-/* Contacto estilo rústico */
+/* Sección de Contacto con Fondo Completo */
+.contact-section {
+    position: relative;
+    background-image: linear-gradient(rgba(30, 15, 10, 0.75), rgba(30, 15, 10, 0.75)), url('../img/banner_contacto.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 6rem 0;
+    color: white;
+}
+
+.contact-section .section-title,
+.contact-section p {
+    color: white;
+}
+
+/* Remover cajas, estilo minimalista divido en 2 */
 .contact-info,
 .contact-form-container {
-    background: #fffaf5;
-    /* Blanco colonial */
-    padding: 2.5rem;
-    border-radius: 8px;
-    border: 1px solid #e6d5c3;
-    border-left: 6px solid #8c5a45;
-    /* Línea gruesa de barro/terracota a la izquierda */
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    background: transparent;
+    padding: 1rem;
+    /* Un ligero espaciado interno */
+    border: none;
+    box-shadow: none;
 }
 
 .contact-subtitle {
-    font-family: 'Georgia', serif;
-    font-size: 1.4rem;
-    color: #3A1F23;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: #e2cba4;
+    /* Tono dorado/arena para subtítulos sobre fondo oscuro */
     margin-bottom: 1rem;
-    border-bottom: 1px solid #e2cba4;
+    border-bottom: 1px solid rgba(226, 203, 164, 0.3);
     padding-bottom: 0.5rem;
 }
 
 .contact-detail {
-    color: #5c433b;
+    font-family: 'Lora', serif;
+    color: #fdf6eb;
+    /* Blanco roto suave */
     margin-bottom: 0.8rem;
+    font-size: 1.15rem;
+    letter-spacing: 0.5px;
+}
+
+.contact-detail a,
+.contact-detail b a {
+    color: #fdf6eb;
+    text-decoration: underline;
+}
+
+.contact-section .form-label {
+    font-family: 'Lora', serif;
+    color: #e2cba4;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
 }
 
 /* Estilo para los campos del formulario de contacto */
