@@ -9,8 +9,17 @@
         content="Hotel Quinta Dalam - La esencia de Michoacán. Hospédate en habitaciones inspiradas en los Pueblos Mágicos de Michoacán.">
     <title>Hotel Quinta Dalam - Reserva para conocer todo Michoacán en Quencio</title>
     <link rel="icon" href="icons/hotel-solid.png" type="image/png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,600&display=swap"
+        rel="stylesheet">
+
     <!-- Arquitectura CSS combinada -->
-    <link rel="stylesheet" href="styles/index-styles.css">
+    <link rel="stylesheet"
+        href="https://raw.githubusercontent.com/aguilarcalderonkaty-boop/Quinta-Dalam/refs/heads/main/styles/index-styles.css?token=GHSAT0AAAAAADV2ZOBMD6XKLBWNI6EUKGA22NHSVXQ">
 </head>
 
 <body>
@@ -40,8 +49,9 @@
                 <div class="navbar-secondary-links">
 
                     <div class="social-top-nav">
-                        <a href="https://wa.me/524431234567" target="_blank" class="icono-animado" title="WhatsApp">
-                            <i class="fa-brands fa-whatsapp social-icon-lg"></i>
+                        <a href="https://www.instagram.com/quintadalam" target="_blank" class="icono-animado"
+                            title="Instagram">
+                            <i class="fa-brands fa-instagram social-icon-lg"></i>
                         </a>
                         <a href="https://www.facebook.com/profile.php?id=61584681841684" target="_blank"
                             class="icono-animado" title="Facebook">
@@ -63,13 +73,7 @@
                     <div class="separator-md"></div>
 
                     <a href="#contacto" class="nav-animado contact-link-wrapper" title="Ir a Contacto">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="contact-icon">
-                            <path
-                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-                            </path>
-                        </svg>
+                        <span>Contacto e Información</span>
                     </a>
                 </div>
             </div>
@@ -119,35 +123,44 @@
         </div>
 
 
-        <section class="about-section container" style="margin-top: 2rem;">
+        <section class="about-section" style="margin-top: 0;">
             <!-- Misión: Imagen Izquierda, Texto Derecha -->
-            <div class="alternating-row">
+            <div class="alternating-row edge-to-edge">
                 <div class="alt-row-image">
                     <img src="img/frontal-hotel.jpg" alt="Nuestra Misión" title="Imagen de la Misión">
                 </div>
-                <div class="alt-row-content">
-                    <h2 class="alt-title">Nuestra Misión</h2>
-                    <p class="alt-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in.
-                    </p>
+                <div class="alt-row-content-wrapper">
+                    <div class="alt-row-content">
+                        <h2 class="alt-title">Nuestra Misión</h2>
+                        <p class="alt-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in.
+                        </p>
+                    </div>
                 </div>
             </div>
 
             <!-- Visión: Texto Izquierda, Imagen Derecha (manejado por CSS reverse) -->
-            <div class="alternating-row reverse">
+            <div class="alternating-row edge-to-edge reverse">
                 <div class="alt-row-image">
                     <img src="img/quencio.jpg" alt="Nuestra Visión" title="Imagen de la Visión">
                 </div>
-                <div class="alt-row-content">
-                    <h2 class="alt-title">Nuestra Visión</h2>
-                    <p class="alt-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in.
-                    </p>
+                <div class="alt-row-content-wrapper">
+                    <div class="alt-row-content">
+                        <h2 class="alt-title">Nuestra Visión</h2>
+                        <p class="alt-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in.
+                        </p>
+                    </div>
                 </div>
+            </div>
+
+            <!-- Botón Más Sobre Nosotros -->
+            <div class="container text-center" style="margin-top: 4rem; padding-bottom: 2rem;">
+                <a href="#" class="btn-primary">MÁS SOBRE NOSOTROS</a>
             </div>
         </section>
 
@@ -155,185 +168,369 @@
         <section id="habitaciones" class="rooms-section">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-title">Nuestros Espacios</h2>
-                    <p>Cada habitación está inspirada en un Pueblo Mágico de Michoacán.</p>
+                    <h2 class="section-title" style="margin-bottom: 1rem;">SUITES Y HABITACIONES</h2>
+                    <p style="margin-bottom: 3rem;">Descubre la habitación que más se adapte a ti y deléitate con
+                        nuestra hospitalidad.</p>
                 </div>
 
-                <div class="floor-title">
-                    <h3>PLANTA BAJA</h3>
+                <!-- CONTROLES RADIO OCULTOS (MAGIA CSS) -->
+                <input type="radio" name="x-room-cat" id="x-cat-pb" class="x-cat-radio" checked>
+                <input type="radio" name="x-room-cat" id="x-cat-pa" class="x-cat-radio">
+                <input type="radio" name="x-room-cat" id="x-cat-suites" class="x-cat-radio">
+
+                <!-- MENU DE CATEGORIAS -->
+                <div class="x-cat-menu">
+                    <label for="x-cat-pb" class="x-cat-label">Planta Baja</label>
+                    <label for="x-cat-pa" class="x-cat-label">Planta Alta</label>
+                    <label for="x-cat-suites" class="x-cat-label">Suites</label>
                 </div>
 
-                <div class="rooms-grid">
-                    <!-- Room 101 -->
-                    <article class="room-card">
-                        <img src="img/101_tzintzuntzan.jpg" alt="Foto Habitación" title="Tzintzuntzan Quinta Dalam"
-                            class="room-card-image">
-                        <div class="room-card-body">
-                            <h3 class="room-card-title">101: Tzintzuntzan</h3>
-                            <p class="room-card-description">Capital del imperio Purépecha.</p>
-                            <div class="room-card-footer">
-                                <a href="#reservar" class="btn-secondary">RESERVAR ESTA HABITACION</a>
+                <!-- LISTA DE HABITACIONES -->
+                <div class="x-rooms-list">
+
+                    <!-- ==============================================
+                         SUITES
+                         ============================================== -->
+
+                    <!-- ROOM 201 SUITE QUENCIO (SUITE) -->
+                    <article class="x-room-row x-cat-suites">
+                        <div class="x-room-img-container">
+                            <img src="img/suite_quencio.jpg" alt="Suite Quencio">
+                        </div>
+                        <div class="x-room-content">
+                            <h3>SUITE QUENCIO</h3>
+                            <span class="x-room-subtitle">201 CASA PRINCIPAL - PLANTA ALTA</span>
+                            <p class="x-room-desc">Complementa las vistas a los jardines con el confort de una suite
+                                superior, con amenidades premium y una decoración auténtica para relajarte al máximo.
+                            </p>
+
+                            <ul class="x-room-amenities">
+                                <li><i class="fa-solid fa-water"></i> Vista al jardín central</li>
+                                <li><i class="fa-solid fa-users"></i> 4 huéspedes: Capacidad máxima hasta 4 adultos</li>
+                                <li><i class="fa-solid fa-bed"></i> 1 Cama King Size, 1 Sofá Cama</li>
+                            </ul>
+
+                            <div class="x-room-actions">
+                                <a href="habitaciones.html" class="x-link-amenities">VER AMENIDADES</a>
+                                <a href="reservacion.html" class="btn-reservar-x">Reservar</a>
                             </div>
                         </div>
                     </article>
 
-                    <!-- Room 102 -->
-                    <article class="room-card">
-                        <img src="img/102_paracho.jpg" alt="Foto Habitación" title="Paracho Quinta Dalam"
-                            class="room-card-image">
-                        <div class="room-card-body">
-                            <h3 class="room-card-title">102: Paracho</h3>
-                            <p class="room-card-description">Capital mundial de la guitarra.</p>
-                            <div class="room-card-footer">
-                                <a href="#reservar" class="btn-secondary">RESERVAR ESTA HABITACION</a>
+                    <!-- ==============================================
+                         PLANTA BAJA
+                         ============================================== -->
+
+                    <!-- ROOM 101 TZINTZUNTZAN (PB) -->
+                    <article class="x-room-row x-cat-pb">
+                        <div class="x-room-img-container">
+                            <img src="img/habitacion_tzintzuntzan.jpg" alt="Habitación Tzintzuntzan">
+                        </div>
+                        <div class="x-room-content">
+                            <h3>101: TZINTZUNTZAN</h3>
+                            <span class="x-room-subtitle">HABITACIÓN ESTÁNDAR - PLANTA BAJA</span>
+                            <p class="x-room-desc">Inspirada en la antigua capital del imperio Purépecha. Cuenta con
+                                detalles artesanales en barro y madera que te transportarán a las raíces de nuestro
+                                estado.</p>
+
+                            <ul class="x-room-amenities">
+                                <li><i class="fa-solid fa-door-open"></i> Acceso directo al patio</li>
+                                <li><i class="fa-solid fa-users"></i> 2 huéspedes adultos</li>
+                                <li><i class="fa-solid fa-bed"></i> 1 Cama Matrimonial</li>
+                            </ul>
+
+                            <div class="x-room-actions">
+                                <a href="habitaciones.html" class="x-link-amenities">VER AMENIDADES</a>
+                                <a href="reservacion.html" class="btn-reservar-x">Reservar</a>
                             </div>
                         </div>
                     </article>
 
-                    <!-- Room 103 -->
-                    <article class="room-card">
-                        <img src="img/103_yunuen.jpg" alt="Foto Habitación" title="Yunuen Quinta Dalam"
-                            class="room-card-image">
-                        <div class="room-card-body">
-                            <h3 class="room-card-title">103: Yunuen</h3>
-                            <p class="room-card-description">Isla con encanto y tradición.</p>
-                            <div class="room-card-footer">
-                                <a href="#reservar" class="btn-secondary">RESERVAR ESTA HABITACION</a>
+                    <!-- ROOM 102 PARACHO (PB) -->
+                    <article class="x-room-row x-cat-pb reverse">
+                        <div class="x-room-img-container">
+                            <img src="img/habitacion_paracho.jpg" alt="Habitación Paracho">
+                        </div>
+                        <div class="x-room-content">
+                            <h3>102: PARACHO</h3>
+                            <span class="x-room-subtitle">HABITACIÓN DOBLE - PLANTA BAJA</span>
+                            <p class="x-room-desc">La capital mundial de la guitarra interpretada en finos acabados de
+                                madera. Una habitación con diseño contemporáneo mexicano ideal para amigos o familias
+                                pequeñas.</p>
+
+                            <ul class="x-room-amenities">
+                                <li><i class="fa-solid fa-music"></i> Decoración musical temática</li>
+                                <li><i class="fa-solid fa-users"></i> Hasta 2 huéspedes adultos</li>
+                                <li><i class="fa-solid fa-bed"></i> 2 Camas Individuales</li>
+                            </ul>
+
+                            <div class="x-room-actions">
+                                <a href="habitaciones.html" class="x-link-amenities">VER AMENIDADES</a>
+                                <a href="reservacion.html" class="btn-reservar-x">Reservar</a>
                             </div>
                         </div>
                     </article>
 
-                    <!-- Room 104 -->
-                    <article class="room-card">
-                        <img src="img/104_patzcuaro.jpg" alt="Foto Habitación" title="Pátzcuaro Quinta Dalam"
-                            class="room-card-image">
-                        <div class="room-card-body">
-                            <h3 class="room-card-title">104: Pátzcuaro</h3>
-                            <p class="room-card-description">Pueblo mágico colonial.</p>
-                            <div class="room-card-footer">
-                                <a href="#reservar" class="btn-secondary">RESERVAR ESTA HABITACION</a>
+                    <!-- ROOM 103 YUNUEN (PB) -->
+                    <article class="x-room-row x-cat-pb">
+                        <div class="x-room-img-container">
+                            <img src="img/103_yunuen.jpg" alt="Habitación Yunuen"
+                                onerror="this.src='img/habitacion_tzintzuntzan.jpg'">
+                        </div>
+                        <div class="x-room-content">
+                            <h3>103: YUNUEN</h3>
+                            <span class="x-room-subtitle">HABITACIÓN ESTÁNDAR - PLANTA BAJA</span>
+                            <p class="x-room-desc">Con un nombre que evoca la hermosa isla del lago de Pátzcuaro, esta
+                                habitación ofrece tranquilidad y una atmósfera propicia para el descanso reparador con
+                                cómodos elementos rústicos.</p>
+
+                            <ul class="x-room-amenities">
+                                <li><i class="fa-solid fa-leaf"></i> Ambiente sereno y acogedor</li>
+                                <li><i class="fa-solid fa-users"></i> 2 huéspedes adultos</li>
+                                <li><i class="fa-solid fa-bed"></i> 1 Cama Matrimonial</li>
+                            </ul>
+
+                            <div class="x-room-actions">
+                                <a href="habitaciones.html" class="x-link-amenities">VER AMENIDADES</a>
+                                <a href="reservacion.html" class="btn-reservar-x">Reservar</a>
                             </div>
                         </div>
                     </article>
 
-                    <!-- Room 105 -->
-                    <article class="room-card">
-                        <img src="img/105_coeneo.jpg" alt="Foto Habitación" title="Coeneo Quinta Dalam"
-                            class="room-card-image">
-                        <div class="room-card-body">
-                            <h3 class="room-card-title">105: Coeneo</h3>
-                            <p class="room-card-description">Lugar de las lentejas.</p>
-                            <div class="room-card-footer">
-                                <a href="#reservar" class="btn-secondary">RESERVAR ESTA HABITACION</a>
+                    <!-- ROOM 104 PÁTZCUARO (PB) -->
+                    <article class="x-room-row x-cat-pb reverse">
+                        <div class="x-room-img-container">
+                            <img src="img/104_patzcuaro.jpg" alt="Habitación Pátzcuaro"
+                                onerror="this.src='img/habitacion_paracho.jpg'">
+                        </div>
+                        <div class="x-room-content">
+                            <h3>104: PÁTZCUARO</h3>
+                            <span class="x-room-subtitle">HABITACIÓN ESTÁNDAR - PLANTA BAJA</span>
+                            <p class="x-room-desc">Cálida y llena de arraigo, esta habitación recoge la esencia del
+                                Pueblo Mágico con maderas tintadas e iluminación íntima que enmarcan una estancia
+                                encantadora.</p>
+
+                            <ul class="x-room-amenities">
+                                <li><i class="fa-solid fa-gem"></i> Elementos decorativos tradicionales</li>
+                                <li><i class="fa-solid fa-users"></i> 2 huéspedes adultos</li>
+                                <li><i class="fa-solid fa-bed"></i> 1 Cama Matrimonial</li>
+                            </ul>
+
+                            <div class="x-room-actions">
+                                <a href="habitaciones.html" class="x-link-amenities">VER AMENIDADES</a>
+                                <a href="reservacion.html" class="btn-reservar-x">Reservar</a>
                             </div>
                         </div>
                     </article>
 
-                    <!-- Room 106 -->
-                    <article class="room-card">
-                        <img src="img/106_janitzio.jpg" alt="Foto Habitación" title="Janitzio Quinta Dalam"
-                            class="room-card-image">
-                        <div class="room-card-body">
-                            <h3 class="room-card-title">106: Janitzio</h3>
-                            <p class="room-card-description">Isla de los pescadores.</p>
-                            <div class="room-card-footer">
-                                <a href="#reservar" class="btn-secondary">RESERVAR ESTA HABITACION</a>
-                            </div>
+                    <!-- ROOM 105 COENEO (PB) -->
+                    <article class="x-room-row x-cat-pb">
+                        <div class="x-room-img-container">
+                            <img src="img/105_coeneo.jpg" alt="Habitación Coeneo"
+                                onerror="this.src='img/habitacion_tzintzuntzan.jpg'">
                         </div>
-                    </article>
-                </div>
+                        <div class="x-room-content">
+                            <h3>105: COENEO</h3>
+                            <span class="x-room-subtitle">HABITACIÓN ESTÁNDAR - PLANTA BAJA</span>
+                            <p class="x-room-desc">Sencillez que enamora. La habitación Coeneo transmite paz en cada
+                                rincón, ofreciendo la fusión perfecta entre la arquitectura de la casona y el confort
+                                contemporáneo.</p>
 
-                <div class="floor-title">
-                    <h3>PLANTA ALTA</h3>
-                </div>
+                            <ul class="x-room-amenities">
+                                <li><i class="fa-solid fa-wind"></i> Ventilación cruzada natural</li>
+                                <li><i class="fa-solid fa-users"></i> 2 huéspedes adultos</li>
+                                <li><i class="fa-solid fa-bed"></i> 1 Cama Matrimonial</li>
+                            </ul>
 
-                <!-- Suite Quencio Special Row -->
-                <div class="suite-card">
-                    <h3 class="suite-card-title">★ 201: Suite Quencio ★</h3>
-                    <img src="img/201_quencio.jpg" alt="Suite Principal" title="Suite Quencio Quinta Dalam"
-                        class="suite-card-image">
-                    <p class="suite-card-description">Lujo y confort superior.</p>
-                    <a href="#reservar" class="btn-primary">RESERVAR ESTA SUITE</a>
-                </div>
-
-                <div class="rooms-grid">
-                    <!-- Room 202 -->
-                    <article class="room-card">
-                        <img src="img/202_morelia.jpg" alt="Habitación 202 Morelia" title="Morelia Quinta Dalam"
-                            class="room-card-image">
-                        <div class="room-card-body">
-                            <h3 class="room-card-title">202: Morelia</h3>
-                            <p class="room-card-description">Capital Michoacana.</p>
-                            <div class="room-card-footer">
-                                <a href="#reservar" class="btn-secondary">RESERVAR ESTA HABITACION</a>
+                            <div class="x-room-actions">
+                                <a href="habitaciones.html" class="x-link-amenities">VER AMENIDADES</a>
+                                <a href="reservacion.html" class="btn-reservar-x">Reservar</a>
                             </div>
                         </div>
                     </article>
 
-                    <!-- Room 203 -->
-                    <article class="room-card">
-                        <img src="img/203_tacambaro.jpg" alt="Habitación 203 Tacámbaro" title="Tacámbaro Quinta Dalam"
-                            class="room-card-image">
-                        <div class="room-card-body">
-                            <h3 class="room-card-title">203: Tacámbaro</h3>
-                            <p class="room-card-description">Ciudad Heroica.</p>
-                            <div class="room-card-footer">
-                                <a href="#reservar" class="btn-secondary">RESERVAR ESTA HABITACION</a>
+                    <!-- ROOM 106 JANITZIO (PB) -->
+                    <article class="x-room-row x-cat-pb reverse">
+                        <div class="x-room-img-container">
+                            <img src="img/106_janitzio.jpg" alt="Habitación Janitzio"
+                                onerror="this.src='img/habitacion_paracho.jpg'">
+                        </div>
+                        <div class="x-room-content">
+                            <h3>106: JANITZIO</h3>
+                            <span class="x-room-subtitle">HABITACIÓN DOBLE - PLANTA BAJA</span>
+                            <p class="x-room-desc">Inspiración lacustre con la solidez de la tierra. Un ambiente dual e
+                                idóneo para acompañantes que prefieran descansar en camas conectadas, rodeados de
+                                hospitalidad.</p>
+
+                            <ul class="x-room-amenities">
+                                <li><i class="fa-solid fa-people-arrows"></i> Diseño amplio y flexible</li>
+                                <li><i class="fa-solid fa-users"></i> Hasta 2 huéspedes adultos</li>
+                                <li><i class="fa-solid fa-bed"></i> 2 Camas Individuales</li>
+                            </ul>
+
+                            <div class="x-room-actions">
+                                <a href="habitaciones.html" class="x-link-amenities">VER AMENIDADES</a>
+                                <a href="reservacion.html" class="btn-reservar-x">Reservar</a>
                             </div>
                         </div>
                     </article>
 
-                    <!-- Room 204 -->
-                    <article class="room-card">
-                        <img src="img/204_uruapan.jpg" alt="Habitación 204 Uruapan" title="Uruapan Quinta Dalam"
-                            class="room-card-image">
-                        <div class="room-card-body">
-                            <h3 class="room-card-title">204: Uruapan</h3>
-                            <p class="room-card-description">Capital Mundial de las Aguacates.</p>
-                            <div class="room-card-footer">
-                                <a href="#reservar" class="btn-secondary">RESERVAR ESTA HABITACION</a>
+                    <!-- ==============================================
+                         PLANTA ALTA
+                         ============================================== -->
+
+                    <!-- ROOM 202 MORELIA (PA) -->
+                    <article class="x-room-row x-cat-pa">
+                        <div class="x-room-img-container">
+                            <img src="img/habitacion_morelia.jpg" alt="Habitación Morelia">
+                        </div>
+                        <div class="x-room-content">
+                            <h3>202: MORELIA</h3>
+                            <span class="x-room-subtitle">HABITACIÓN ESTÁNDAR - PLANTA ALTA</span>
+                            <p class="x-room-desc">Evoca la majestuosidad arquitectónica de la capital michoacana con
+                                acabados de cantera rosa auténtica y espacios soberbios que garantizan un descanso
+                                absoluto.</p>
+
+                            <ul class="x-room-amenities">
+                                <li><i class="fa-solid fa-archway"></i> Balcón con arcos coloniales</li>
+                                <li><i class="fa-solid fa-users"></i> 2 huéspedes adultos</li>
+                                <li><i class="fa-solid fa-bed"></i> 1 Cama Matrimonial</li>
+                            </ul>
+
+                            <div class="x-room-actions">
+                                <a href="habitaciones.html" class="x-link-amenities">VER AMENIDADES</a>
+                                <a href="reservacion.html" class="btn-reservar-x">Reservar</a>
                             </div>
                         </div>
                     </article>
 
-                    <!-- Room 205 -->
-                    <article class="room-card">
-                        <img src="img/205_tlalpujahua.jpg" alt="Habitación 205 Tlalpujahua"
-                            title="Tlalpujahua Quinta Dalam" class="room-card-image">
-                        <div class="room-card-body">
-                            <h3 class="room-card-title">205: Tlalpujahua</h3>
-                            <p class="room-card-description">Pueblo de la Eterna Navidad.</p>
-                            <div class="room-card-footer">
-                                <a href="#reservar" class="btn-secondary">RESERVAR ESTA HABITACION</a>
+                    <!-- ROOM 203 TACÁMBARO (PA) -->
+                    <article class="x-room-row x-cat-pa reverse">
+                        <div class="x-room-img-container">
+                            <img src="img/203_tacambaro.jpg" alt="Habitación Tacámbaro"
+                                onerror="this.src='img/habitacion_morelia.jpg'">
+                        </div>
+                        <div class="x-room-content">
+                            <h3>203: TACÁMBARO</h3>
+                            <span class="x-room-subtitle">HABITACIÓN ESTÁNDAR - PLANTA ALTA</span>
+                            <p class="x-room-desc">Homenaje a uno de los puntos florales del estado. Una estancia con
+                                excelente iluminación que invita al descanso y con detalles pintorescos.</p>
+
+                            <ul class="x-room-amenities">
+                                <li><i class="fa-solid fa-sun"></i> Luminosidad y ambiente tibio</li>
+                                <li><i class="fa-solid fa-users"></i> 2 huéspedes adultos</li>
+                                <li><i class="fa-solid fa-bed"></i> 1 Cama Matrimonial</li>
+                            </ul>
+
+                            <div class="x-room-actions">
+                                <a href="habitaciones.html" class="x-link-amenities">VER AMENIDADES</a>
+                                <a href="reservacion.html" class="btn-reservar-x">Reservar</a>
                             </div>
                         </div>
                     </article>
 
-                    <!-- Room 206 -->
-                    <article class="room-card">
-                        <img src="img/206_cuitzeo.jpg" alt="Habitación 206 Cuitzeo" title="Cuitzeo Quinta Dalam"
-                            class="room-card-image">
-                        <div class="room-card-body">
-                            <h3 class="room-card-title">206: Cuitzeo</h3>
-                            <p class="room-card-description">Pueblo Mágico con encanto.</p>
-                            <div class="room-card-footer">
-                                <a href="#reservar" class="btn-secondary">RESERVAR ESTA HABITACION</a>
+                    <!-- ROOM 204 URUAPAN (PA) -->
+                    <article class="x-room-row x-cat-pa">
+                        <div class="x-room-img-container">
+                            <img src="img/204_uruapan.jpg" alt="Habitación Uruapan"
+                                onerror="this.src='img/suite_quencio.jpg'">
+                        </div>
+                        <div class="x-room-content">
+                            <h3>204: URUAPAN</h3>
+                            <span class="x-room-subtitle">HABITACIÓN ESTÁNDAR - PLANTA ALTA</span>
+                            <p class="x-room-desc">La fuerza y la frescura de la Perla de Cupatitzio en un diseño
+                                acogedor. Descubre un refugio pensado para que disfrutes las noches estelares y
+                                despiertes renovado.</p>
+
+                            <ul class="x-room-amenities">
+                                <li><i class="fa-solid fa-panorama"></i> Vistas agradables desde la altura</li>
+                                <li><i class="fa-solid fa-users"></i> 2 huéspedes adultos</li>
+                                <li><i class="fa-solid fa-bed"></i> 1 Cama Matrimonial</li>
+                            </ul>
+
+                            <div class="x-room-actions">
+                                <a href="habitaciones.html" class="x-link-amenities">VER AMENIDADES</a>
+                                <a href="reservacion.html" class="btn-reservar-x">Reservar</a>
                             </div>
                         </div>
                     </article>
 
-                    <!-- Room 207 -->
-                    <article class="room-card">
-                        <img src="img/207_cuanajo.jpg" alt="Habitación 207 Cuanajo" title="Cuanajo Quinta Dalam"
-                            class="room-card-image">
-                        <div class="room-card-body">
-                            <h3 class="room-card-title">207: Cuanajo</h3>
-                            <p class="room-card-description">La cuna del mueble artesanal.</p>
-                            <div class="room-card-footer">
-                                <a href="#reservar" class="btn-secondary">RESERVAR ESTA HABITACION</a>
+                    <!-- ROOM 205 TLALPUJAHUA (PA) -->
+                    <article class="x-room-row x-cat-pa reverse">
+                        <div class="x-room-img-container">
+                            <img src="img/205_tlalpujahua.jpg" alt="Habitación Tlalpujahua"
+                                onerror="this.src='img/habitacion_morelia.jpg'">
+                        </div>
+                        <div class="x-room-content">
+                            <h3>205: TLALPUJAHUA</h3>
+                            <span class="x-room-subtitle">HABITACIÓN ESTÁNDAR - PLANTA ALTA</span>
+                            <p class="x-room-desc">Elegancia brillante y clásica. Aquí encontrarás madera labrada y un
+                                espacio encantador donde te sentirás en un rincón atemporal lleno de encanto.</p>
+
+                            <ul class="x-room-amenities">
+                                <li><i class="fa-solid fa-star"></i> Decoración de encanto clásico</li>
+                                <li><i class="fa-solid fa-users"></i> 2 huéspedes adultos</li>
+                                <li><i class="fa-solid fa-bed"></i> 1 Cama Matrimonial</li>
+                            </ul>
+
+                            <div class="x-room-actions">
+                                <a href="habitaciones.html" class="x-link-amenities">VER AMENIDADES</a>
+                                <a href="reservacion.html" class="btn-reservar-x">Reservar</a>
                             </div>
                         </div>
                     </article>
+
+                    <!-- ROOM 206 CUITZEO (PA) -->
+                    <article class="x-room-row x-cat-pa">
+                        <div class="x-room-img-container">
+                            <img src="img/206_cuitzeo.jpg" alt="Habitación Cuitzeo"
+                                onerror="this.src='img/suite_quencio.jpg'">
+                        </div>
+                        <div class="x-room-content">
+                            <h3>206: CUITZEO</h3>
+                            <span class="x-room-subtitle">HABITACIÓN ESTÁNDAR - PLANTA ALTA</span>
+                            <p class="x-room-desc">Tonalidades pacíficas y un ambiente íntimo se abrazan en esta
+                                habitación, ideal para el reposo alejado del bullicio urbano de cualquier día.</p>
+
+                            <ul class="x-room-amenities">
+                                <li><i class="fa-solid fa-feather"></i> Detalle y confort en cada rincón</li>
+                                <li><i class="fa-solid fa-users"></i> 2 huéspedes adultos</li>
+                                <li><i class="fa-solid fa-bed"></i> 1 Cama Matrimonial</li>
+                            </ul>
+
+                            <div class="x-room-actions">
+                                <a href="habitaciones.html" class="x-link-amenities">VER AMENIDADES</a>
+                                <a href="reservacion.html" class="btn-reservar-x">Reservar</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- ROOM 207 CUANAJO (PA) -->
+                    <article class="x-room-row x-cat-pa reverse">
+                        <div class="x-room-img-container">
+                            <img src="img/207_cuanajo.jpg" alt="Habitación Cuanajo"
+                                onerror="this.src='img/habitacion_morelia.jpg'">
+                        </div>
+                        <div class="x-room-content">
+                            <h3>207: CUANAJO</h3>
+                            <span class="x-room-subtitle">HABITACIÓN ESTÁNDAR - PLANTA ALTA</span>
+                            <p class="x-room-desc">Refleja la noble labor artesanal en muebles tallados. Una habitación
+                                concebida para brindar paz y hacerte sentir un profundo vínculo con el confort
+                                tradicional.</p>
+
+                            <ul class="x-room-amenities">
+                                <li><i class="fa-solid fa-tree"></i> Mobiliario en maderas nobles</li>
+                                <li><i class="fa-solid fa-users"></i> 2 huéspedes adultos</li>
+                                <li><i class="fa-solid fa-bed"></i> 1 Cama Matrimonial</li>
+                            </ul>
+
+                            <div class="x-room-actions">
+                                <a href="habitaciones.html" class="x-link-amenities">VER AMENIDADES</a>
+                                <a href="reservacion.html" class="btn-reservar-x">Reservar</a>
+                            </div>
+                        </div>
+                    </article>
+
                 </div>
             </div>
         </section>
@@ -343,29 +540,31 @@
         <section id="contacto" class="contact-section">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-title">Información de Contacto</h2>
+                    <h2 class="section-title">Contacto e Información</h2>
                     <p>¿Tienes dudas? Comunícate directamente con nosotros.</p>
                 </div>
 
                 <div class="contact-grid">
                     <div class="contact-info">
                         <h3 class="contact-subtitle">Ubicación</h3>
-                        <p class="contact-detail">Morelia, Michoacán, México.</p>
-                        <img src="" alt="Hotel Quinta Dalam Google Maps" title="Hotel Quinta Dalam Google Maps"
-                            style="width: 100%; border-radius: 8px; margin: 1rem 0;">
-                        <a href="https://www.google.com/maps/place/Hotel+Colonial+Playa+del+carmen/@20.625414,-87.0816557,17z/data=!3m1!4b1!4m9!3m8!1s0x8f4e43006d2a9b4d:0x22ae322a812c2383!5m2!4m1!1i2!8m2!3d20.625409!4d-87.0767848!16s%2Fg%2F11vtbpsmz3?entry=ttu&g_ep=EgoyMDI2MDIwOC4wIKXMDSoASAFQAw%3D%3D"
-                            target="_blank" class="link-important"><br>VER EN GOOGLE MAPS</a>
-
+                        <p class="contact-detail">Quencio, Michoacán, México.</p>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3752.8900004734437!2d-101.5924440240292!3d19.844606727392826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842db166315ff277%3A0xa06d0f4d41887dc9!2s58404%20Quencio%2C%20Mich.!5e0!3m2!1ses-419!2smx!4v1772587466393!5m2!1ses-419!2smx"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                         <hr style="margin: 2rem 0; border: 1px solid #cbd5e1;">
 
                         <h3 class="contact-subtitle">Atención al Cliente</h3>
-                        <p class="contact-detail">Teléfono: <b><a href="tel:+524431234567">+52 (443) 123-4567</a></b>
+                        <p class="contact-detail"><i class="fa-solid fa-phone" style="margin-right: 8px;"></i> Teléfono:
+                            <b><a href="tel:+524431234567">+52 (443) 123-4567</a></b>
                         </p>
-                        <p class="contact-detail">WhatsApp: <a href="https://wa.me/524431234567" target="_blank">Enviar
+                        <p class="contact-detail"><i class="fa-brands fa-whatsapp" style="margin-right: 8px;"></i>
+                            WhatsApp: <a href="https://wa.me/524431234567" target="_blank">Enviar
                                 mensaje</a></p>
 
                         <h3 class="contact-subtitle" style="margin-top: 2rem;">Correo Electrónico</h3>
-                        <p class="contact-detail"><a href="mailto:contacto@quintadalam.com">contacto@quintadalam.com</a>
+                        <p class="contact-detail"><i class="fa-solid fa-envelope" style="margin-right: 8px;"></i> <a
+                                href="mailto:contacto@quintadalam.com">contacto@quintadalam.com</a>
                         </p>
                     </div>
 
@@ -408,7 +607,7 @@
 
     <!-- FOOTER -->
     <footer class="footer">
-        <div class="container text-center">
+        <div class="container text-center" style="position: relative;">
             <h3 class="footer-heading">Síguenos</h3>
             <div class="social-footer-links">
                 <a href="https://www.facebook.com/profile.php?id=61584681841684" target="_blank" class="icono-animado"
@@ -423,6 +622,12 @@
                 </a>
             </div>
             <p class="footer-text">© 2026 Hotel Quinta Dalam. Todos los derechos reservados.</p>
+            <p class="w3c-badge" style="position: absolute; right: 0; bottom: 0; margin: 0;">
+                <a href="https://jigsaw.w3.org/css-validator/check/referer" target="_blank">
+                    <img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss"
+                        alt="¡CSS Válido!" />
+                </a>
+            </p>
         </div>
     </footer>
 </body>
