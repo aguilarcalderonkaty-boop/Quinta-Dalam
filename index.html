@@ -9,16 +9,14 @@
         content="Hotel Quinta Dalam - La esencia de Michoacán. Hospédate en habitaciones inspiradas en los Pueblos Mágicos de Michoacán.">
     <title>Hotel Quinta Dalam - Reserva para conocer todo Michoacán en Quencio</title>
     <link rel="icon" href="icons/hotel-solid.png" type="image/png">
-    <!-- Arquitectura CSS separada -->
-    <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="styles/layout.css">
-    <link rel="stylesheet" href="styles/components.css">
+    <!-- Arquitectura CSS combinada -->
+    <link rel="stylesheet" href="styles/index-styles.css">
 </head>
 
 <body>
 
     <header class="header-nav">
-        <nav class="navbar container navbar-container">
+        <nav class="navbar navbar-container navbar-wide">
 
             <div class="navbar-left">
 
@@ -57,6 +55,13 @@
 
                     <div class="separator-md"></div>
 
+                    <a href="#login" class="nav-animado login-link-wrapper" title="Iniciar Sesión">
+                        <i class="fa-regular fa-user"></i>
+                        <span>Iniciar sesión</span>
+                    </a>
+
+                    <div class="separator-md"></div>
+
                     <a href="#contacto" class="nav-animado contact-link-wrapper" title="Ir a Contacto">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -86,9 +91,9 @@
 
         </section>
 
-        <!-- Barra de Reservas Rápida sobrepuesta (Movida fuera para sticky persistente) -->
-        <div class="quick-booking-bar">
-            <form action="resultados.html" class="quick-booking-form">
+        <!-- Barra de Reservas Rápida (Estilo Superpuesto Flotante) -->
+        <div class="quick-booking-bar container">
+            <form action="reservacion.html" class="quick-booking-form">
                 <div class="qb-group qb-date">
                     <label>Llegada</label>
                     <input type="date" required>
@@ -109,36 +114,38 @@
                     </select>
                 </div>
 
-                <button type="submit" class="btn-reservar-hero">RESERVAR</button>
+                <button type="submit" class="btn-reservar-hero">BUSCAR</button>
             </form>
         </div>
 
 
-        <section class="about-section container">
-            <div class="text-center">
-                <h2 class="section-title">Bienvenidos a Michoacán</h2>
-                <p>Vive la magia y tradición de nuestros pueblos en un solo lugar.</p>
-                <img src="img/bienvenida.jpg" alt="Vista Principal del Hotel" title="Vista Principal del Hotel"
-                    style="max-width: 100%; border-radius: 8px; margin: 2rem 0;">
-            </div>
-
-            <div class="mission-vision-grid">
-                <div class="info-card">
-                    <h3 class="info-title">Nuestra Misión</h3>
-                    <img src="img/mision.jpg" alt="Foto Misión" title="Foto Misión" class="info-img">
-                    <p class="info-text">
+        <section class="about-section container" style="margin-top: 2rem;">
+            <!-- Misión: Imagen Izquierda, Texto Derecha -->
+            <div class="alternating-row">
+                <div class="alt-row-image">
+                    <img src="img/frontal-hotel.jpg" alt="Nuestra Misión" title="Imagen de la Misión">
+                </div>
+                <div class="alt-row-content">
+                    <h2 class="alt-title">Nuestra Misión</h2>
+                    <p class="alt-text">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat.
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in.
                     </p>
                 </div>
-                <div class="info-card">
-                    <h3 class="info-title">Nuestra Visión</h3>
-                    <img src="img/vision.jpg" alt="Foto Visión" title="Foto Visión" class="info-img">
-                    <p class="info-text">
+            </div>
+
+            <!-- Visión: Texto Izquierda, Imagen Derecha (manejado por CSS reverse) -->
+            <div class="alternating-row reverse">
+                <div class="alt-row-image">
+                    <img src="img/quencio.jpg" alt="Nuestra Visión" title="Imagen de la Visión">
+                </div>
+                <div class="alt-row-content">
+                    <h2 class="alt-title">Nuestra Visión</h2>
+                    <p class="alt-text">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat.
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in.
                     </p>
                 </div>
             </div>
@@ -404,7 +411,8 @@
         <div class="container text-center">
             <h3 class="footer-heading">Síguenos</h3>
             <div class="social-footer-links">
-                <a href="https://www.facebook.com/profile.php?id=61584681841684" target="_blank" class="icono-animado" title="Facebook">
+                <a href="https://www.facebook.com/profile.php?id=61584681841684" target="_blank" class="icono-animado"
+                    title="Facebook">
                     <i class="fa-brands fa-facebook-f"></i>
                 </a>
                 <a href="https://www.instagram.com/quintadalam" target="_blank" class="icono-animado" title="Instagram">
@@ -417,9 +425,6 @@
             <p class="footer-text">© 2026 Hotel Quinta Dalam. Todos los derechos reservados.</p>
         </div>
     </footer>
-
-    <!-- Scripts -->
-    <script src="js/main.js"></script>
 </body>
 
 </html>

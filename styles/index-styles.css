@@ -1,0 +1,1147 @@
+:root {
+    --color-brand: #3A1F23;
+    /* Azul oscuro Iberostar (Logo y Textos primarios) */
+    --color-secondary: #7A5051;
+    /* Verde agua/turquesa (Botones y acentos) */
+    --color-dark: #000000;
+    /* Gris oscuro para textos normales */
+    --bg-light: #FFFFFF;
+    /* Gris muy claro para fondos */
+    --bg-dark: #3A1F23;
+    /* Footer */
+    --white: #FFFFFF;
+    --nav-height: 100px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--nav-height);
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: var(--bg-light);
+    color: var(--color-dark);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-dark);
+}
+
+.text-white {
+    color: var(--white);
+}
+
+.link-important {
+    color: var(--color-secondary);
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* =========================================
+   ESTILOS DEL HEADER Y NAVEGACIÓN
+   ========================================= */
+
+.header-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--color-brand);
+    height: 90px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+}
+
+/* --- Animaciones Generales --- */
+.nav-animado,
+.icono-animado {
+    transition: all 0.3s ease;
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-animado:hover,
+.icono-animado:hover {
+    color: #f59e0b !important;
+    /* Color dorado/ámbar */
+}
+
+.nav-animado:hover {
+    transform: translateY(-2px);
+}
+
+.icono-animado {
+    display: inline-block;
+}
+
+.icono-animado:hover {
+    transform: scale(1.25);
+}
+
+.icono-animado:active {
+    transform: scale(0.9);
+}
+
+/* --- Estructura Layout (Flexbox) --- */
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar-wide {
+    width: 96%;
+    /* Para evitar que llegue a tocar matemáticamente los bordes en monitores gigantes */
+    max-width: none;
+    margin: 0 auto;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.navbar-brand {
+    text-decoration: none;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.brand-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.brand-title {
+    font-weight: 400;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+}
+
+.brand-subtitle {
+    font-size: 0.6rem;
+    letter-spacing: 1px;
+    color: #ccc;
+}
+
+.nav-links-group {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.navbar-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navbar-secondary-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.social-top-nav {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+/* --- Utilidades y Separadores --- */
+.separator-sm {
+    width: 1px;
+    height: 18px;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.separator-md {
+    width: 1px;
+    height: 24px;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.social-icon-lg {
+    font-size: 1.2rem;
+}
+
+.social-icon-md {
+    font-size: 1.1rem;
+}
+
+.contact-link-wrapper,
+.login-link-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.login-link-wrapper {
+    font-size: 0.95rem;
+    /* Ajuste sutil de tamaño para login */
+    letter-spacing: 0.5px;
+}
+
+/* Menú Hamburguesa estático */
+.menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 5px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: #333;
+    transition: 0.3s;
+}
+
+.menu-toggle:hover span {
+    background-color: #7A5051;
+}
+
+section {
+    padding: 5rem 0;
+}
+
+.rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 3rem;
+}
+
+.booking-section {
+    background-color: var(--color-brand);
+    padding: 5rem 0;
+}
+
+.booking-container {
+    max-width: 900px;
+}
+
+.footer {
+    background-color: var(--bg-dark);
+    color: var(--white);
+    padding: 3rem 0;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar-menu {
+        display: none;
+        /* En un futuro SPA se hace menú hamburguesa */
+    }
+}
+
+/* =========================================
+   ESTILOS DEL FOOTER Y REDES SOCIALES
+   ========================================= */
+.footer-heading {
+    margin-bottom: 1rem;
+}
+
+.social-footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.social-footer-links a {
+    font-size: 2rem;
+    /* Hace los iconos más grandes */
+    color: var(--white);
+    /* Toma el color blanco definido en tu :root */
+    text-decoration: none;
+}
+
+/* El efecto hover se hereda de la clase .icono-animado que ya tienes, 
+   pero si quieres asegurar que cambien de color al pasar el mouse: */
+.social-footer-links a:hover i {
+    color: #f59e0b;
+    /* Color dorado al pasar el mouse */
+}
+
+/* Botones */
+.btn-primary,
+.btn-secondary,
+.btn-clear {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    font-weight: 500;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.btn-primary {
+    background-color: #7A5051;
+    /* Verde turquesa */
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: #000000;
+}
+
+.btn-secondary {
+    background-color: #003264;
+    /* Azul oscuro corporativo */
+    color: var(--white);
+}
+
+.btn-secondary:hover {
+    background-color: #002244;
+}
+
+.btn-clear {
+    background-color: transparent;
+    border: 1px solid #cbd5e1;
+    color: var(--color-dark);
+}
+
+.btn-clear:hover {
+    background-color: #f1f5f9;
+}
+
+/* Hero */
+.hero-section {
+    position: relative;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(rgba(58, 31, 35, 0.5), rgba(58, 31, 35, 0.5)), url('../img/NAV.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: var(--white);
+    padding: 0;
+    /* Hero llega hasta el fondo, no necesita margin inferior especial. La barra flotará encima. */
+}
+
+.hero-content {
+    max-width: 900px;
+    padding: 2rem;
+    z-index: 10;
+}
+
+.hero-title {
+    font-family: 'Georgia', serif;
+    /* Estilo serif similar a la imagen */
+    font-size: 4.5rem;
+    margin: 1rem 0;
+    font-weight: normal;
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+/* =========================================
+   BARRA DE RESERVAS ESTILO PALLADIUM
+   ========================================= */
+
+.booking-bar-wrapper {
+    background-color: var(--bg-light);
+    /* Utiliza el fondo gris claro / arena de la página */
+    padding: 3rem 0;
+    border-top: 1px solid var(--color-dark);
+    border-bottom: 1px solid var(--color-brand);
+}
+
+.quick-booking-bar {
+    background-color: var(--white);
+    padding: 1.5rem 2rem;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+    /* Sombra pronunciada en la parte inferior (bottom) */
+    width: 90%;
+    max-width: 1000px;
+    /* Un poco más compacta */
+    margin: -60px auto 4rem auto;
+    /* Sube -60px sobre el hero, margen abajo de 4rem para respirar */
+    position: relative;
+    z-index: 20;
+}
+
+.quick-booking-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto;
+    gap: 1.5rem;
+    align-items: flex-end;
+}
+
+.qb-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.qb-group label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--color-dark);
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+}
+
+.qb-group input,
+.qb-select-standard {
+    padding: 0.5rem 0;
+    border: none;
+    border-bottom: 2px solid #eaeaea;
+    /* Línea de base limpia estilo Palladium */
+    border-radius: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: transparent;
+    color: var(--color-brand);
+    transition: border-bottom 0.3s ease;
+}
+
+.qb-group input:focus,
+.qb-select-standard:focus {
+    outline: none;
+    border-bottom: 2px solid var(--color-brand);
+}
+
+.qb-select-standard {
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn-reservar-hero {
+    background-color: #7d6b38;
+    /* Color similar al botón de la imagen (dorado/oliva oscuro) */
+    color: white;
+    padding: 1.2rem 2.5rem;
+    border: none;
+    border-radius: 2px;
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    height: 100%;
+}
+
+.btn-reservar-hero:hover {
+    background-color: #5c4e27;
+}
+
+@media (max-width: 900px) {
+    .quick-booking-bar {
+        margin-top: -30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .quick-booking-form {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+.hero-title {
+    font-size: 4.5rem;
+    font-weight: 900;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    /* Sombra suave para que resalte más contra el fondo */
+    margin: 1rem 0;
+}
+
+/* =========================================
+   SECCIÓN MISIÓN Y VISIÓN (Intercalada)
+   ========================================= */
+.about-section {
+    padding: 3rem 0;
+}
+
+.alternating-row {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    margin-bottom: 5rem;
+}
+
+.alternating-row:last-child {
+    margin-bottom: 0;
+}
+
+.alternating-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.alt-row-image {
+    flex: 1;
+}
+
+.alt-row-image img {
+    width: 100%;
+    height: 350px;
+    /* Asegura un formato horizontal/rectangular amplio */
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.alt-row-content {
+    flex: 1;
+    padding: 1rem;
+}
+
+.alt-title {
+    font-family: 'Georgia', serif;
+    font-size: 2.2rem;
+    color: var(--color-brand);
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+.alt-text {
+    font-size: 1.1rem;
+    color: #5c433b;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+@media (max-width: 900px) {
+
+    .alternating-row,
+    .alternating-row.reverse {
+        flex-direction: column;
+        gap: 2rem;
+        margin-bottom: 4rem;
+    }
+
+    .alt-row-image img {
+        height: 250px;
+    }
+
+    .alt-row-content {
+        padding: 0;
+    }
+}
+
+/* Habitaciones estilo hacienda */
+.floor-title {
+    background-color: #e2cba4;
+    /* Arena colonial */
+    color: #3A1F23;
+    padding: 0.8rem;
+    text-align: center;
+    border-radius: 4px;
+    margin: 3rem 0 2rem 0;
+    border: 1px solid #c9a77b;
+    font-family: 'Georgia', serif;
+    letter-spacing: 2px;
+}
+
+.room-card {
+    background-color: #fffaf5;
+    /* Blanco cálido */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e6d5c3;
+    border-bottom: 5px solid #8c5a45;
+    /* Detalle terracota */
+}
+
+.room-card-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.room-card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.room-card-title {
+    font-family: 'Georgia', serif;
+    font-size: 1.4rem;
+    color: #3A1F23;
+    margin-bottom: 0.5rem;
+}
+
+.room-card-description {
+    color: #6d4432;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+    font-style: italic;
+}
+
+.room-card-footer {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #e2cba4;
+    padding-top: 1rem;
+    background-color: #fdf6eb;
+}
+
+/* Rediseño del botón secundario para que combine */
+.btn-secondary {
+    background-color: #3A1F23;
+    /* Madera oscura */
+    color: var(--white);
+    border: 1px solid #3A1F23;
+}
+
+.btn-secondary:hover {
+    background-color: #8c5a45;
+    /* Terracota al pasar el mouse */
+}
+
+/* Suite Destacada estilo Premium Colonial */
+.suite-card {
+    background-color: #3A1F23;
+    /* Fondo oscuro elegante */
+    color: #e2cba4;
+    /* Letras doradas/arena */
+    border: 2px solid #c9a77b;
+    border-radius: 8px;
+    padding: 3rem 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    box-shadow: 0 10px 30px rgba(58, 31, 35, 0.4);
+}
+
+.suite-card-title {
+    font-family: 'Georgia', serif;
+    font-size: 2rem;
+    color: #e2cba4;
+    margin-bottom: 1rem;
+}
+
+.suite-card-description {
+    color: #fdf6eb;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+/* Formularios */
+.form-fieldset {
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    background-color: var(--white);
+}
+
+.form-legend {
+    font-weight: bold;
+    color: var(--color-brand);
+    padding: 0 0.5rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+/* =========================================
+   NUEVA BARRA DE RESERVAS RÁPIDA (Hero)
+   ========================================= */
+
+/* Efectos hover para los inputs */
+.qb-group input {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.qb-group input:hover,
+.guests-display:hover {
+    border-color: #8c5a45;
+    box-shadow: 0 0 8px rgba(140, 90, 69, 0.2);
+}
+
+/* El botón principal de RESERVAR (Sustituye al azul) en otras secciones si aplica, pero ahora es global flat */
+.btn-reservar-hero {
+    background-color: var(--color-brand);
+    color: white;
+    padding: 1rem 2.5rem;
+    border: 1px solid var(--color-brand);
+    border-radius: 0;
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    height: 100%;
+}
+
+.btn-reservar-hero:hover {
+    background-color: var(--white);
+    color: var(--color-brand);
+}
+
+/* --- Desplegable de Huéspedes --- */
+.qb-guests-group {
+    position: relative;
+}
+
+.guests-display {
+    padding: 0.8rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-dark);
+}
+
+.guests-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 250px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+    margin-top: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.guests-dropdown.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.guest-counter-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.guest-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btn-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid #8c5a45;
+    /* Color colonial terracota */
+    background: white;
+    color: #8c5a45;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.btn-circle:hover {
+    background: #fdf8f5;
+    /* Fondo claro al pasar el mouse */
+}
+
+.btn-confirm-guests {
+    width: 100%;
+    background-color: #8c5a45;
+    /* Color colonial terracota */
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 4px;
+    margin-top: 1.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-confirm-guests:hover {
+    background-color: #6d4432;
+    /* Tono más oscuro al pasar el mouse */
+}
+
+
+/* =========================================
+   PÁGINA DE RESULTADOS (ESTILO STARAGENTS)
+   ========================================= */
+
+/* Fondo específico para esta página para que resalten las tarjetas blancas */
+.bg-resultados {
+    background-color: #f5f5f5;
+}
+
+/* --- Barra de Resumen Superior --- */
+.search-summary-bar {
+    background: white;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 2rem;
+}
+
+.summary-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    /* Para que no se rompa en pantallas pequeñas */
+    gap: 1rem;
+}
+
+.summary-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.summary-item small {
+    color: #666;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+/* --- Layout Principal de Resultados --- */
+.results-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    /* Columna izq (2/3) y der (1/3) */
+    gap: 2rem;
+    align-items: start;
+    margin-bottom: 5rem;
+}
+
+.results-title {
+    margin-bottom: 1.5rem;
+    color: var(--color-brand);
+}
+
+/* --- Tarjetas de Habitación (Columna Izquierda) --- */
+.room-result-card {
+    background: white;
+    border-radius: 8px;
+    display: flex;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    border-left: 5px solid #8c5a45;
+    /* Detalle terracota a la izquierda */
+}
+
+.room-result-img {
+    width: 280px;
+    min-height: 200px;
+    object-fit: cover;
+}
+
+.room-result-info {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.room-info-top h3 {
+    color: #8c5a45;
+    margin-bottom: 0.5rem;
+}
+
+.room-info-top p {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.room-info-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 1.5rem;
+}
+
+.price-old {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.price-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--color-brand);
+}
+
+.price-suffix {
+    color: #666;
+}
+
+/* Botones de seleccionar */
+.btn-select-room {
+    background: white;
+    border: 1px solid #458277;
+    /* Verde teal */
+    color: #458277;
+    padding: 0.8rem 2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-select-room:hover {
+    background: #458277;
+    color: white;
+}
+
+.btn-modificar {
+    padding: 0.5rem 1rem;
+}
+
+/* --- Carrito Fijo (Columna Derecha) --- */
+.sticky-cart {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 110px;
+    /* Hace que el carrito baje contigo cuando haces scroll */
+}
+
+.cart-title {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.5rem;
+    color: var(--color-brand);
+}
+
+.cart-dates,
+.cart-guests {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.cart-room-status {
+    display: flex;
+    justify-content: space-between;
+    color: #aaa;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.status-pending {
+    color: #458277;
+    font-style: italic;
+}
+
+.cart-total-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    border-top: 1px solid #ddd;
+    padding-top: 1rem;
+}
+
+.total-price-text {
+    font-size: 1.5rem;
+    color: var(--color-brand);
+}
+
+.btn-continue-disabled {
+    width: 100%;
+    background: #ccc;
+    border: none;
+    padding: 1rem;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    cursor: not-allowed;
+}
+
+.cart-taxes-note {
+    font-size: 0.8rem;
+    color: #999;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* --- Responsividad para móviles --- */
+@media (max-width: 900px) {
+    .results-layout {
+        grid-template-columns: 1fr;
+        /* Una sola columna en celulares */
+    }
+
+    .room-result-card {
+        flex-direction: column;
+    }
+
+    .room-result-img {
+        width: 100%;
+        height: 200px;
+    }
+
+    .sticky-cart {
+        position: static;
+        /* Quita el efecto pegajoso en móviles */
+    }
+}
+
+.btn-confirm-guests:hover {
+    background-color: #35665d;
+}
+
+.form-grid {
+    grid-template-columns: 1fr;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-label {
+    font-weight: 600;
+    color: var(--color-dark);
+    font-size: 0.9rem;
+}
+
+.form-input,
+.form-textarea {
+    padding: 0.8rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--color-brand);
+}
+
+/* Contacto estilo rústico */
+.contact-info,
+.contact-form-container {
+    background: #fffaf5;
+    /* Blanco colonial */
+    padding: 2.5rem;
+    border-radius: 8px;
+    border: 1px solid #e6d5c3;
+    border-left: 6px solid #8c5a45;
+    /* Línea gruesa de barro/terracota a la izquierda */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.contact-subtitle {
+    font-family: 'Georgia', serif;
+    font-size: 1.4rem;
+    color: #3A1F23;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #e2cba4;
+    padding-bottom: 0.5rem;
+}
+
+.contact-detail {
+    color: #5c433b;
+    margin-bottom: 0.8rem;
+}
+
+/* Estilo para los campos del formulario de contacto */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.form-input,
+.form-textarea {
+    background-color: white;
+    border: 1px solid #c9a77b;
+    /* Borde color arena/madera clara */
+    color: #3A1F23;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: #8c5a45;
+    box-shadow: 0 0 8px rgba(140, 90, 69, 0.2);
+}

@@ -1,0 +1,21 @@
+/* =========================================
+   ESTILOS PARA LOS MENÚS DESPLEGABLES
+   ========================================= */
+
+.select-personas {
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #555;
+    background-color: white;
+    width: 250px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+}
+
+.select-personas:focus {
+    outline: none;
+    border-color: #8c5a45; /* Color terracota al darle clic */
+    box-shadow: 0 0 5px rgba(140, 90, 69, 0.3);
+}
