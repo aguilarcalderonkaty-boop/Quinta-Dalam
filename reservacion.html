@@ -8,6 +8,8 @@
     <title>Reservar | Hotel Quinta Dalam</title>
     <link rel="icon" href="icons/hotel-solid.png" type="image/png">
     <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/aguilarcalderonkaty-boop/Quinta-Dalam@main/styles/index-styles.css">
+    <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/aguilarcalderonkaty-boop/Quinta-Dalam@main/styles/reservaciones-styles.css">
 </head>
 
@@ -26,6 +28,13 @@
                         <span class="brand-title">QUINTA DALAM</span>
                         <span class="brand-subtitle">HOTEL MICHOACANO</span>
                     </div>
+                </a>
+            </div>
+
+            <div class="navbar-right">
+                <a href="index.html" class="btn-clear"
+                    style="padding: 0.6rem 1.2rem; border-color: rgba(255,255,255,0.3); color: white; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fa-solid fa-arrow-left"></i> Volver a Inicio
                 </a>
             </div>
         </nav>
@@ -87,6 +96,9 @@
 
                 <!-- Columna Izquierda: Lista de Habitaciones -->
                 <section class="rooms-list">
+                    <h2
+                        style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0;">
+                        Lista de Habitaciones Disponibles</h2>
 
                     <!-- Lógica CSS de Selección: Radios ocultos antes de cada tarjeta -->
                     <!-- El 'name="room-selection"' asegura que solo 1 pueda estar activa -->
@@ -587,6 +599,8 @@
                         </div>
                     </article>
 
+
+
                 </section>
 
                 <!-- Columna Derecha: Carrito Sticky (Sidebar) -->
@@ -988,7 +1002,7 @@
 
     <!-- FOOTER -->
     <footer class="footer">
-        <div class="container text-center">
+        <div class="container text-center" style="position: relative;">
             <h3 class="footer-heading">Síguenos</h3>
             <div class="social-footer-links">
                 <a href="https://www.facebook.com/profile.php?id=61584681841684" target="_blank" class="icono-animado"
@@ -1003,6 +1017,18 @@
                 </a>
             </div>
             <p class="footer-text">© 2026 Hotel Quinta Dalam. Todos los derechos reservados.</p>
+
+            <div class="w3c-badge"
+                style="position: absolute; right: 0; bottom: 0; margin: 0; display: flex; align-items: center; gap: 8px;">
+                <span
+                    style="font-family: 'Playfair Display', serif; font-size: 0.85rem; color: var(--text-muted); font-style: italic;">Validado
+                    por:</span>
+                <a href="https://jigsaw.w3.org/css-validator/check/referer" style="display: flex; align-items: center;"
+                    target="_blank">
+                    <img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss"
+                        alt="¡CSS Válido!" />
+                </a>
+            </div>
         </div>
     </footer>
 </body>
