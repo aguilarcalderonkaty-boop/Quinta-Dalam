@@ -1,20 +1,13 @@
-/* =========================================
-   ESTILOS ESPECÍFICOS DE RESERVACIÓN
-   Diseño de 2 Columnas - Imagen Superior Proporcional
-   Simulación de Selección con solo HTML/CSS (Radio inputs)
-   ========================================= */
+/* Estilos de reservación */
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Open+Sans:wght@400;600;700&display=swap');
 
 :root {
     --color-brand: #3A1F23;
-    /* Tinto/Madera Oscura */
     --color-secondary: #7A5051;
-    /* Palo de Rosa Intenso */
     --color-accent-light: #f4ece4;
-    /* Fondo Suave / Arena */
     --color-dark: #2c2c2c;
-    /* Gris casi negro */
+
     --bg-light: #FFFFFF;
     --colonial-bg: #fdfbf7;
     --colonial-border: #e6dfd5;
@@ -34,7 +27,7 @@ body.bg-resultados {
     padding: 0 1rem;
 }
 
-/* --- Barra de Progreso Superior --- */
+/* Barra de progreso */
 .progress-bar-container {
     background-color: transparent;
     padding: 2.5rem 0 1.5rem 0;
@@ -90,7 +83,7 @@ body.bg-resultados {
     margin-bottom: 1.5rem;
 }
 
-/* --- MAIN LAYOUT (Izquierda Habitaciones, Derecha Carrito) --- */
+/* Layout principal */
 .results-layout {
     display: flex;
     gap: 3.5rem;
@@ -100,19 +93,18 @@ body.bg-resultados {
 
 .rooms-list {
     flex: 1;
-    /* Tira principal (Izquierda) */
     display: flex;
     flex-direction: column;
     gap: 3rem;
     min-width: 0;
 }
 
-/* Ocultar los radio buttons reales que manejan la lógica CSS */
+/* Ocultar los inputs de selección */
 .room-radio-input {
     display: none;
 }
 
-/* --- TARJETAS DE HABITACIÓN (IMAGEN ARRIBA, TEXTO ABAJO) --- */
+/* Tarjetas de habitación */
 .room-card {
     background-color: var(--white);
     border-radius: 0;
@@ -125,13 +117,13 @@ body.bg-resultados {
     position: relative;
 }
 
-/* Indicador de "Seleccionada" visual */
+/* Indicador de selección */
 .room-radio-input:checked+.room-card {
     border: 2px solid var(--color-secondary);
     box-shadow: 0 8px 25px rgba(122, 80, 81, 0.15);
 }
 
-/* Banderin de seleccionada que aparce al checkear */
+/* Banderin de selección */
 .selected-badge {
     position: absolute;
     top: 1rem;
@@ -159,11 +151,10 @@ body.bg-resultados {
     position: relative;
 }
 
-/* Ajuste de Proporciones: Fotografía estilo panorámica/grande */
+/* Proporciones de imagen */
 .room-img {
     width: 100%;
     height: 250px;
-    /* Reducido para que quepa la información completa */
     object-fit: cover;
     display: block;
 }
@@ -212,7 +203,7 @@ body.bg-resultados {
     font-size: 1.2rem;
 }
 
-/* Pie de la tarjeta (Precio y Botón Label) */
+/* Pie de tarjeta */
 .room-footer {
     display: flex;
     justify-content: space-between;
@@ -262,7 +253,7 @@ body.bg-resultados {
     margin-top: 0.3rem;
 }
 
-/* Este label funciona como el botón de selección real */
+/* Botón de selección */
 .btn-seleccionar-label {
     background-color: transparent;
     color: var(--color-brand);
@@ -282,7 +273,7 @@ body.bg-resultados {
     color: var(--white);
 }
 
-/* Cambiar estilo del botón cuando está chequeado */
+/* Estilo del botón seleccionado */
 .room-radio-input:checked+.room-card .btn-seleccionar-label {
     background-color: var(--color-secondary);
     color: var(--white);
@@ -291,30 +282,30 @@ body.bg-resultados {
 
 /* --- CARRITO LATERAL (SIDEBAR) --- */
 .sticky-sidebar {
-    width: 380px;
+    width: 320px;
     flex-shrink: 0;
+    position: sticky;
+    top: 100px;
+    align-self: flex-start;
 }
 
 .cart-box {
-    position: sticky;
-    top: 2rem;
     background-color: #faf9f6;
     border: 1px solid var(--colonial-border);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    padding: 2rem;
-    /* Padding bottom extra para el boton final flotante */
-    padding-bottom: 2.5rem;
+    padding: 1.3rem;
+    padding-bottom: 1.5rem;
 }
 
 .cart-header {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .cart-hotel-title {
     font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: var(--color-brand);
-    margin: 0 0 0.3rem 0;
+    margin: 0 0 0.2rem 0;
 }
 
 .cart-stars {
@@ -326,13 +317,13 @@ body.bg-resultados {
     width: 100%;
     height: 1px;
     background-color: var(--colonial-border);
-    margin: 1.5rem 0;
+    margin: 1rem 0;
 }
 
 .cart-details h4 {
     color: var(--color-secondary);
-    font-size: 1.05rem;
-    margin: 0 0 1rem 0;
+    font-size: 0.95rem;
+    margin: 0 0 0.7rem 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -340,18 +331,17 @@ body.bg-resultados {
 
 .cart-details p {
     color: var(--color-dark);
-    margin: 0 0 0.5rem 0;
-    font-size: 0.95rem;
+    margin: 0 0 0.3rem 0;
+    font-size: 0.85rem;
 }
 
-/* LÓGICA DE SELECCIÓN EN EL CARRITO MEDIANTE CSS PURO */
-/* Por defecto todo apagado en el carrito */
+/* Selección en el carrito */
 .cart-room-dynamic {
     display: none;
     clear: both;
 }
 
-/* Si hay algun input radio checked general, el estado vacio ("¡Elige tu habitación!") se oculta */
+/* Estado vacío del carrito */
 .cart-empty-state {
     display: flex;
     justify-content: space-between;
@@ -364,7 +354,7 @@ body:has(.room-radio-input:checked) .cart-empty-state {
     display: none;
 }
 
-/* Mostrar la info específica según qué ID esté checked usando :has en el body (Soportado en browsers modernos) */
+/* Mostrar habitación seleccionada en carrito */
 body:has(#room101:checked) .room101-info,
 body:has(#room102:checked) .room102-info,
 body:has(#room103:checked) .room103-info,
@@ -381,14 +371,14 @@ body:has(#room207:checked) .room207-info {
     display: block;
 }
 
-/* Cabecera de la habitación dinámica en el carrito */
+/* Info de habitación en carrito */
 .dynamic-room-name {
     display: flex;
     justify-content: space-between;
     font-weight: bold;
     color: var(--color-brand);
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
 }
 
 .dynamic-room-price {
@@ -398,12 +388,12 @@ body:has(#room207:checked) .room207-info {
 }
 
 .total-final-box {
-    margin-top: 1.5rem;
+    margin-top: 1rem;
 }
 
 .total-label {
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 0.85rem;
     color: var(--color-dark);
     text-transform: uppercase;
     display: block;
@@ -411,33 +401,31 @@ body:has(#room207:checked) .room207-info {
 
 .total-amount {
     display: block;
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;
     color: var(--color-brand);
     text-align: right;
-    margin-top: 0.5rem;
+    margin-top: 0.3rem;
 }
 
-/* Boton Continuar a Datos Personales */
+/* Botón continuar */
 .btn-submit-cart {
     display: block;
     width: 100%;
     background-color: var(--colonial-border);
-    /* Color apagado por default */
     color: #888;
     text-align: center;
     text-decoration: none;
-    padding: 1.2rem;
+    padding: 0.9rem;
     font-weight: bold;
-    font-size: 1.1rem;
-    margin-top: 2rem;
+    font-size: 1rem;
+    margin-top: 1.2rem;
     transition: all 0.3s ease;
     pointer-events: none;
-    /* Deshabilitado por default */
 }
 
-/* Activar botón cuando haya selección via checkbox/radio */
+/* Activar botón con selección */
 body:has(.room-radio-input:checked) .btn-submit-cart {
     background-color: var(--color-secondary);
     color: var(--white);
@@ -450,24 +438,20 @@ body:has(.room-radio-input:checked) .btn-submit-cart:hover {
 
 .taxes-footer {
     background-color: #eedcd0;
-    padding: 1rem;
-    margin: 2rem -2rem -2.5rem -2rem;
-    /* Se expande a los bordes del cart-box */
-    font-size: 0.85rem;
+    padding: 0.7rem;
+    margin: 1rem -1.3rem -1.5rem -1.3rem;
+    font-size: 0.8rem;
     color: var(--color-brand);
     text-align: center;
 }
 
-/* =========================================
-   PANTALLA 2: DATOS PERSONALES
-   ========================================= */
+/* Pantalla 2: Datos personales */
 #toggle-datos-personales {
     display: none;
 }
 
 .seccion-datos-personales {
     display: none;
-    /* Oculto por defecto */
     margin-top: 3rem;
     background: var(--white);
     padding: 3rem;
@@ -475,13 +459,13 @@ body:has(.room-radio-input:checked) .btn-submit-cart:hover {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-/* Animación al pasar a pantalla 2 */
+/* Transición a pantalla 2 */
 body:has(#toggle-datos-personales:checked) .seccion-datos-personales {
     display: block;
     animation: fadeIn 0.5s ease;
 }
 
-/* Ocultar vista inicial */
+/* Ocultar vista de habitaciones */
 body:has(#toggle-datos-personales:checked) .results-layout {
     display: none;
 }
@@ -490,7 +474,7 @@ body:has(#toggle-datos-personales:checked) .search-summary-bar {
     display: none;
 }
 
-/* Progreso pantalla 2 */
+/* Progreso paso 2 */
 body:has(#toggle-datos-personales:checked) .progress-bar-container .step-1 {
     color: #b0a39c;
 }
@@ -509,14 +493,12 @@ body:has(#toggle-datos-personales:checked) .progress-bar-container .step-2 .step
     color: var(--white);
 }
 
-/* =========================================
-   PANTALLA 3: CONFIRMACIÓN
-   ========================================= */
+/* Pantalla 3: Confirmación */
 .seccion-confirmacion-final {
     display: none;
 }
 
-/* Detalles de confirmación de la habitación */
+/* Detalles de confirmación por habitación */
 body:has(#room101:checked) .conf-room-img-container .img-101,
 body:has(#room101:checked) .conf-room-name .name-101,
 body:has(#room101:checked) .conf-room-price .price-101 {
@@ -577,9 +559,9 @@ body:has(#room204:checked) .conf-room-price .price-204 {
     display: inline-block !important;
 }
 
-/* Mostrar datos y formulario correctos */
-body:has(input[name="room-selection"]:checked) .conf-room-name .conf-default,
-body:has(input[name="room-selection"]:checked) .conf-room-price .conf-default {
+/* Ocultar textos por defecto al seleccionar */
+body:has(.room-radio-input:checked) .conf-room-name .conf-default,
+body:has(.room-radio-input:checked) .conf-room-price .conf-default {
     display: none !important;
 }
 
@@ -592,7 +574,7 @@ body:has(#toggle-confirmacion:checked) .seccion-confirmacion-final {
     animation: fadeIn 0.5s ease;
 }
 
-/* Progreso pantalla 3 */
+/* Progreso paso 3 */
 body:has(#toggle-confirmacion:checked) .progress-bar-container .step-1,
 body:has(#toggle-confirmacion:checked) .progress-bar-container .step-2 {
     color: #b0a39c;
@@ -685,7 +667,7 @@ body:has(#toggle-confirmacion:checked) .progress-bar-container .step:nth-child(5
     background-color: var(--color-secondary);
 }
 
-/* --- Responsive --- */
+/* Responsive */
 @media (max-width: 1024px) {
     .results-layout {
         flex-direction: column-reverse;
@@ -694,9 +676,6 @@ body:has(#toggle-confirmacion:checked) .progress-bar-container .step:nth-child(5
 
     .sticky-sidebar {
         width: 100%;
-    }
-
-    .cart-box {
         position: static;
     }
 }

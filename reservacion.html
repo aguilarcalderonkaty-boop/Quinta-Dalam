@@ -7,10 +7,12 @@
     <script src="https://kit.fontawesome.com/aab6fd71ad.js" crossorigin="anonymous"></script>
     <title>Reservar | Hotel Quinta Dalam</title>
     <link rel="icon" href="icons/hotel-solid.png" type="image/png">
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/aguilarcalderonkaty-boop/Quinta-Dalam@main/styles/index-styles.css">
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/aguilarcalderonkaty-boop/Quinta-Dalam@main/styles/reservaciones-styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/index-styles.css">
+    <link rel="stylesheet" href="styles/reservaciones-styles.css">
 </head>
 
 <body class="bg-resultados">
@@ -60,30 +62,60 @@
         </div>
 
         <div class="container">
-            <div class="search-summary-bar">
+            <div class="search-summary-bar" id="summary-bar">
                 <div class="container summary-grid">
                     <div class="summary-item">
                         <small>HOTEL</small>
                         <strong>Hotel Quinta Dalam</strong>
                     </div>
-                    <div class="summary-item">
+                    <div class="summary-item" data-field="entrada">
                         <small>ENTRADA</small>
-                        <span><i class="fa-regular fa-calendar"
-                                style="color: var(--color-secondary); margin-right: 5px;"></i> 13/08/2026</span>
+                        <span id="sum-entrada"><i class="fa-regular fa-calendar"
+                                style="color: #3A1F23; margin-right: 5px;"></i> 13/08/2026</span>
                     </div>
-                    <div class="summary-item">
+                    <div class="summary-item" data-field="salida">
                         <small>SALIDA</small>
-                        <span>17/08/2026</span>
+                        <span id="sum-salida">17/08/2026</span>
                     </div>
-                    <div class="summary-item">
+                    <div class="summary-item" data-field="habitaciones">
                         <small>HABITACIONES</small>
-                        <span>1</span>
+                        <span id="sum-habitaciones">1</span>
                     </div>
-                    <div class="summary-item">
+                    <div class="summary-item" data-field="personas">
                         <small>PERSONAS</small>
-                        <span>2 adultos</span>
+                        <span id="sum-personas">2 adultos</span>
                     </div>
-                    <a href="index.html" class="btn-modificar-busqueda">Modificar Búsqueda</a>
+                    <button type="button" class="btn-edit-summary" id="btn-edit-summary" title="Editar datos de búsqueda">
+                        <i class="fa-solid fa-pen"></i>
+                    </button>
+                </div>
+
+                <!-- Modern Edit Panel -->
+                <div class="summary-edit-panel" id="summary-edit-panel" style="display:none;">
+                    <div class="container edit-panel-inner">
+                        <div class="edit-section">
+                            <h4 class="edit-section-title"><i class="fa-regular fa-calendar"></i> Fechas</h4>
+                            <div class="edit-dates-row">
+                                <div class="edit-field" style="flex:1;">
+                                    <label>Entrada — Salida</label>
+                                    <input type="text" id="edit-rango-fechas" class="edit-input" placeholder="Seleccionar fechas" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="edit-section">
+                            <h4 class="edit-section-title"><i class="fa-solid fa-users"></i> Huéspedes</h4>
+                            <div id="edit-rooms-container"></div>
+                            <a href="#" class="edit-add-room" id="edit-add-room">+ Añadir habitación</a>
+                        </div>
+                        <div class="edit-actions">
+                            <button type="button" class="btn-save-edit" id="btn-save-edit">
+                                <i class="fa-solid fa-check"></i> Actualizar
+                            </button>
+                            <button type="button" class="btn-cancel-edit" id="btn-cancel-edit">
+                                Cancelar
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -94,7 +126,7 @@
                         Lista de Habitaciones Disponibles</h2>
 
                     <!-- Habitación 101 Tzintzuntzan -->
-                    <input type="radio" name="room-selection" id="room101" class="room-radio-input">
+                    <input type="checkbox" id="room101" class="room-radio-input">
                     <article class="room-card">
                         <span class="selected-badge"><i class="fa-solid fa-check"></i> Seleccionada</span>
                         <div class="room-img-container">
@@ -132,7 +164,7 @@
                     </article>
 
                     <!-- Habitación 102 Paracho -->
-                    <input type="radio" name="room-selection" id="room102" class="room-radio-input">
+                    <input type="checkbox" id="room102" class="room-radio-input">
                     <article class="room-card">
                         <span class="selected-badge"><i class="fa-solid fa-check"></i> Seleccionada</span>
                         <div class="room-img-container">
@@ -170,7 +202,7 @@
                     </article>
 
                     <!-- Habitación 103 Yunuen -->
-                    <input type="radio" name="room-selection" id="room103" class="room-radio-input">
+                    <input type="checkbox" id="room103" class="room-radio-input">
                     <article class="room-card">
                         <span class="selected-badge"><i class="fa-solid fa-check"></i> Seleccionada</span>
                         <div class="room-img-container">
@@ -208,7 +240,7 @@
                     </article>
 
                     <!-- Habitación 104 Pátzcuaro -->
-                    <input type="radio" name="room-selection" id="room104" class="room-radio-input">
+                    <input type="checkbox" id="room104" class="room-radio-input">
                     <article class="room-card">
                         <span class="selected-badge"><i class="fa-solid fa-check"></i> Seleccionada</span>
                         <div class="room-img-container">
@@ -246,7 +278,7 @@
                     </article>
 
                     <!-- Habitación 105 Coeneo -->
-                    <input type="radio" name="room-selection" id="room105" class="room-radio-input">
+                    <input type="checkbox" id="room105" class="room-radio-input">
                     <article class="room-card">
                         <span class="selected-badge"><i class="fa-solid fa-check"></i> Seleccionada</span>
                         <div class="room-img-container">
@@ -284,7 +316,7 @@
                     </article>
 
                     <!-- Habitación 106 Janitzio -->
-                    <input type="radio" name="room-selection" id="room106" class="room-radio-input">
+                    <input type="checkbox" id="room106" class="room-radio-input">
                     <article class="room-card">
                         <span class="selected-badge"><i class="fa-solid fa-check"></i> Seleccionada</span>
                         <div class="room-img-container">
@@ -322,7 +354,7 @@
                     </article>
 
                     <!-- Suite 201 Quencio -->
-                    <input type="radio" name="room-selection" id="room201" class="room-radio-input">
+                    <input type="checkbox" id="room201" class="room-radio-input">
                     <article class="room-card">
                         <span class="selected-badge"><i class="fa-solid fa-check"></i> Seleccionada</span>
                         <div class="room-img-container">
@@ -362,7 +394,7 @@
                     </article>
 
                     <!-- Habitación 202 Morelia -->
-                    <input type="radio" name="room-selection" id="room202" class="room-radio-input">
+                    <input type="checkbox" id="room202" class="room-radio-input">
                     <article class="room-card">
                         <span class="selected-badge"><i class="fa-solid fa-check"></i> Seleccionada</span>
                         <div class="room-img-container">
@@ -400,7 +432,7 @@
                     </article>
 
                     <!-- Habitación 203 Tacámbaro -->
-                    <input type="radio" name="room-selection" id="room203" class="room-radio-input">
+                    <input type="checkbox" id="room203" class="room-radio-input">
                     <article class="room-card">
                         <span class="selected-badge"><i class="fa-solid fa-check"></i> Seleccionada</span>
                         <div class="room-img-container">
@@ -438,7 +470,7 @@
                     </article>
 
                     <!-- Habitación 204 Uruapan -->
-                    <input type="radio" name="room-selection" id="room204" class="room-radio-input">
+                    <input type="checkbox" id="room204" class="room-radio-input">
                     <article class="room-card">
                         <span class="selected-badge"><i class="fa-solid fa-check"></i> Seleccionada</span>
                         <div class="room-img-container">
@@ -476,7 +508,7 @@
                     </article>
 
                     <!-- Habitación 205 Tlalpujahua -->
-                    <input type="radio" name="room-selection" id="room205" class="room-radio-input">
+                    <input type="checkbox" id="room205" class="room-radio-input">
                     <article class="room-card">
                         <span class="selected-badge"><i class="fa-solid fa-check"></i> Seleccionada</span>
                         <div class="room-img-container">
@@ -514,7 +546,7 @@
                     </article>
 
                     <!-- Habitación 206 Cuitzeo -->
-                    <input type="radio" name="room-selection" id="room206" class="room-radio-input">
+                    <input type="checkbox" id="room206" class="room-radio-input">
                     <article class="room-card">
                         <span class="selected-badge"><i class="fa-solid fa-check"></i> Seleccionada</span>
                         <div class="room-img-container">
@@ -552,7 +584,7 @@
                     </article>
 
                     <!-- Habitación 207 Cuanajo -->
-                    <input type="radio" name="room-selection" id="room207" class="room-radio-input">
+                    <input type="checkbox" id="room207" class="room-radio-input">
                     <article class="room-card">
                         <span class="selected-badge"><i class="fa-solid fa-check"></i> Seleccionada</span>
                         <div class="room-img-container">
@@ -1024,6 +1056,428 @@
             </div>
         </div>
     </footer>
+    <style>
+        .btn-edit-summary {
+            background: none;
+            border: 1px solid #3A1F23;
+            color: #3A1F23;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+        .btn-edit-summary:hover { background: #3A1F23; color: #fff; }
+
+        /* --- Edit Panel Modern --- */
+        .summary-edit-panel {
+            background: #faf9f6;
+            border-top: 2px solid #e6dfd5;
+            animation: editSlideIn 0.35s ease;
+        }
+        @keyframes editSlideIn {
+            from { opacity: 0; max-height: 0; }
+            to { opacity: 1; max-height: 600px; }
+        }
+        .edit-panel-inner {
+            padding: 1.8rem 1rem;
+            display: flex;
+            gap: 2.5rem;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+        .edit-section {
+            flex: 1;
+            min-width: 240px;
+        }
+        .edit-section-title {
+            font-family: 'Playfair Display', serif;
+            color: #3A1F23;
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 0 0 1rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .edit-section-title i { color: #3A1F23; font-size: 0.9rem; }
+        .edit-dates-row {
+            display: flex;
+            gap: 1rem;
+        }
+        .edit-field {
+            flex: 1;
+            min-width: 0;
+        }
+        .edit-field label {
+            display: block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #888;
+            margin-bottom: 0.4rem;
+            font-weight: 700;
+        }
+        .edit-input {
+            width: 100%;
+            border: 1px solid #e0d5c7;
+            border-radius: 4px;
+            padding: 0.6rem 0.8rem;
+            font-family: 'Lora', serif;
+            font-size: 0.95rem;
+            color: #3A1F23;
+            background: #fff;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            box-sizing: border-box;
+        }
+        .edit-input:focus {
+            outline: none;
+            border-color: #3A1F23;
+            box-shadow: 0 0 0 3px rgba(58,31,35,0.08);
+        }
+
+        /* Room blocks in edit panel */
+        .edit-room-block {
+            background: #fff;
+            border: 1px solid #e6dfd5;
+            border-radius: 6px;
+            padding: 0.8rem 1rem;
+            margin-bottom: 0.7rem;
+            position: relative;
+        }
+        .edit-room-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.6rem;
+        }
+        .edit-room-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #3A1F23;
+            letter-spacing: 0.5px;
+        }
+        .edit-room-delete {
+            background: none;
+            border: none;
+            color: #ccc;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: color 0.2s;
+            padding: 2px 6px;
+        }
+        .edit-room-delete:hover { color: #d32f2f; }
+        .edit-occ-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.4rem;
+        }
+        .edit-occ-label {
+            font-size: 0.85rem;
+            color: #555;
+            font-weight: 600;
+        }
+        .edit-occ-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .edit-btn-circle {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 1px solid #3A1F23;
+            background: transparent;
+            color: #3A1F23;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            line-height: 1;
+        }
+        .edit-btn-circle:hover:not(:disabled) { background: #3A1F23; color: #fff; }
+        .edit-btn-circle:disabled { border-color: #ddd; color: #ddd; cursor: not-allowed; }
+        .edit-occ-count {
+            font-family: 'Lora', serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #3A1F23;
+            min-width: 18px;
+            text-align: center;
+        }
+        .edit-add-room {
+            display: inline-block;
+            font-family: 'Open Sans', sans-serif;
+            color: #3A1F23;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-decoration: none;
+            border-bottom: 1px dashed #3A1F23;
+            padding-bottom: 1px;
+            transition: opacity 0.2s;
+            margin-top: 0.3rem;
+        }
+        .edit-add-room:hover { opacity: 0.7; }
+
+        /* Action buttons */
+        .edit-actions {
+            display: flex;
+            gap: 0.8rem;
+            align-items: center;
+            align-self: flex-end;
+            padding-top: 1.5rem;
+            min-width: 200px;
+        }
+        .btn-save-edit {
+            background: #3A1F23;
+            color: #fff;
+            border: none;
+            padding: 0.6rem 1.5rem;
+            font-family: 'Lora', serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+            white-space: nowrap;
+        }
+        .btn-save-edit:hover { background: #2a1218; }
+        .btn-cancel-edit {
+            background: none;
+            border: 1px solid #ccc;
+            color: #777;
+            padding: 0.6rem 1.2rem;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.85rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-cancel-edit:hover { border-color: #999; color: #444; }
+
+        /* Flatpickr dark theme override for edit panel */
+        .qd-edit-calendar .flatpickr-month { font-family: 'Playfair Display', serif; color: #3A1F23 !important; }
+        .qd-edit-calendar .flatpickr-weekday { font-weight: 700; color: #3A1F23 !important; }
+        .qd-edit-calendar .flatpickr-day.selected,
+        .qd-edit-calendar .flatpickr-day.startRange,
+        .qd-edit-calendar .flatpickr-day.endRange { background: #3A1F23 !important; border-color: #3A1F23 !important; color: #fff !important; }
+        .qd-edit-calendar .flatpickr-day.inRange { background: #e9d5bd !important; border-color: #e9d5bd !important; color: #3A1F23 !important; }
+
+        @media (max-width: 768px) {
+            .edit-panel-inner { flex-direction: column; gap: 1.5rem; }
+            .edit-dates-row { flex-direction: column; }
+            .edit-actions { min-width: auto; width: 100%; }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/es.js"></script>
+    <script>
+        (function () {
+            // Read booking search from localStorage
+            let data = JSON.parse(localStorage.getItem('qd_booking_search') || 'null');
+            // Edit rooms state
+            let editRooms = [{ adults: 2, children: 0 }];
+            const MAX_EDIT_ROOMS = 4;
+
+            function buildPersonsText(adultos, ninos) {
+                let txt = adultos + ' adulto' + (adultos !== 1 ? 's' : '');
+                if (ninos > 0) txt += ', ' + ninos + ' niño' + (ninos !== 1 ? 's' : '');
+                return txt;
+            }
+
+            function updateSummaryDisplay(d) {
+                const elEntrada = document.getElementById('sum-entrada');
+                const elSalida = document.getElementById('sum-salida');
+                const elHab = document.getElementById('sum-habitaciones');
+                const elPers = document.getElementById('sum-personas');
+
+                if (elEntrada) elEntrada.innerHTML = '<i class="fa-regular fa-calendar" style="color:#3A1F23;margin-right:5px;"></i> ' + d.fechaEntrada;
+                if (elSalida) elSalida.textContent = d.fechaSalida;
+                if (elHab) elHab.textContent = d.habitaciones;
+                if (elPers) elPers.textContent = buildPersonsText(d.adultos, d.ninos);
+
+                // Update cart details
+                const cartDetails = document.querySelector('.cart-details');
+                if (cartDetails) {
+                    const paragraphs = cartDetails.querySelectorAll('p');
+                    if (paragraphs[0]) paragraphs[0].textContent = d.fechaEntrada + ' - ' + d.fechaSalida + ' (' + d.noches + ' noche' + (d.noches !== 1 ? 's' : '') + ')';
+                    if (paragraphs[1]) paragraphs[1].textContent = buildPersonsText(d.adultos, d.ninos);
+                }
+            }
+
+            if (data) updateSummaryDisplay(data);
+
+            // --- Render edit rooms ---
+            function renderEditRooms() {
+                const container = document.getElementById('edit-rooms-container');
+                if (!container) return;
+                container.innerHTML = '';
+                editRooms.forEach((room, idx) => {
+                    const html = `
+                    <div class="edit-room-block">
+                        <div class="edit-room-header">
+                            <span class="edit-room-title">Habitación ${idx + 1}</span>
+                            ${editRooms.length > 1 ? '<button type="button" class="edit-room-delete" data-idx="' + idx + '"><i class="fa-regular fa-trash-can"></i></button>' : ''}
+                        </div>
+                        <div class="edit-occ-row">
+                            <span class="edit-occ-label">Adultos</span>
+                            <div class="edit-occ-controls">
+                                <button type="button" class="edit-btn-circle" data-idx="${idx}" data-type="adults" data-change="-1" ${room.adults <= 1 ? 'disabled' : ''}>−</button>
+                                <span class="edit-occ-count">${room.adults}</span>
+                                <button type="button" class="edit-btn-circle" data-idx="${idx}" data-type="adults" data-change="1" ${room.adults >= 4 ? 'disabled' : ''}>+</button>
+                            </div>
+                        </div>
+                        <div class="edit-occ-row">
+                            <span class="edit-occ-label">Niños</span>
+                            <div class="edit-occ-controls">
+                                <button type="button" class="edit-btn-circle" data-idx="${idx}" data-type="children" data-change="-1" ${room.children <= 0 ? 'disabled' : ''}>−</button>
+                                <span class="edit-occ-count">${room.children}</span>
+                                <button type="button" class="edit-btn-circle" data-idx="${idx}" data-type="children" data-change="1" ${room.children >= 3 ? 'disabled' : ''}>+</button>
+                            </div>
+                        </div>
+                    </div>`;
+                    container.insertAdjacentHTML('beforeend', html);
+                });
+                const addBtn = document.getElementById('edit-add-room');
+                if (addBtn) addBtn.style.display = editRooms.length >= MAX_EDIT_ROOMS ? 'none' : 'inline-block';
+            }
+
+            // Event delegation for edit room buttons
+            document.addEventListener('click', function (e) {
+                const circleBtn = e.target.closest('.edit-btn-circle');
+                if (circleBtn) {
+                    e.stopPropagation();
+                    const idx = parseInt(circleBtn.dataset.idx);
+                    const type = circleBtn.dataset.type;
+                    const change = parseInt(circleBtn.dataset.change);
+                    if (editRooms[idx]) {
+                        editRooms[idx][type] += change;
+                        renderEditRooms();
+                    }
+                    return;
+                }
+                const delBtn = e.target.closest('.edit-room-delete');
+                if (delBtn) {
+                    e.stopPropagation();
+                    const idx = parseInt(delBtn.dataset.idx);
+                    editRooms.splice(idx, 1);
+                    renderEditRooms();
+                    return;
+                }
+            });
+
+            const editAddRoom = document.getElementById('edit-add-room');
+            if (editAddRoom) {
+                editAddRoom.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    if (editRooms.length < MAX_EDIT_ROOMS) {
+                        editRooms.push({ adults: 2, children: 0 });
+                        renderEditRooms();
+                    }
+                });
+            }
+
+            // --- Flatpickr range for dates ---
+            let fpRange;
+            function initFlatpickr() {
+                fpRange = flatpickr('#edit-rango-fechas', {
+                    mode: 'range',
+                    dateFormat: 'd/m/Y',
+                    locale: 'es',
+                    minDate: 'today',
+                    showMonths: window.innerWidth > 768 ? 2 : 1,
+                    onReady: function (s, d, instance) { instance.calendarContainer.classList.add('qd-edit-calendar'); }
+                });
+            }
+
+            // --- Edit panel toggle ---
+            const btnEdit = document.getElementById('btn-edit-summary');
+            const panel = document.getElementById('summary-edit-panel');
+            const btnSave = document.getElementById('btn-save-edit');
+            const btnCancel = document.getElementById('btn-cancel-edit');
+            let fpInitialized = false;
+
+            if (btnEdit && panel) {
+                btnEdit.addEventListener('click', function () {
+                    const isOpen = panel.style.display !== 'none';
+                    if (isOpen) { panel.style.display = 'none'; return; }
+
+                    if (!fpInitialized) { initFlatpickr(); fpInitialized = true; }
+
+                    // Populate from current data
+                    const d = data || { fechaEntrada: '', fechaSalida: '', adultos: 2, ninos: 0, habitaciones: 1 };
+                    if (fpRange && d.fechaEntrada && d.fechaSalida) {
+                        fpRange.setDate([
+                            flatpickr.parseDate(d.fechaEntrada, 'd/m/Y'),
+                            flatpickr.parseDate(d.fechaSalida, 'd/m/Y')
+                        ]);
+                    }
+
+                    // Build rooms from data
+                    if (d.roomsDetail && d.roomsDetail.length > 0) {
+                        editRooms = d.roomsDetail.map(r => ({ adults: r.adults, children: r.children }));
+                    } else {
+                        editRooms = [];
+                        for (let i = 0; i < d.habitaciones; i++) {
+                            editRooms.push({ adults: Math.ceil(d.adultos / d.habitaciones), children: Math.floor(d.ninos / d.habitaciones) });
+                        }
+                        if (editRooms.length === 0) editRooms.push({ adults: 2, children: 0 });
+                    }
+                    renderEditRooms();
+                    panel.style.display = 'block';
+                });
+
+                btnCancel.addEventListener('click', function () { panel.style.display = 'none'; });
+
+                btnSave.addEventListener('click', function () {
+                    const rangoVal = document.getElementById('edit-rango-fechas').value.trim();
+                    if (!rangoVal) { alert('Por favor selecciona las fechas.'); return; }
+
+                    // Parse range: "dd/mm/yyyy a dd/mm/yyyy"
+                    const partes = rangoVal.split(' a ');
+                    const entrada = partes[0] || '';
+                    const salida = partes[1] || partes[0] || '';
+
+                    let totalAdultos = 0, totalNinos = 0;
+                    editRooms.forEach(r => { totalAdultos += r.adults; totalNinos += r.children; });
+
+                    let noches = 1;
+                    const pe = entrada.split('/'), ps = salida.split('/');
+                    if (pe.length === 3 && ps.length === 3) {
+                        const dIn = new Date(pe[2], pe[1] - 1, pe[0]);
+                        const dOut = new Date(ps[2], ps[1] - 1, ps[0]);
+                        noches = Math.round((dOut - dIn) / 86400000);
+                        if (noches <= 0) noches = 1;
+                    }
+
+                    data = {
+                        fechaEntrada: entrada,
+                        fechaSalida: salida,
+                        noches: noches,
+                        adultos: totalAdultos,
+                        ninos: totalNinos,
+                        habitaciones: editRooms.length,
+                        roomsDetail: editRooms,
+                        timestamp: Date.now()
+                    };
+
+                    localStorage.setItem('qd_booking_search', JSON.stringify(data));
+                    updateSummaryDisplay(data);
+                    panel.style.display = 'none';
+                });
+            }
+        })();
+    </script>
 </body>
 
 </html>

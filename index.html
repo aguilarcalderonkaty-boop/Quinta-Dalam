@@ -9,7 +9,7 @@
         content="Hotel Quinta Dalam - La esencia de Michoacán. Hospédate en habitaciones inspiradas en los Pueblos Mágicos de Michoacán.">
     <title>Hotel Quinta Dalam - Reserva para conocer todo Michoacán en Quencio</title>
     <link rel="icon" href="icons/hotel-solid.png" type="image/png">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,8 +18,7 @@
         rel="stylesheet">
 
 
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/aguilarcalderonkaty-boop/Quinta-Dalam@main/styles/index-styles.css">
+    <link rel="stylesheet" href="styles/index-styles.css">
 </head>
 
 <body>
@@ -38,9 +37,9 @@
                 </a>
 
                 <div class="nav-links-group">
-                    <a href="#" class="nav-animado">Sobre nosotros</a>
+                    <a href="#nosotros" class="nav-animado">Sobre nosotros</a>
                     <div class="separator-sm"></div>
-                    <a href="#" class="nav-animado">Sobre el destino</a>
+                    <a href="#destino" class="nav-animado">Sobre el destino</a>
                 </div>
 
             </div>
@@ -97,33 +96,47 @@
 
         <!-- Buscador rápido -->
         <div class="quick-booking-bar container">
-            <form action="reservacion.html" class="quick-booking-form">
-                <div class="qb-group qb-date">
-                    <label>Llegada</label>
-                    <input type="date" required>
+            <form action="reservacion.html" class="quick-booking-form" id="booking-form">
+
+                <div class="qb-group qb-date-range">
+                    <label class="qb-label-elegant">FECHAS DE ESTANCIA</label>
+                    <div class="input-with-icon">
+                        <i class="fa-regular fa-calendar input-icon"></i>
+                        <input type="text" id="rango-fechas" class="input-style-elegant"
+                            placeholder="Seleccionar fechas" readonly required>
+                    </div>
                 </div>
 
-                <div class="qb-group qb-date">
-                    <label>Salida</label>
-                    <input type="date" required>
+                <div class="qb-group qb-occupancy">
+                    <label class="qb-label-elegant">PERSONAS</label>
+                    <div class="input-with-icon trigger-occupancy" id="occupancy-trigger">
+                        <div class="occ-summary-display">
+                            <i class="fa-regular fa-user input-icon-static"></i>
+                            <span id="summary-guests" class="summary-number">2</span>
+                            <i class="fa-solid fa-bed input-icon-static" style="margin-left: 12px;"></i>
+                            <span id="summary-rooms" class="summary-number">1</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-down caret-icon"></i>
+                    </div>
+
+                    <div class="occupancy-dropdown" id="occupancy-dropdown">
+                        <div id="rooms-container"></div>
+
+                        <div class="occ-dropdown-footer">
+                            <a href="#" class="btn-add-room" id="btn-add-room">+ Añadir habitaciones</a>
+                            <button type="button" class="btn-confirm-occ" id="btn-confirm-occ">Confirmar</button>
+                        </div>
+                    </div>
+                    <input type="hidden" name="total_adultos" id="hidden-adults" value="2">
+                    <input type="hidden" name="total_ninos" id="hidden-children" value="0">
+                    <input type="hidden" name="total_habitaciones" id="hidden-rooms" value="1">
                 </div>
 
-                <div class="qb-group">
-                    <label>Huéspedes</label>
-                    <select name="huespedes" class="qb-select-standard">
-                        <option value="1">1 Adulto, 0 Niños</option>
-                        <option value="2" selected>2 Adultos, 0 Niños</option>
-                        <option value="3">2 Adultos, 2 Niños</option>
-                        <option value="4">4 Adultos, 0 Niños</option>
-                    </select>
-                </div>
-
-                <button type="submit" class="btn-reservar-hero">BUSCAR</button>
+                <button type="submit" class="btn-reservar-hero-elegant">BUSCAR</button>
             </form>
         </div>
 
-
-        <section class="about-section" style="margin-top: 0;">
+        <section id="nosotros" class="about-section" style="margin-top: 0;">
             <!-- Misión: Imagen Izquierda, Texto Derecha -->
             <div class="alternating-row edge-to-edge">
                 <div class="alt-row-image">
@@ -133,9 +146,12 @@
                     <div class="alt-row-content">
                         <h2 class="alt-title">Nuestra Misión</h2>
                         <p class="alt-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+                            incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                            ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                            in.
                         </p>
                     </div>
                 </div>
@@ -150,9 +166,12 @@
                     <div class="alt-row-content">
                         <h2 class="alt-title">Nuestra Visión</h2>
                         <p class="alt-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+                            incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                            ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                            in.
                         </p>
                     </div>
                 </div>
@@ -160,7 +179,97 @@
 
             <!-- Botón Más Sobre Nosotros -->
             <div class="container text-center" style="margin-top: 4rem; padding-bottom: 2rem;">
-                <a href="#" class="btn-primary">MÁS SOBRE NOSOTROS</a>
+                <a href="#" id="btn-mas-nosotros" class="btn-primary">MÁS SOBRE NOSOTROS</a>
+            </div>
+
+            <!-- Contenido desplegable de Más Sobre Nosotros -->
+            <div id="mas-nosotros-content" class="container"
+                style="display: none; padding-bottom: 4rem; animation: fadeIn 0.5s ease;">
+                <div class="text-center" style="margin-bottom: 3rem;">
+                    <h3
+                        style="font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--color-brand); margin-bottom: 1.5rem;">
+                        Nuestra Historia</h3>
+                    <p
+                        style="color: #555; max-width: 800px; margin: 0 auto; line-height: 1.8; font-size: 1.1rem; text-align: justify;">
+                        Hotel Quinta Dalam nació del profundo amor por nuestra tierra y el sueño de compartir la
+                        riqueza
+                        cultural de Michoacán con el mundo. Desde nuestros inicios, nos propusimos crear un lugar
+                        donde
+                        la hospitalidad tradicional se funde con el confort moderno. Cada rincón y cada detalle ha
+                        sido
+                        pensado para brindar no solo descanso a tu viaje, sino también un tributo a la belleza
+                        atemporal
+                        de Quencio y sus alrededores.
+                    </p>
+                </div>
+                <div style="display: flex; gap: 4rem; justify-content: center; flex-wrap: wrap;">
+                    <div class="founder-card" style="text-align: center; max-width: 250px;">
+                        <img src="img/habitacion_tzintzuntzan.jpg" alt="María Elena"
+                            onerror="this.src='img/frontal-hotel.jpg'"
+                            style="width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 4px solid #e2cba4; margin-bottom: 1rem; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
+                        <h4
+                            style="font-family: 'Playfair Display', serif; color: var(--color-brand); font-size: 1.3rem; margin-bottom: 0.3rem;">
+                            María Elena</h4>
+                        <p style="color: #888; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px;">
+                            Cofundadora</p>
+                    </div>
+                    <div class="founder-card" style="text-align: center; max-width: 250px;">
+                        <img src="img/habitacion_paracho.jpg" alt="Alejandro" onerror="this.src='img/quencio.jpg'"
+                            style="width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 4px solid #e2cba4; margin-bottom: 1rem; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
+                        <h4
+                            style="font-family: 'Playfair Display', serif; color: var(--color-brand); font-size: 1.3rem; margin-bottom: 0.3rem;">
+                            Alejandro</h4>
+                        <p style="color: #888; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px;">
+                            Cofundador</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+
+        <!-- Sobre el destino -->
+        <section id="destino" class="about-section" style="padding-top: 5rem;">
+            <!-- Quencio -->
+            <div class="alternating-row edge-to-edge">
+                <div class="alt-row-image">
+                    <img src="img/banner_contacto.jpg" alt="Acerca de Quencio" title="Conoce Quencio"
+                        onerror="this.src='img/frontal-hotel.jpg'">
+                </div>
+                <div class="alt-row-content-wrapper">
+                    <div class="alt-row-content">
+                        <h2 class="alt-title">Acerca de Quencio</h2>
+                        <p class="alt-text">
+                            Quencio es el corazón de Michoacán, un paraíso pintoresco donde la vasta cultura, las
+                            arraigadas tradiciones y la hermosa naturaleza conviven en perfecta armonía. Disfruta de
+                            la
+                            hospitalidad local y la sorprendente gastronomía en un ambiente inigualable que te
+                            invita a
+                            la calma y te brinda una verdadera conexión con las raíces de nuestro hermoso estado.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mejores fechas para visitar -->
+            <div class="alternating-row edge-to-edge reverse">
+                <div class="alt-row-image">
+                    <img src="img/NAV.jpg" alt="Mejores fechas para visitar" title="Fechas ideales"
+                        onerror="this.src='img/quencio.jpg'">
+                </div>
+                <div class="alt-row-content-wrapper">
+                    <div class="alt-row-content">
+                        <h2 class="alt-title">Mejores Fechas para Visitar</h2>
+                        <p class="alt-text">
+                            El encanto de la región se manifiesta en su máximo esplendor durante los meses de otoño
+                            e
+                            invierno. Las celebraciones como el tradicional Día de Muertos y nuestras festividades
+                            con
+                            danzas típicas son imperdibles, permitiéndote presenciar un espectáculo lleno de vida y
+                            color en fechas selectas. Te garantizamos recuerdos imborrables en tu visita.
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -199,12 +308,14 @@
                             <h3>SUITE QUENCIO</h3>
                             <span class="x-room-subtitle">201 CASA PRINCIPAL - PLANTA ALTA</span>
                             <p class="x-room-desc">Complementa las vistas a los jardines con el confort de una suite
-                                superior, con amenidades premium y una decoración auténtica para relajarte al máximo.
+                                superior, con amenidades premium y una decoración auténtica para relajarte al
+                                máximo.
                             </p>
 
                             <ul class="x-room-amenities">
                                 <li><i class="fa-solid fa-water"></i> Vista al jardín central</li>
-                                <li><i class="fa-solid fa-users"></i> 4 huéspedes: Capacidad máxima hasta 4 adultos</li>
+                                <li><i class="fa-solid fa-users"></i> 4 huéspedes: Capacidad máxima hasta 4 adultos
+                                </li>
                                 <li><i class="fa-solid fa-bed"></i> 1 Cama King Size, 1 Sofá Cama</li>
                             </ul>
 
@@ -250,8 +361,10 @@
                         <div class="x-room-content">
                             <h3>102: PARACHO</h3>
                             <span class="x-room-subtitle">HABITACIÓN DOBLE - PLANTA BAJA</span>
-                            <p class="x-room-desc">La capital mundial de la guitarra interpretada en finos acabados de
-                                madera. Una habitación con diseño contemporáneo mexicano ideal para amigos o familias
+                            <p class="x-room-desc">La capital mundial de la guitarra interpretada en finos acabados
+                                de
+                                madera. Una habitación con diseño contemporáneo mexicano ideal para amigos o
+                                familias
                                 pequeñas.</p>
 
                             <ul class="x-room-amenities">
@@ -276,8 +389,10 @@
                         <div class="x-room-content">
                             <h3>103: YUNUEN</h3>
                             <span class="x-room-subtitle">HABITACIÓN ESTÁNDAR - PLANTA BAJA</span>
-                            <p class="x-room-desc">Con un nombre que evoca la hermosa isla del lago de Pátzcuaro, esta
-                                habitación ofrece tranquilidad y una atmósfera propicia para el descanso reparador con
+                            <p class="x-room-desc">Con un nombre que evoca la hermosa isla del lago de Pátzcuaro,
+                                esta
+                                habitación ofrece tranquilidad y una atmósfera propicia para el descanso reparador
+                                con
                                 cómodos elementos rústicos.</p>
 
                             <ul class="x-room-amenities">
@@ -329,7 +444,8 @@
                             <h3>105: COENEO</h3>
                             <span class="x-room-subtitle">HABITACIÓN ESTÁNDAR - PLANTA BAJA</span>
                             <p class="x-room-desc">Sencillez que enamora. La habitación Coeneo transmite paz en cada
-                                rincón, ofreciendo la fusión perfecta entre la arquitectura de la casona y el confort
+                                rincón, ofreciendo la fusión perfecta entre la arquitectura de la casona y el
+                                confort
                                 contemporáneo.</p>
 
                             <ul class="x-room-amenities">
@@ -354,7 +470,8 @@
                         <div class="x-room-content">
                             <h3>106: JANITZIO</h3>
                             <span class="x-room-subtitle">HABITACIÓN DOBLE - PLANTA BAJA</span>
-                            <p class="x-room-desc">Inspiración lacustre con la solidez de la tierra. Un ambiente dual e
+                            <p class="x-room-desc">Inspiración lacustre con la solidez de la tierra. Un ambiente
+                                dual e
                                 idóneo para acompañantes que prefieran descansar en camas conectadas, rodeados de
                                 hospitalidad.</p>
 
@@ -381,7 +498,8 @@
                         <div class="x-room-content">
                             <h3>202: MORELIA</h3>
                             <span class="x-room-subtitle">HABITACIÓN ESTÁNDAR - PLANTA ALTA</span>
-                            <p class="x-room-desc">Evoca la majestuosidad arquitectónica de la capital michoacana con
+                            <p class="x-room-desc">Evoca la majestuosidad arquitectónica de la capital michoacana
+                                con
                                 acabados de cantera rosa auténtica y espacios soberbios que garantizan un descanso
                                 absoluto.</p>
 
@@ -407,7 +525,8 @@
                         <div class="x-room-content">
                             <h3>203: TACÁMBARO</h3>
                             <span class="x-room-subtitle">HABITACIÓN ESTÁNDAR - PLANTA ALTA</span>
-                            <p class="x-room-desc">Homenaje a uno de los puntos florales del estado. Una estancia con
+                            <p class="x-room-desc">Homenaje a uno de los puntos florales del estado. Una estancia
+                                con
                                 excelente iluminación que invita al descanso y con detalles pintorescos.</p>
 
                             <ul class="x-room-amenities">
@@ -458,7 +577,8 @@
                         <div class="x-room-content">
                             <h3>205: TLALPUJAHUA</h3>
                             <span class="x-room-subtitle">HABITACIÓN ESTÁNDAR - PLANTA ALTA</span>
-                            <p class="x-room-desc">Elegancia brillante y clásica. Aquí encontrarás madera labrada y un
+                            <p class="x-room-desc">Elegancia brillante y clásica. Aquí encontrarás madera labrada y
+                                un
                                 espacio encantador donde te sentirás en un rincón atemporal lleno de encanto.</p>
 
                             <ul class="x-room-amenities">
@@ -508,7 +628,8 @@
                         <div class="x-room-content">
                             <h3>207: CUANAJO</h3>
                             <span class="x-room-subtitle">HABITACIÓN ESTÁNDAR - PLANTA ALTA</span>
-                            <p class="x-room-desc">Refleja la noble labor artesanal en muebles tallados. Una habitación
+                            <p class="x-room-desc">Refleja la noble labor artesanal en muebles tallados. Una
+                                habitación
                                 concebida para brindar paz y hacerte sentir un profundo vínculo con el confort
                                 tradicional.</p>
 
@@ -549,7 +670,8 @@
                         <hr style="margin: 2rem 0; border: 1px solid #cbd5e1;">
 
                         <h3 class="contact-subtitle">Atención al Cliente</h3>
-                        <p class="contact-detail"><i class="fa-solid fa-phone" style="margin-right: 8px;"></i> Teléfono:
+                        <p class="contact-detail"><i class="fa-solid fa-phone" style="margin-right: 8px;"></i>
+                            Teléfono:
                             <b><a href="tel:+524431234567">+52 (443) 123-4567</a></b>
                         </p>
                         <p class="contact-detail"><i class="fa-brands fa-whatsapp" style="margin-right: 8px;"></i>
@@ -589,8 +711,7 @@
                             </div>
                             <div class="form-actions" style="display: flex; gap: 1rem; margin-top: 1rem;">
                                 <input type="reset" value="LIMPIAR" class="btn-clear">
-                                <input type="submit" value="ENVIAR MENSAJE AHORA" class="btn-secondary"
-                                    style="flex-grow: 1;">
+                                <input type="submit" value="ENVIAR MENSAJE" class="btn-secondary" style="flex-grow: 1;">
                             </div>
                         </form>
                     </div>
@@ -635,6 +756,10 @@
             </div>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/es.js"></script>
+
+    <script src="scripts/reservas.js"></script>
 </body>
 
 </html>

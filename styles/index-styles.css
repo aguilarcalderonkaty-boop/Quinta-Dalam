@@ -19,6 +19,10 @@
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+}
+
 html {
     scroll-behavior: smooth;
     scroll-padding-top: var(--nav-height);
@@ -422,22 +426,20 @@ section {
 }
 
 .quick-booking-bar {
-    background-color: var(--white);
-    padding: 1.5rem 2rem;
+    background-color: #fff;
+    padding: 1rem 2.5rem;
     border-radius: 4px;
-    border: none;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
-    width: 90%;
-    max-width: 1000px;
-    margin: -60px auto 4rem auto;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
     position: relative;
-    z-index: 20;
+    z-index: 100;
+    margin-top: -75px;
+    margin-bottom: 3rem;
 }
 
 .quick-booking-form {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr auto;
-    gap: 1.5rem;
+    grid-template-columns: 2fr 1.5fr auto;
+    gap: 2rem;
     align-items: flex-end;
 }
 
@@ -784,12 +786,14 @@ section {
 }
 
 .x-link-amenities {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: #888;
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: color 0.3s;
     font-weight: bold;
+    text-decoration: none !important;
+    font-family: 'Playfair Display', serif;
 }
 
 .x-link-amenities:hover {
@@ -802,7 +806,10 @@ section {
     color: white;
     padding: 0.8rem 2rem;
     font-weight: bold;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    font-family: 'Playfair Display', serif;
+    text-decoration: none !important;
+    letter-spacing: 0.5px;
     border-radius: 2px;
     transition: background-color 0.3s;
 }
@@ -856,130 +863,7 @@ section {
    ========================================= */
 
 /* Efectos hover para los inputs */
-.qb-group input {
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
 
-.qb-group input:hover,
-.guests-display:hover {
-    border-color: #8c5a45;
-    box-shadow: 0 0 8px rgba(140, 90, 69, 0.2);
-}
-
-/* El botón principal de RESERVAR (Sustituye al azul) en otras secciones si aplica, pero ahora es global flat */
-.btn-reservar-hero {
-    background-color: var(--color-brand);
-    color: white;
-    padding: 1rem 2.5rem;
-    border: 1px solid var(--color-brand);
-    border-radius: 0;
-    font-weight: bold;
-    font-size: 1rem;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: background-color 0.2s ease, color 0.2s ease;
-    height: 100%;
-}
-
-.btn-reservar-hero:hover {
-    background-color: var(--white);
-    color: var(--color-brand);
-}
-
-/* --- Desplegable de Huéspedes --- */
-.qb-guests-group {
-    position: relative;
-}
-
-.guests-display {
-    padding: 0.8rem;
-    border: 1px solid #cbd5e1;
-    border-radius: 4px;
-    font-size: 1rem;
-    background-color: white;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--color-dark);
-}
-
-.guests-dropdown {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 250px;
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1.5rem;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    z-index: 100;
-    margin-top: 10px;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
-}
-
-.guests-dropdown.active {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.guest-counter-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.guest-controls {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.btn-circle {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    border: 1px solid #8c5a45;
-    /* Color colonial terracota */
-    background: white;
-    color: #8c5a45;
-    font-size: 1.2rem;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.2s;
-}
-
-.btn-circle:hover {
-    background: #fdf8f5;
-    /* Fondo claro al pasar el mouse */
-}
-
-.btn-confirm-guests {
-    width: 100%;
-    background-color: #8c5a45;
-    /* Color colonial terracota */
-    color: white;
-    border: none;
-    padding: 0.8rem;
-    border-radius: 4px;
-    margin-top: 1.5rem;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.btn-confirm-guests:hover {
-    background-color: #6d4432;
-    /* Tono más oscuro al pasar el mouse */
-}
 
 
 /* =========================================
@@ -1321,4 +1205,369 @@ section {
     outline: none;
     border-color: #8c5a45;
     box-shadow: 0 0 8px rgba(140, 90, 69, 0.2);
+}
+
+
+/* ============================================================
+   TEMA CALENDARIO ELEGANTE QUINTA DALAM
+   ============================================================ */
+.qd-calendar-theme {
+    font-family: 'Open Sans', sans-serif;
+    border: 1px solid #e2cba4 !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+.qd-calendar-theme .flatpickr-month {
+    font-family: 'Playfair Display', serif;
+    color: #3A1F23 !important;
+    font-size: 1.1rem;
+}
+
+.qd-calendar-theme .flatpickr-weekday {
+    font-weight: 700;
+    color: #3A1F23 !important;
+}
+
+/* Color Días Selección Principal (Terracota) */
+.qd-calendar-theme .flatpickr-day.selected,
+.qd-calendar-theme .flatpickr-day.startRange,
+.qd-calendar-theme .flatpickr-day.endRange {
+    background: #3A1F23 !important;
+    border-color: #3A1F23 !important;
+    color: #fff !important;
+    font-weight: bold;
+}
+
+/* Color Rango Intermedio Fuerte (Arena/Palo Rosa visible) */
+.qd-calendar-theme .flatpickr-day.inRange,
+.qd-calendar-theme .flatpickr-day.inRange:hover {
+    background: #e9d5bd !important;
+    /* Tono más fuerte e identificable */
+    border-color: #e9d5bd !important;
+    color: #3A1F23 !important;
+    box-shadow: -5px 0 0 #e9d5bd, 5px 0 0 #e9d5bd !important;
+}
+
+@media (max-width: 768px) {
+    .quick-booking-form {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .occupancy-dropdown {
+        width: 100%;
+    }
+}
+
+/* ============================================================
+   BARRA DE RESERVAS (ESTILO IBEROSTAR + QUINTA DALAM)
+   ============================================================ */
+
+.quick-booking-bar {
+    background-color: #fff;
+    padding: 1rem 2.5rem;
+    border-radius: 4px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    position: relative;
+    z-index: 100;
+    margin-top: -75px;
+    margin-bottom: 3rem;
+
+    width: 90%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.quick-booking-form {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr auto;
+    gap: 2rem;
+    align-items: flex-end;
+}
+
+.qb-label-elegant {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    color: #3A1F23;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+}
+
+.input-with-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #eaeaea;
+    padding-bottom: 8px;
+    transition: border-color 0.3s;
+    cursor: pointer;
+}
+
+.input-with-icon:hover,
+.input-with-icon.active {
+    border-bottom-color: #3A1F23;
+}
+
+.input-icon,
+.input-icon-static {
+    color: #3A1F23;
+    font-size: 1.2rem;
+    margin-right: 12px;
+}
+
+.input-style-elegant {
+    width: 100%;
+    border: none;
+    font-family: 'Lora', serif;
+    font-size: 1.1rem;
+    color: #3A1F23;
+    background: transparent;
+    cursor: pointer;
+    outline: none;
+}
+
+.occ-summary-display {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.summary-number {
+    font-family: 'Lora', serif;
+    font-size: 1.15rem;
+    color: #3A1F23;
+    font-weight: 500;
+}
+
+.caret-icon {
+    color: #3A1F23;
+    font-size: 0.8rem;
+    transition: transform 0.3s;
+}
+
+.trigger-occupancy.active .caret-icon {
+    transform: rotate(180deg);
+}
+
+.btn-reservar-hero-elegant {
+    background-color: #3A1F23;
+    color: #fff;
+    border: none;
+    padding: 12px 35px;
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    height: 100%;
+}
+
+.btn-reservar-hero-elegant:hover {
+    background-color: #2a1218;
+}
+
+/* --- Menú Desplegable Ocupación --- */
+.qb-occupancy {
+    position: relative;
+}
+
+.occupancy-dropdown {
+    position: absolute;
+    top: calc(100% + 15px);
+    left: 0;
+    width: 320px;
+    background: #fff;
+    border: 1px solid #e2cba4;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 101;
+}
+
+.occupancy-dropdown.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.room-block {
+    padding: 1.5rem;
+    border-bottom: 1px solid #f0e6d8;
+}
+
+.room-block:last-child {
+    border-bottom: none;
+}
+
+.room-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.room-title {
+    font-family: 'Playfair Display', serif;
+    color: #3A1F23;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.btn-delete-room {
+    background: none;
+    border: none;
+    color: #999;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+}
+
+.btn-delete-room:hover {
+    color: #d32f2f;
+}
+
+.occ-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.occ-label-text {
+    font-family: 'Open Sans', sans-serif;
+    color: #444;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.occ-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid #3A1F23;
+    background: transparent;
+    color: #3A1F23;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-circle:hover:not(:disabled) {
+    background: #fdf6eb;
+}
+
+.btn-circle:disabled {
+    border-color: #ccc;
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+.occ-count {
+    font-family: 'Lora', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #3A1F23;
+    min-width: 20px;
+    text-align: center;
+}
+
+.occ-dropdown-footer {
+    padding: 1.5rem;
+    background-color: #fdfcf9;
+    border-radius: 0 0 4px 4px;
+    border-top: 1px solid #e2cba4;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.btn-add-room {
+    font-family: 'Open Sans', sans-serif;
+    color: #3A1F23;
+    font-weight: 600;
+    text-decoration: underline;
+    font-size: 0.95rem;
+}
+
+.btn-confirm-occ {
+    background-color: #3A1F23;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-family: 'Lora', serif;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-confirm-occ:hover {
+    background-color: #2a1218;
+}
+
+/* ============================================================
+   TEMA CALENDARIO ELEGANTE QUINTA DALAM
+   ============================================================ */
+.qd-calendar-theme {
+    font-family: 'Open Sans', sans-serif;
+    border: 1px solid #e2cba4 !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+.qd-calendar-theme .flatpickr-month {
+    font-family: 'Playfair Display', serif;
+    color: #3A1F23 !important;
+    font-size: 1.1rem;
+}
+
+.qd-calendar-theme .flatpickr-weekday {
+    font-weight: 700;
+    color: #3A1F23 !important;
+}
+
+.qd-calendar-theme .flatpickr-day.selected,
+.qd-calendar-theme .flatpickr-day.startRange,
+.qd-calendar-theme .flatpickr-day.endRange {
+    background: #3A1F23 !important;
+    border-color: #3A1F23 !important;
+    color: #fff !important;
+    font-weight: bold;
+}
+
+.qd-calendar-theme .flatpickr-day.inRange,
+.qd-calendar-theme .flatpickr-day.inRange:hover {
+    background: #e9d5bd !important;
+    border-color: #e9d5bd !important;
+    color: #3A1F23 !important;
+    box-shadow: -5px 0 0 #e9d5bd, 5px 0 0 #e9d5bd !important;
+}
+
+@media (max-width: 768px) {
+    .quick-booking-form {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .occupancy-dropdown {
+        width: 100%;
+    }
 }
