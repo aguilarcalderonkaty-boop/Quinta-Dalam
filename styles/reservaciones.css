@@ -1,4 +1,3 @@
-/* Estilos de reservación */
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Open+Sans:wght@400;600;700&display=swap');
 
@@ -27,7 +26,6 @@ body.bg-resultados {
     padding: 0 1rem;
 }
 
-/* Barra de progreso */
 .progress-bar-container {
     background-color: transparent;
     padding: 2.5rem 0 1.5rem 0;
@@ -83,7 +81,6 @@ body.bg-resultados {
     margin-bottom: 1.5rem;
 }
 
-/* Layout principal */
 .results-layout {
     display: flex;
     gap: 3.5rem;
@@ -99,12 +96,10 @@ body.bg-resultados {
     min-width: 0;
 }
 
-/* Ocultar los inputs de selección */
 .room-radio-input {
     display: none;
 }
 
-/* Tarjetas de habitación */
 .room-card {
     background-color: var(--white);
     border-radius: 0;
@@ -117,13 +112,11 @@ body.bg-resultados {
     position: relative;
 }
 
-/* Indicador de selección */
 .room-radio-input:checked+.room-card {
     border: 2px solid var(--color-secondary);
     box-shadow: 0 8px 25px rgba(122, 80, 81, 0.15);
 }
 
-/* Banderin de selección */
 .selected-badge {
     position: absolute;
     top: 1rem;
@@ -151,7 +144,6 @@ body.bg-resultados {
     position: relative;
 }
 
-/* Proporciones de imagen */
 .room-img {
     width: 100%;
     height: 250px;
@@ -203,7 +195,6 @@ body.bg-resultados {
     font-size: 1.2rem;
 }
 
-/* Pie de tarjeta */
 .room-footer {
     display: flex;
     justify-content: space-between;
@@ -253,7 +244,6 @@ body.bg-resultados {
     margin-top: 0.3rem;
 }
 
-/* Botón de selección */
 .btn-seleccionar-label {
     background-color: transparent;
     color: var(--color-brand);
@@ -273,14 +263,12 @@ body.bg-resultados {
     color: var(--white);
 }
 
-/* Estilo del botón seleccionado */
 .room-radio-input:checked+.room-card .btn-seleccionar-label {
     background-color: var(--color-secondary);
     color: var(--white);
     border-color: var(--color-secondary);
 }
 
-/* --- CARRITO LATERAL (SIDEBAR) --- */
 .sticky-sidebar {
     width: 320px;
     flex-shrink: 0;
@@ -335,13 +323,11 @@ body.bg-resultados {
     font-size: 0.85rem;
 }
 
-/* Selección en el carrito */
 .cart-room-dynamic {
     display: none;
     clear: both;
 }
 
-/* Estado vacío del carrito */
 .cart-empty-state {
     display: flex;
     justify-content: space-between;
@@ -354,7 +340,6 @@ body:has(.room-radio-input:checked) .cart-empty-state {
     display: none;
 }
 
-/* Mostrar habitación seleccionada en carrito */
 body:has(#room101:checked) .room101-info,
 body:has(#room102:checked) .room102-info,
 body:has(#room103:checked) .room103-info,
@@ -371,7 +356,6 @@ body:has(#room207:checked) .room207-info {
     display: block;
 }
 
-/* Info de habitación en carrito */
 .dynamic-room-name {
     display: flex;
     justify-content: space-between;
@@ -409,7 +393,6 @@ body:has(#room207:checked) .room207-info {
     margin-top: 0.3rem;
 }
 
-/* Botón continuar */
 .btn-submit-cart {
     display: block;
     width: 100%;
@@ -425,7 +408,6 @@ body:has(#room207:checked) .room207-info {
     pointer-events: none;
 }
 
-/* Activar botón con selección */
 body:has(.room-radio-input:checked) .btn-submit-cart {
     background-color: var(--color-secondary);
     color: var(--white);
@@ -445,7 +427,6 @@ body:has(.room-radio-input:checked) .btn-submit-cart:hover {
     text-align: center;
 }
 
-/* Pantalla 2: Datos personales */
 #toggle-datos-personales {
     display: none;
 }
@@ -459,13 +440,11 @@ body:has(.room-radio-input:checked) .btn-submit-cart:hover {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-/* Transición a pantalla 2 */
 body:has(#toggle-datos-personales:checked) .seccion-datos-personales {
     display: block;
     animation: fadeIn 0.5s ease;
 }
 
-/* Ocultar vista de habitaciones */
 body:has(#toggle-datos-personales:checked) .results-layout {
     display: none;
 }
@@ -474,7 +453,6 @@ body:has(#toggle-datos-personales:checked) .search-summary-bar {
     display: none;
 }
 
-/* Progreso paso 2 */
 body:has(#toggle-datos-personales:checked) .progress-bar-container .step-1 {
     color: #b0a39c;
 }
@@ -493,12 +471,10 @@ body:has(#toggle-datos-personales:checked) .progress-bar-container .step-2 .step
     color: var(--white);
 }
 
-/* Pantalla 3: Confirmación */
 .seccion-confirmacion-final {
     display: none;
 }
 
-/* Detalles de confirmación por habitación */
 body:has(#room101:checked) .conf-room-img-container .img-101,
 body:has(#room101:checked) .conf-room-name .name-101,
 body:has(#room101:checked) .conf-room-price .price-101 {
@@ -559,7 +535,6 @@ body:has(#room204:checked) .conf-room-price .price-204 {
     display: inline-block !important;
 }
 
-/* Ocultar textos por defecto al seleccionar */
 body:has(.room-radio-input:checked) .conf-room-name .conf-default,
 body:has(.room-radio-input:checked) .conf-room-price .conf-default {
     display: none !important;
@@ -574,7 +549,6 @@ body:has(#toggle-confirmacion:checked) .seccion-confirmacion-final {
     animation: fadeIn 0.5s ease;
 }
 
-/* Progreso paso 3 */
 body:has(#toggle-confirmacion:checked) .progress-bar-container .step-1,
 body:has(#toggle-confirmacion:checked) .progress-bar-container .step-2 {
     color: #b0a39c;
@@ -667,11 +641,9 @@ body:has(#toggle-confirmacion:checked) .progress-bar-container .step:nth-child(5
     background-color: var(--color-secondary);
 }
 
-/* Responsive */
 @media (max-width: 1024px) {
     .results-layout {
         flex-direction: column-reverse;
-        /* Carrito primero en moviles */
     }
 
     .sticky-sidebar {

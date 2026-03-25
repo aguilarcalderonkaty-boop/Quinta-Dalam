@@ -1,0 +1,217 @@
+.btn-edit-summary {
+    background: none;
+    border: 1px solid #3A1F23;
+    color: #3A1F23;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+.btn-edit-summary:hover { background: #3A1F23; color: #fff; }
+
+.summary-edit-panel {
+    background: #faf9f6;
+    border-top: 2px solid #e6dfd5;
+    animation: editSlideIn 0.35s ease;
+}
+@keyframes editSlideIn {
+    from { opacity: 0; max-height: 0; }
+    to { opacity: 1; max-height: 600px; }
+}
+.edit-panel-inner {
+    padding: 1.8rem 1rem;
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.edit-section {
+    flex: 1;
+    min-width: 240px;
+}
+.edit-section-title {
+    font-family: 'Playfair Display', serif;
+    color: #3A1F23;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.edit-section-title i { color: #3A1F23; font-size: 0.9rem; }
+.edit-dates-row {
+    display: flex;
+    gap: 1rem;
+}
+.edit-field {
+    flex: 1;
+    min-width: 0;
+}
+.edit-field label {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #888;
+    margin-bottom: 0.4rem;
+    font-weight: 700;
+}
+.edit-input {
+    width: 100%;
+    border: 1px solid #e0d5c7;
+    border-radius: 4px;
+    padding: 0.6rem 0.8rem;
+    font-family: 'Lora', serif;
+    font-size: 0.95rem;
+    color: #3A1F23;
+    background: #fff;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+.edit-input:focus {
+    outline: none;
+    border-color: #3A1F23;
+    box-shadow: 0 0 0 3px rgba(58,31,35,0.08);
+}
+
+.edit-room-block {
+    background: #fff;
+    border: 1px solid #e6dfd5;
+    border-radius: 6px;
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.7rem;
+    position: relative;
+}
+.edit-room-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.6rem;
+}
+.edit-room-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #3A1F23;
+    letter-spacing: 0.5px;
+}
+.edit-room-delete {
+    background: none;
+    border: none;
+    color: #ccc;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: color 0.2s;
+    padding: 2px 6px;
+}
+.edit-room-delete:hover { color: #d32f2f; }
+.edit-occ-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.4rem;
+}
+.edit-occ-label {
+    font-size: 0.85rem;
+    color: #555;
+    font-weight: 600;
+}
+.edit-occ-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.edit-btn-circle {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid #3A1F23;
+    background: transparent;
+    color: #3A1F23;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    line-height: 1;
+}
+.edit-btn-circle:hover:not(:disabled) { background: #3A1F23; color: #fff; }
+.edit-btn-circle:disabled { border-color: #ddd; color: #ddd; cursor: not-allowed; }
+.edit-occ-count {
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #3A1F23;
+    min-width: 18px;
+    text-align: center;
+}
+.edit-add-room {
+    display: inline-block;
+    font-family: 'Open Sans', sans-serif;
+    color: #3A1F23;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-decoration: none;
+    border-bottom: 1px dashed #3A1F23;
+    padding-bottom: 1px;
+    transition: opacity 0.2s;
+    margin-top: 0.3rem;
+}
+.edit-add-room:hover { opacity: 0.7; }
+
+.edit-actions {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    align-self: flex-end;
+    padding-top: 1.5rem;
+    min-width: 200px;
+}
+.btn-save-edit {
+    background: #3A1F23;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    font-family: 'Lora', serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+    white-space: nowrap;
+}
+.btn-save-edit:hover { background: #2a1218; }
+.btn-cancel-edit {
+    background: none;
+    border: 1px solid #ccc;
+    color: #777;
+    padding: 0.6rem 1.2rem;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.btn-cancel-edit:hover { border-color: #999; color: #444; }
+
+.qd-edit-calendar .flatpickr-month { font-family: 'Playfair Display', serif; color: #3A1F23 !important; }
+.qd-edit-calendar .flatpickr-weekday { font-weight: 700; color: #3A1F23 !important; }
+.qd-edit-calendar .flatpickr-day.selected,
+.qd-edit-calendar .flatpickr-day.startRange,
+.qd-edit-calendar .flatpickr-day.endRange { background: #3A1F23 !important; border-color: #3A1F23 !important; color: #fff !important; }
+.qd-edit-calendar .flatpickr-day.inRange { background: #e9d5bd !important; border-color: #e9d5bd !important; color: #3A1F23 !important; }
+
+@media (max-width: 768px) {
+    .edit-panel-inner { flex-direction: column; gap: 1.5rem; }
+    .edit-dates-row { flex-direction: column; }
+    .edit-actions { min-width: auto; width: 100%; }
+}

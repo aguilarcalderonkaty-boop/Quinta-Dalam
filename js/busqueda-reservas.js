@@ -1,4 +1,3 @@
-/* Configuración del calendario */
 const fp = flatpickr("#rango-fechas", {
     mode: "range",
     minDate: "today",
@@ -12,7 +11,6 @@ const fp = flatpickr("#rango-fechas", {
     }
 });
 
-/* Ocupación */
 let roomsData = [{ id: 1, adults: 2, children: 0 }];
 let nextRoomId = 2;
 const MAX_ROOMS = 4;
@@ -95,7 +93,6 @@ function renderRooms() {
     btnAddRoom.style.display = roomsData.length >= MAX_ROOMS ? 'none' : 'inline-block';
 }
 
-/* Delegación de eventos para botones de ocupación */
 container.addEventListener('click', (e) => {
     e.stopPropagation();
 
@@ -130,7 +127,6 @@ btnAddRoom.addEventListener('click', (e) => {
     }
 });
 
-/* Formulario de reserva con localStorage */
 const bookingForm = document.getElementById('booking-form');
 if (bookingForm) {
     bookingForm.addEventListener('submit', function (e) {
@@ -172,7 +168,6 @@ if (bookingForm) {
     });
 }
 
-/* Botón "Más sobre nosotros" */
 window.addEventListener('load', function () {
     const btnNosotros = document.getElementById('btn-mas-nosotros');
     const contentNosotros = document.getElementById('mas-nosotros-content');
@@ -191,7 +186,6 @@ window.addEventListener('load', function () {
         });
     }
 
-    /* Formulario de contacto */
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', function (e) {
@@ -220,7 +214,6 @@ window.addEventListener('load', function () {
         });
     }
 
-    /* WhatsApp */
     const whatsappLink = document.querySelector('a[href*="wa.me"]');
     if (whatsappLink) {
         whatsappLink.addEventListener('click', function (e) {

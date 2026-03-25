@@ -1,14 +1,9 @@
 :root {
     --color-brand: #3A1F23;
-    /* Azul oscuro Iberostar (Logo y Textos primarios) */
     --color-secondary: #7A5051;
-    /* Verde agua/turquesa (Botones y acentos) */
     --color-dark: #000000;
-    /* Gris oscuro para textos normales */
     --bg-light: #FFFFFF;
-    /* Gris muy claro para fondos */
     --bg-dark: #3A1F23;
-    /* Footer */
     --white: #FFFFFF;
     --nav-height: 100px;
 }
@@ -62,9 +57,6 @@ body {
     text-decoration: underline;
 }
 
-/* =========================================
-   HEADER Y NAVEGACIÓN
-   ========================================= */
 
 .header-nav {
     position: sticky;
@@ -89,7 +81,6 @@ body {
 .nav-animado:hover,
 .icono-animado:hover {
     color: #f59e0b !important;
-    /* Color dorado/ámbar */
 }
 
 .nav-animado:hover {
@@ -155,7 +146,6 @@ body {
     font-size: 0.65rem;
     letter-spacing: 1.5px;
     color: #ffd700;
-    /* Dorado para destacar elegancia */
     text-transform: uppercase;
 }
 
@@ -215,7 +205,6 @@ body {
 
 .login-link-wrapper {
     font-size: 0.95rem;
-    /* Ajuste sutil de tamaño para login */
     letter-spacing: 0.5px;
 }
 
@@ -282,13 +271,10 @@ section {
 
     .navbar-menu {
         display: none;
-        /* En un futuro SPA se hace menú hamburguesa */
     }
 }
 
-/* =========================================
-   FOOTER Y REDES
-   ========================================= */
+
 .footer-heading {
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
@@ -305,15 +291,12 @@ section {
 
 .social-footer-links a {
     font-size: 2rem;
-    /* Hace los iconos más grandes */
     color: var(--white);
-    /* Toma el color blanco definido en tu :root */
     text-decoration: none;
 }
 
 .social-footer-links a:hover i {
     color: #f59e0b;
-    /* Color dorado al pasar el mouse */
 }
 
 /* Botones */
@@ -344,14 +327,11 @@ section {
 
 .btn-secondary {
     background-color: #e2cba4;
-    /* Color arena/dorado */
     color: #3A1F23;
-    /* Marrón oscuro para contraste */
 }
 
 .btn-secondary:hover {
     background-color: #c9a77b;
-    /* Arena oscuro al hacer hover */
     color: #1a0f0a;
 }
 
@@ -380,7 +360,6 @@ section {
     text-align: center;
     color: var(--white);
     padding: 0;
-    /* Hero llega hasta el fondo, no necesita margin inferior especial. La barra flotará encima. */
 }
 
 .hero-content {
@@ -395,7 +374,6 @@ section {
     margin: 1rem 0;
     font-weight: 700;
     text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.5);
-    /* Sombra elegante */
 }
 
 .hero-subtitle {
@@ -414,9 +392,6 @@ section {
     margin-top: 2rem;
 }
 
-/* =========================================
-   BARRA DE RESERVAS
-   ========================================= */
 
 .booking-bar-wrapper {
     background-color: var(--bg-light);
@@ -520,9 +495,7 @@ section {
     margin: 1rem 0;
 }
 
-/* =========================================
-   MISIÓN Y VISIÓN
-   ========================================= */
+
 .about-section {
     padding: 0;
     /* Quitado padding superior/inferior para pegar héroe vs contenido */
@@ -575,11 +548,9 @@ section {
     flex-direction: column;
     justify-content: center;
     padding: 3rem 6rem;
-    /* Padding amplio para no tocar los bordes */
 }
 
 .alt-row-content {
-    /* flex: 1; y padding: 1rem; ya no aplican directamente si usamos el wrapper, pero lo mantenemos por si acaso */
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
@@ -633,9 +604,6 @@ section {
     }
 }
 
-/* =========================================
-   HABITACIONES
-   ========================================= */
 
 /* Filtros */
 .x-cat-radio {
@@ -802,7 +770,6 @@ section {
 
 .btn-reservar-x {
     background-color: #8c5a45;
-    /* Tono tierra/colonial */
     color: white;
     padding: 0.8rem 2rem;
     font-weight: bold;
@@ -858,17 +825,11 @@ section {
     gap: 1.5rem;
 }
 
-/* =========================================
-   NUEVA BARRA DE RESERVAS RÁPIDA (Hero)
-   ========================================= */
 
 /* Efectos hover para los inputs */
 
 
 
-/* =========================================
-   PÁGINA DE RESULTADOS (ESTILO STARAGENTS)
-   ========================================= */
 
 /* Fondo específico para esta página para que resalten las tarjetas blancas */
 .bg-resultados {
@@ -888,7 +849,6 @@ section {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    /* Para que no se rompa en pantallas pequeñas */
     gap: 1rem;
 }
 
@@ -927,7 +887,6 @@ section {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     overflow: hidden;
     border-left: 5px solid #8c5a45;
-    /* Detalle terracota a la izquierda */
 }
 
 .room-result-img {
@@ -1208,9 +1167,7 @@ section {
 }
 
 
-/* ============================================================
-   TEMA CALENDARIO ELEGANTE QUINTA DALAM
-   ============================================================ */
+
 .qd-calendar-theme {
     font-family: 'Open Sans', sans-serif;
     border: 1px solid #e2cba4 !important;
@@ -1259,9 +1216,6 @@ section {
     }
 }
 
-/* ============================================================
-   BARRA DE RESERVAS (ESTILO IBEROSTAR + QUINTA DALAM)
-   ============================================================ */
 
 .quick-booking-bar {
     background-color: #fff;
@@ -1524,9 +1478,7 @@ section {
     background-color: #2a1218;
 }
 
-/* ============================================================
-   TEMA CALENDARIO ELEGANTE QUINTA DALAM
-   ============================================================ */
+
 .qd-calendar-theme {
     font-family: 'Open Sans', sans-serif;
     border: 1px solid #e2cba4 !important;
@@ -1570,4 +1522,400 @@ section {
     .occupancy-dropdown {
         width: 100%;
     }
+}
+
+
+.auth-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 5, 6, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 9999;
+    display: none;
+    overflow-y: auto;
+    padding: 1rem;
+}
+.auth-overlay.active { display: block; }
+
+.auth-modal {
+    background: #fdfbf7;
+    border: 1px solid #e6dfd5;
+    width: 100%;
+    max-width: 480px;
+    margin: 2rem auto;
+    padding: 1.2rem 1.8rem;
+    position: relative;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+    animation: fadeIn 0.3s ease;
+}
+
+.auth-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 36px;
+    height: 36px;
+    background: transparent;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    color: #888;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+.auth-close:hover { background: #f5f0ea; color: #3A1F23; }
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.auth-header h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--color-brand);
+    font-size: 1.5rem;
+    margin: 0.5rem 0 0.2rem;
+}
+.auth-header p {
+    color: #888;
+    font-size: 0.85rem;
+}
+
+.auth-form { display: flex; flex-direction: column; gap: 0.6rem; }
+
+.auth-field-row {
+    display: flex;
+    flex-direction: row;
+    gap: 0.6rem;
+    min-width: 0;
+    align-items: stretch;
+}
+.auth-field-row .auth-field {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.auth-field {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+.auth-field label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #555;
+    margin-bottom: 0.2rem;
+}
+.auth-field input {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 0.7rem 0.9rem;
+    border: 1px solid #ddd;
+    font-size: 0.95rem;
+    font-family: inherit;
+    color: var(--color-brand);
+    background: #fff;
+    transition: border-color 0.2s;
+}
+.auth-field input:focus {
+    outline: none;
+    border-color: var(--color-secondary);
+}
+
+.auth-error {
+    color: #c62828;
+    font-size: 0.85rem;
+    background: #fce4ec;
+    padding: 0.6rem 1rem;
+    border-radius: 4px;
+    margin: 0;
+}
+
+.btn-auth-submit {
+    background: var(--color-brand);
+    color: #fff;
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    font-family: 'Playfair Display', serif;
+    transition: background 0.3s;
+    margin-top: 0.5rem;
+}
+.btn-auth-submit:hover { background: var(--color-secondary); }
+
+.auth-switch {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #888;
+    font-size: 0.9rem;
+}
+.auth-switch a {
+    color: var(--color-secondary);
+    font-weight: 700;
+    text-decoration: underline;
+}
+.auth-switch a:hover { color: var(--color-brand); }
+
+
+.user-sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 10000;
+    display: none;
+    justify-content: flex-end;
+}
+.user-sidebar-overlay.active { display: flex; }
+
+.user-sidebar {
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    background: #fdfbf7;
+    box-shadow: -5px 0 25px rgba(0,0,0,0.15);
+    overflow-y: auto;
+    animation: slideInRight 0.3s ease;
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1.5rem 1.8rem;
+    border-bottom: 1px solid #e6dfd5;
+    background: linear-gradient(135deg, #faf6f0 0%, #f5ebe0 100%);
+}
+
+.sidebar-user-info {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.sidebar-user-info h3 {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    color: var(--color-brand);
+    font-size: 1.2rem;
+}
+.sidebar-user-info p {
+    margin: 0.2rem 0 0;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.sidebar-close {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    background: #fff;
+    color: #888;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+.sidebar-close:hover { background: #f5f0ea; color: #3A1F23; }
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e6dfd5;
+}
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 1.8rem;
+    color: var(--color-brand);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background 0.2s;
+}
+.sidebar-link:hover { background: #f5f0ea; }
+.sidebar-link i { width: 1.2rem; text-align: center; color: var(--color-secondary); }
+.sidebar-logout { color: #c62828 !important; margin-top: 0.5rem; }
+.sidebar-logout i { color: #c62828 !important; }
+
+.sidebar-reservas-panel,
+.sidebar-perfil-panel {
+    padding: 1.5rem 1.8rem;
+    animation: fadeIn 0.3s ease;
+}
+.sidebar-reservas-panel h4,
+.sidebar-perfil-panel h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--color-brand);
+    font-size: 1.1rem;
+    margin: 0 0 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.sidebar-reservas-panel h4 i,
+.sidebar-perfil-panel h4 i { color: var(--color-secondary); }
+
+.no-reserva {
+    color: #888;
+    font-style: italic;
+    text-align: center;
+    padding: 1rem;
+}
+
+.reserva-card {
+    background: #fff;
+    border: 1px solid #e6dfd5;
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1rem;
+}
+.reserva-card.actual {
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 2px rgba(139, 90, 60, 0.15);
+}
+.reserva-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px dashed #e6dfd5;
+}
+.reserva-room-name {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    color: var(--color-brand);
+    font-size: 1rem;
+}
+.reserva-badge-active {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+.reserva-detail {
+    font-size: 0.88rem;
+    color: #555;
+    margin-bottom: 0.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.reserva-detail i { color: var(--color-secondary); width: 1rem; }
+.reserva-price { font-weight: 700; color: var(--color-brand); }
+.reserva-date {
+    font-size: 0.75rem;
+    color: #aaa;
+    margin-top: 0.8rem;
+    padding-top: 0.6rem;
+    border-top: 1px solid #f0ebe4;
+}
+.reserva-room-line {
+    font-size: 0.82rem;
+    padding-left: 0.15rem;
+}
+.reserva-room-mini {
+    color: #888;
+    font-weight: 500;
+    font-size: 0.78rem;
+}
+
+.sidebar-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-field {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+.sidebar-field label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+.sidebar-field input,
+.sidebar-field textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    min-width: 0;
+    padding: 0.7rem 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    color: var(--color-brand);
+}
+.sidebar-field input:focus,
+.sidebar-field textarea:focus {
+    outline: none;
+    border-color: var(--color-secondary);
+}
+
+.sidebar-field-row {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    min-width: 0;
+    align-items: stretch;
+}
+.sidebar-field-row .sidebar-field {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.btn-sidebar-submit {
+    background: var(--color-brand);
+    color: #fff;
+    border: none;
+    padding: 0.9rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    font-family: 'Playfair Display', serif;
+    transition: background 0.3s;
+    margin-top: 0.5rem;
+}
+.btn-sidebar-submit:hover { background: var(--color-secondary); }
+
+.sidebar-success {
+    background: #e8f5e9;
+    color: #2e7d32;
+    padding: 0.6rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 4px;
+    margin: 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
 }
